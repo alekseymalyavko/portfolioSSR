@@ -1,0 +1,9 @@
+<template>
+  <div class="container">
+    Page not found
+  </div>
+</template>
+
+<style>
+</style>
+
