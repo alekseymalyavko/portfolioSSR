@@ -17,6 +17,12 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  css: [
+    'assets/main.css'
+  ],
+  router: {
+    middleware: 'index'
+  },
   /*
   ** Build configuration
   */
@@ -24,6 +30,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
+   vendor: ['axios'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
