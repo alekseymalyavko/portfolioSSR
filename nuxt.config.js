@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Portfolio page, created with ssr' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/images/logo-dark.png' }
     ]
   },
   /*

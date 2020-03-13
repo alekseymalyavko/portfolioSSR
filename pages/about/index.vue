@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="lol" v-on:click="lol"> {{ title }} </p>
+    <p> {{ title }} </p>
     <nuxt-link to="/">Main Page</nuxt-link>
   </div>
 </template>
@@ -21,9 +21,7 @@ export default {
     }
   },
   methods: {
-    lol() {
-      console.log(123)
-    }
+    
   }
 }
 </script>
