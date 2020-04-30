@@ -1,13 +1,13 @@
 <template>
-  <main>
-    <nuxt-link to="/about">About Page</nuxt-link>
+  <main class="container">
+    <!-- <nuxt-link to="/about">About Page</nuxt-link> -->
     <Hero/>
-    <About/>
+    <About id="about"/>
     <Directions/>
     <Services/>
-    <Skills/>
-    <Portfolio/>
-    <Contacts/>
+    <Skills id="skills"/>
+    <Portfolio id="portfolio"/>
+    <Contacts id="contacts"/>
   </main>
 </template>
 
