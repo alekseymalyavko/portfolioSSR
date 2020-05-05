@@ -56,7 +56,7 @@ export default {
   methods: {
     parralaxEl: function(e) {
       debounceEvent(this.parallax(e, this.$refs.firstSquare, 1), 50);
-      debounceEvent(this.parallax(e, this.$refs.secondSquare, 1.8), 50);
+      debounceEvent(this.parallax(e, this.$refs.secondSquare, 1.5), 50);
       debounceEvent(this.parallax(e, this.$refs.picture, 0.35), 50);
     },
     parallax: function (e, target, layer) {

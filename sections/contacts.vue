@@ -11,15 +11,15 @@
       <div class="contacts__info col-6">
         <h3 class="contacts__info__heading heading">JUST SAY HELLO !</h3>
         <p class="text">The idea of the site is to purchasing big varietty of balloons in Canada. The idea of the site is to purchasing big varietty of balloons in Canada.</p>
-        <ul class="contacts__info__list list ">
+        <ul class="contacts__info__list list without-dots">
           <li class="list__item ">
-            <i class="icon">D</i> <a href="/"><span class="caption">Minsk, Belarus</span></a>
+            <i class="icon"><PhoneIcon/></i> <a href="/"><span class="caption">Minsk, Belarus</span></a>
           </li>
           <li class="list__item ">
-            <i class="icon">D</i> <a href="/"><span class="caption">Minsk, Belarus</span></a>
+            <i class="icon"><MailIcon/></i> <a href="/"><span class="caption">Minsk, Belarus</span></a>
           </li>
           <li class="list__item ">
-            <i class="icon">D</i> <a href="/"><span class="caption">Minsk, Belarus</span></a>
+            <i class="icon"><LocationIcon/></i> <a href="/"><span class="caption">Minsk, Belarus</span></a>
           </li>
         </ul>
       </div>
@@ -27,16 +27,16 @@
         <form class="form">
           <div class="form__row">
             <div class="form__input__wrapper">
-              <input class="input form__input" type="text" placeholder=""/>
+              <input class="input form__input" type="text" placeholder="" required @blur="e => isEmpty(e)"/>
               <label>Name</label>
             </div>
             <div class="form__input__wrapper">
-              <input class="input form__input" type="text" placeholder=""/>
+              <input class="input form__input" type="text" placeholder="" required @blur="e => isEmpty(e)"/>
               <label>Subject</label>
             </div>
           </div>
           <div class="form__input__wrapper">
-            <textarea class="input form__input" rows="5" placeholder=""/>
+            <textarea class="input form__input" rows="6" placeholder="" required @blur="e => isEmpty(e)"/>
             <label>Your message</label>
           </div>
           <input class="button " type="submit" value="Send"/>
@@ -48,22 +48,36 @@
 </template>
 
 <script>
+import { PhoneIcon, MailIcon, LocationIcon } from '~/components/icons/index'
 
 export default {
   components: {
-    
+    PhoneIcon,
+    MailIcon,
+    LocationIcon
+  },
+  methods: {
+    isEmpty: function(e) {
+      
+      if (e.target.value.length > 0) {
+        e.target.parentNode.classList.add('active')
+      } else {
+        e.target.parentNode.classList.remove('active')
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
   .contacts {
+    padding-bottom: 120px;
 
     &__info {
 
       .list__item {
         padding-left: 15px;
-        margin-bottom: 13px;
+        margin-bottom: 15px;
       }
       .text {
         margin-bottom: 25px;
@@ -72,11 +86,26 @@ export default {
     }
 
     .form {
-      max-width: 450px;
+      max-width: 550px;
 
       &__input__wrapper {
         position: relative;
+        margin-bottom: 10px;
 
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background: #0ABC5C;
+          background: var(--green);
+          transition: 0.45s;
+        }
+        &.active:after {
+          width: 100%;
+        }
         label {
           position: absolute;
           top: 0;
@@ -87,6 +116,7 @@ export default {
           color: var(--white);
         }
 
+        &.active .form__input + label,        
         .form__input:active + label,
         .form__input:focus + label {
           color: var(--grey);
@@ -98,13 +128,12 @@ export default {
 
       input:not([type="submit"]), 
       textarea {
-        font-size: 16px;
+        font-size: 18px;
         padding: 10px;
-        padding-top: 20px;
-        background: #323232;
+        padding-top: 21px;
+        background: var(--black);
         width: 100%;
         resize: none;
-        margin-bottom: 10px;
         color: var(--white);
         border-radius: 2px;
       }

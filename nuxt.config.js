@@ -2,6 +2,9 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  server: {
+    port: 8000,
+  },
   head: {
     title: 'Portfolio page',
     meta: [

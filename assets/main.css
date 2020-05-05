@@ -70,11 +70,11 @@ h1 {
   line-height: 1.05;
 }
 h2 {
-  font-size: 1.875rem;
+  font-size: 1.975rem;
   line-height: 1.2;
 }
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   line-height: 1.18;
 }
 h4 {
@@ -241,7 +241,7 @@ h5 {
   padding-left: 10px;
   margin-bottom: 8px;
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 .list__item .caption,
 .list__item .text {
@@ -260,17 +260,29 @@ h5 {
   border-radius: 50%;
   background: var(--green);
 }
+.list.without-dots .list__item {
+  padding-left: 0;
+}
+.list.without-dots .list__item:before {
+  content: none;
+}
 .list__item .icon {
   margin-right: 10px;
 }
 .icon {
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.icon svg {
+  height: 100%;
+  fill: var(--white);
+  transition: 0.35s;
 }
 .icon:after {
   content: '';
@@ -280,8 +292,15 @@ h5 {
   border: 1px solid var(--green);
   transition: 0.35s;
 }
+.list__item:hover .icon:after,
+.icon.active:after,
 .icon:hover:after {
   transform: rotate(45deg);
+}
+.list__item:hover .icon svg,
+/* .icon.active svg, */
+.icon:hover svg {
+  fill: var(--green);
 }
 
 .row {
@@ -341,16 +360,32 @@ h5 {
 .page-enter, .page-leave-active {
   opacity: 0;
 }
-
+@media screen and (min-width: 1280px) {
+  h1 {
+    font-size: 4.2rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+  h5 {
+    font-size: 2.05rem;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  .caption {
+    font-size: 1.55rem;
+  }
+  .button, .link, .text {
+    font-size: 1.2rem;
+  }
+}
 @media screen and (max-width: 1280px) {
   .container {
-    max-width: 1000px;
+    max-width: 900px;
   }
 }
 @media screen and (max-width: 720px) {
-  /* .container {
-    max-width: 500px;
-  } */
   h1 {
     font-size: calc(0.875vw + 1.95rem);
   }

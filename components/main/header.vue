@@ -62,7 +62,7 @@ export default {
     width: 100%;
     top: 0;
     left: 0;
-    padding: 7px 0;
+    padding: 10px 0;
     z-index: 5;
     transform: translateY(0%);
     will-change: transform;
@@ -72,7 +72,7 @@ export default {
       transform: translateY(-100%);
     }
     &.active {
-      height: 50px;
+      height: 56px;
       background: var(--dark-blue);
       box-shadow: rgb(2, 12, 27) 0px 10px 30px -10px;
     }
@@ -102,6 +102,10 @@ export default {
         opacity: 1;
         background: var(--white);
         transition: opacity 0.3s, transform 0.3s;
+
+        &:last-child {
+          margin: 0;
+        }
       }
 
       &:hover &__line {
@@ -157,7 +161,7 @@ export default {
         align-items: center;
         justify-content: center;
         width: 75vw;
-        min-width: 300px;
+        min-width: 240px;
         padding: 50px;
         background: var(--dark);
 

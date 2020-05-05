@@ -125,12 +125,12 @@ export default {
 
     &__item {
       border: 1px solid var(--green);
-      width: 320px;
-      height: 320px;
+      width: 360px;
+      height: 360px;
       margin: 10px;
       display: flex;
       align-items: center;
-      padding: 25px;
+      padding: 30px;
 
       .project {
         .caption {
@@ -146,6 +146,13 @@ export default {
       }
     }
     
+    @media screen and (max-width: 719px) {
+      &__item {
+        width: 270px;
+        height: 270px;
+        padding: 25px;
+      }
+    }
   }
 </style>
 

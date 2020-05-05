@@ -1,16 +1,16 @@
 <template>
   <div class="social">
     <div class="social__content">
-      <p class="social__text">Follow me</p>
+      <p class="social__text text">Follow me</p>
       <ul class="social__icons ">
-        <li>
-          <i class="icon">o</i>
+        <li class="icon">
+          <InIcon/>
         </li>
-        <li>
-          <i class="icon">o</i>
+        <li class="icon">
+          <GhIcon/>
         </li>
-        <li>
-          <i class="icon">o</i>
+        <li class="icon">
+          <FbIcon/>
         </li>
       </ul>
     </div>
@@ -18,8 +18,13 @@
 </template>
 
 <script>
+import { InIcon, GhIcon, FbIcon } from '~/components/icons/index'
 export default {
-  
+  components: {
+    InIcon,
+    GhIcon,
+    FbIcon
+  }
 }
 </script>
 
@@ -29,7 +34,11 @@ export default {
     bottom: 25px;
     right: 15px;
     z-index: 4;
+    transition: bottom 0.35s;
 
+    &:hover {
+      bottom: 30px;
+    }
     &__content {
       display: flex;
       flex-direction: column;
@@ -38,6 +47,7 @@ export default {
     }
 
     &__text {
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       writing-mode: vertical-rl;
       padding-bottom: 80px;
@@ -50,12 +60,12 @@ export default {
         left: 9px;
         width: 1px;
         height: 65px;
-        background: var(--white);
+        background: var(--grey);
       }
     }
 
     &__icons {
-      margin-top: 15px;
+      margin-top: 20px;
       
       li {
         margin-bottom: 15px;
@@ -67,7 +77,10 @@ export default {
     }
   
   @media screen and (min-width: 1280px) {
-    right: calc(100vw / 2 - 1280px / 2);
+    right: calc(95vw / 2 - 1280px / 2);
+  }
+  @media screen and (max-width: 719px) {
+    display: none;
   }
 }
 </style>
