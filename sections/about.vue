@@ -95,6 +95,11 @@ export default {
         width: 90%;
         height: 90%;
         z-index: 0;
+        transition: background 0.35s;
+
+        &:hover {
+          background: var(--light-green)
+        }
 
         &.second {
           left: unset;

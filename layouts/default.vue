@@ -1,7 +1,7 @@
 <template>
-  <div class="content">
+  <div id="content">
     <Header :isScrolled="isScrolled" :isActive="isActive"/>
-    <nuxt/>
+    <nuxt class="main container"/>
     <Social/>
     <Footer/>
     <Bg/>
@@ -54,6 +54,20 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
+  #__nuxt,
+  #__layout,
+  #content {
+    height: 100%;
+  }
+  #content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
 
+    .main {
+      padding-top: 60px;
+      flex: 1;
+    }
+  }
 </style>

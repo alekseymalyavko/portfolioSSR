@@ -45,7 +45,7 @@ export default {
 .hero {
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 60px);
   min-height: 500px;
   position: relative;
   overflow: hidden;

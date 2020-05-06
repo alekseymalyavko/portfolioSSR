@@ -14,9 +14,11 @@
           </h6>
           <p class="light">UX / UI / HTML / CSS / JS / SEO</p>
           <p class="text">The idea of the site is about marketing agency which provides their services to customers.</p>
-          <div class="button ">
-            More
-          </div>
+          <nuxt-link to="/portfolio/metrica">
+            <div class="button ">
+              More
+            </div>
+          </nuxt-link>
         </div>
       </div>
 
@@ -30,9 +32,11 @@
           </h6>
           <p class="light">UX / UI / HTML / CSS / JS / SEO</p>
           <p class="text">The idea of the site is about marketing agency which provides their services to customers.</p>
-          <div class="button ">
-            More
-          </div>
+          <nuxt-link to="/portfolio/balloon">
+            <div class="button ">
+              More
+            </div>
+          </nuxt-link>
         </div>
       </div>
 
@@ -46,9 +50,11 @@
           </h6>
           <p class="light">UX / UI / HTML / CSS / JS / SEO</p>
           <p class="text">The idea of the site is about marketing agency which provides their services to customers.</p>
-          <div class="button ">
-            More
-          </div>
+          <nuxt-link to="/portfolio/nom">
+            <div class="button ">
+              More
+            </div>
+          </nuxt-link>
         </div>
       </div>
 
@@ -124,6 +130,8 @@ export default {
     }
 
     &__item {
+      position: relative;
+      top: 0;
       border: 1px solid var(--green);
       width: 360px;
       height: 360px;
@@ -131,7 +139,12 @@ export default {
       display: flex;
       align-items: center;
       padding: 30px;
+      transition: 0.35s ease-out;
 
+      &:hover {
+        top: -8px;
+        background: var(--light-green)
+      }
       .project {
         .caption {
           margin: 5px 0;

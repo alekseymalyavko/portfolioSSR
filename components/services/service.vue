@@ -45,7 +45,7 @@ export default {
 
     .caption {
       text-transform: uppercase;
-      margin: 15px 0 10px;
+      margin: 25px 0 10px;
       letter-spacing: 1px;
       font-weight: 500;
     }

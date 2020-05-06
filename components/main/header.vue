@@ -1,8 +1,8 @@
 <template>
   <div class="header" :class="{'unpinned': isScrolled, 'active': !isActive}">
     <div class="container header__content">
-      <img class="header__logo" src="/images/logo.png" alt="" />
-      
+      <nuxt-link to="/"><img class="header__logo" src="/images/logo.png" alt="" /></nuxt-link>
+
       <div class="header__menu__wrapper" :class="{'opened': isOpened}">
         <div class="header__btn" @click="toggleMenu()">
           <span class="header__btn__line"></span>

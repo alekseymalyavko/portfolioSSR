@@ -13,21 +13,19 @@ export default {
       let canvas = this.$refs.space;
       let c = canvas.getContext("2d");
 
-      let numStars = 2000;
-      let radius = '0.'+Math.floor(Math.random() * 9) + 1  ;
+      let numStars = 1500;
+      let starSize = 1;
+      let radius = '0.'+Math.floor(Math.random() * 9) + 1;
       let focalLength = canvas.width *2;
       let centerX, centerY;
 
       let stars = [], star;
       let i;
 
-      let animate = true;
-
+      setStars();
       initializeStars();
 
-      function executeFrame(){
-        
-      if(animate)
+      function executeFrame() {
         requestAnimFrame(executeFrame);
         moveStars();
         drawStars();
@@ -64,9 +62,10 @@ export default {
         let pixelX, pixelY, pixelRadius;
         
         // Resize to the screen
-        if(canvas.width != window.innerWidth || canvas.width != window.innerWidth){
+        if(canvas.width != window.innerWidth || canvas.height != window.innerHeight){
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
+          setStars();
           initializeStars();
         }
         // if(warp==0) {
@@ -81,12 +80,25 @@ export default {
           pixelX += centerX;
           pixelY = (star.y - centerY) * (focalLength / star.z);
           pixelY += centerY;
-          pixelRadius = 1 * (focalLength / star.z);
+          pixelRadius = starSize * (focalLength / star.z);
           
           c.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
           c.fillStyle = "rgba(10, 188, 92, "+star.o+")";
           // rgb(10, 188, 92)
           //c.fill();
+        }
+      }
+
+      function setStars() {
+        let media720 = window.matchMedia('screen and (max-width: 720px)');
+        let media1280 = window.matchMedia('screen and (min-width: 1280px)');
+
+        if (media720.matches) {
+          numStars = 900;
+          starSize = 0.75;
+        } else if (media1280.matches) {
+          numStars = 2300;
+          starSize = 2;
         }
       }
       executeFrame();
