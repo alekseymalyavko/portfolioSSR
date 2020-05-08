@@ -2,6 +2,7 @@
   <div id="content">
     <Header :isScrolled="isScrolled" :isActive="isActive"/>
     <nuxt class="main container"/>
+    <ColorGenerator/>
     <Social/>
     <Footer/>
     <Bg/>
@@ -12,6 +13,7 @@ import Header from '~/components/main/header'
 import Social from '~/components/main/social'
 import Footer from '~/components/main/footer'
 import Bg from '~/components/main/bg'
+import ColorGenerator from '~/components/main/generator'
 
 import debounceEvent from '~/middleware'
 
@@ -20,7 +22,8 @@ export default {
     Header,
     Social,
     Footer,
-    Bg
+    Bg,
+    ColorGenerator
   },
   data() {
     return {

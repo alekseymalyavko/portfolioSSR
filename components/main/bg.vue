@@ -4,24 +4,36 @@
 
 <script>
 export default {
+  data() {
+    return {
+      numStars: null,
+      starSize: null,
+      canvas: null,
+      bg: null,
+      focalLength: null,
+      centerX: null,
+      centerY: null,
+      stars: [],
+      star: null,
+    }
+  },
   mounted () {
-    this.setupBg();
+    // this.setupBg();
+    this.setupSpace();
   },
   methods: {
     setupBg: function() {
       window.requestAnimFrame = (function(){  return  window.requestAnimationFrame})();
       let canvas = this.$refs.space;
-      let c = canvas.getContext("2d");
+      let bg = canvas.getContext("2d");
 
       let numStars = 1500;
       let starSize = 1;
-      let radius = '0.'+Math.floor(Math.random() * 9) + 1;
       let focalLength = canvas.width *2;
       let centerX, centerY;
 
       let stars = [], star;
       let i;
-
       setStars();
       initializeStars();
 
@@ -51,7 +63,6 @@ export default {
         for(i = 0; i < numStars; i++){
           star = stars[i];
           star.z--;
-          
           if(star.z <= 0){
             star.z = canvas.width;
           }
@@ -61,18 +72,16 @@ export default {
       function drawStars(){
         let pixelX, pixelY, pixelRadius;
         
-        // Resize to the screen
         if(canvas.width != window.innerWidth || canvas.height != window.innerHeight){
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
           setStars();
           initializeStars();
         }
-        // if(warp==0) {
-          c.fillStyle = "rgba(0,10,20,1)";
-          c.fillRect(0,0, canvas.width, canvas.height);
-        // }
-        // c.fillStyle = "rgba(209, 255, 255, "+radius+")";
+        // // if(warp==0) {
+          bg.fillStyle = "rgba(0,10,20,1)";
+          bg.fillRect(0,0, canvas.width, canvas.height);
+        // // }
         for(i = 0; i < numStars; i++){
           star = stars[i];
           
@@ -82,10 +91,8 @@ export default {
           pixelY += centerY;
           pixelRadius = starSize * (focalLength / star.z);
           
-          c.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
-          c.fillStyle = "rgba(10, 188, 92, "+star.o+")";
-          // rgb(10, 188, 92)
-          //c.fill();
+          bg.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
+          bg.fillStyle = "rgba(10, 188, 92, "+star.o+")";
         }
       }
 
@@ -102,6 +109,89 @@ export default {
         }
       }
       executeFrame();
+    },
+    setupSpace: function() {
+      window.requestAnimFrame = (function(){  return  window.requestAnimationFrame})();
+      this.canvas = this.$refs.space;
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = window.innerHeight;
+      this.bg = this.canvas.getContext("2d");
+      this.focalLength = this.canvas.width * 0.65;
+      
+      this.setStars();
+      this.initializeStars();
+      this.executeFrame();
+    },
+    setStars: function() {
+      let media720 = window.matchMedia('screen and (max-width: 720px)');
+      let media1280 = window.matchMedia('screen and (min-width: 1280px)');
+
+      if (media720.matches) {
+        this.numStars = 900;
+        this.starSize = 0.75;
+      } else if (media1280.matches) {
+        this.numStars = 2300;
+        this.starSize = 1.25;
+      } else {
+        this.numStars = 1500;
+        this.starSize = 1;
+      }
+    },
+    initializeStars: function() {
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = window.innerHeight;
+      this.centerX = this.canvas.width / 2;
+      this.centerY = this.canvas.height / 2;
+
+      this.stars = [];
+      for(let i = 0; i < this.numStars; i++){
+        let star = {
+          x: Math.random() * this.canvas.width,
+          y: Math.random() * this.canvas.height,
+          z: Math.random() * this.canvas.width,
+          o: '0.'+Math.floor(Math.random() * 99) + 1
+        };
+        this.stars.push(star);
+      }
+      console.log(this.stars)
+    },
+    drawStars: function() {
+      let pixelX, pixelY, pixelRadius;
+
+      if(this.canvas.width != window.innerWidth || this.canvas.height != window.innerHeight) {
+        this.setStars();
+        this.initializeStars();
+      }
+      // // if(warp==0) {
+        this.bg.fillStyle = "rgba(0,10,20,1)";
+        this.bg.fillRect(0,0, this.canvas.width, this.canvas.height);
+      // // }
+      for(let i = 0; i < this.numStars; i++){
+        let star = this.stars[i];
+        
+        pixelX = (star.x - this.centerX) * (this.focalLength / star.z);
+        pixelX += this.centerX;
+        pixelY = (star.y - this.centerY) * (this.focalLength / star.z);
+        pixelY += this.centerY;
+        pixelRadius = this.starSize * (this.focalLength / star.z);
+        
+        this.bg.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
+        this.bg.fillStyle = "rgba(10, 188, 92, "+star.o+")";
+      }
+    },
+    moveStars: function() {
+      for(let i = 0; i < this.numStars; i++){
+        let star = this.stars[i];
+        star.z--;
+        if(star.z <= 0){
+          star.z = this.canvas.width;
+        }
+      }
+    },
+    executeFrame: function() {
+      requestAnimFrame(this.executeFrame);
+      this.moveStars();
+      this.drawStars();
     }
   }
 }
@@ -114,6 +204,8 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
 	}
 </style>
