@@ -13,7 +13,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Portfolio page, created with ssr' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/images/logo-dark.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/images/icon.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
     ]
   },

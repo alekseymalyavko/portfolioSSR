@@ -8,5 +8,10 @@ function debounceEvent(callback, time) {
     }, time);
   };
 }
-
-export default debounceEvent; 
+function onWaypoint(e) {
+  if (e.going === this.$waypointMap.GOING_IN) {
+    this.isActive = true;
+    console.log(5555)
+  }
+}
+export {debounceEvent, onWaypoint}; 

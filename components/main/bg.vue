@@ -35,13 +35,13 @@ export default {
     },
     setStars: function() {
       let media720 = window.matchMedia('screen and (max-width: 720px)');
-      let media1280 = window.matchMedia('screen and (min-width: 1280px)');
+      let media1450 = window.matchMedia('screen and (min-width: 1450px)');
 
       if (media720.matches) {
         this.numStars = 900;
         this.starSize = 0.85;
         this.focalLength = this.canvas.width * 2;
-      } else if (media1280.matches) {
+      } else if (media1450.matches) {
         this.numStars = 2000;
         this.starSize = 1.25;
         this.focalLength = this.canvas.width * 0.6;

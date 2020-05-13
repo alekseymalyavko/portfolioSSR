@@ -73,7 +73,7 @@ export default {
     right: 0;
     top: 80px;
     transform: translateX(100%);
-    z-index: 4;
+    z-index: 5;
     transition: all 0.35s ease-in-out;
     
     &.active {
@@ -121,7 +121,7 @@ export default {
       cursor: pointer;
       position: absolute;
       top: -1px;
-      right: 100%;
+      right: calc(100% + 1px);
       width: 70px;
       height: 70px;
       padding: 10px;
@@ -129,6 +129,7 @@ export default {
       background: var(--black);
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
+      border-right: none;
       box-shadow: #020c1b 0px 10px 30px -10px;
       transition: border 0.35s;
 

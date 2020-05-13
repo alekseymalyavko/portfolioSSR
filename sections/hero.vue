@@ -8,7 +8,7 @@
           Software Developer
         </h1>
         <h5 class="hero__text light">ReactJS / VueJs / HTML5 / CSS3</h5>
-        <p class="caption">and i <span class="creative bold" @click="isActive = true">love</span> to create.</p>
+        <p class="caption">and i <span class="creative bold">love</span> to create.</p>
         <nuxt-link :to="{ path: '/', hash:'#portfolio'}">
           <div class="button ">
             Look Portfolio

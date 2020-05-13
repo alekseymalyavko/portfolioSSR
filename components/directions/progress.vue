@@ -72,7 +72,7 @@ export default {
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
+        height: calc(100% + 1px);
         width: 50%;
         background: var(--active);
         // transition: 0.4s;

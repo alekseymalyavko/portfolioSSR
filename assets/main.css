@@ -381,10 +381,10 @@ h5 {
   padding-left: 15px;
 }
 
-.animated {
+.animate__animated {
   visibility: hidden;
 }
-.animated.animate__animated {
+.animate__animated.animate__animated {
   visibility: visible;
   animation-duration: 0.55s;
 }
@@ -411,7 +411,7 @@ h5 {
     font-size: 1.55rem;
   }
   .button, .link, .text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 @media screen and (max-width: 1280px) {

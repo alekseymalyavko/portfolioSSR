@@ -20,7 +20,7 @@ import Social from '~/components/main/social'
 import Footer from '~/components/main/footer'
 import Bg from '~/components/main/bg'
 import ColorGenerator from '~/components/main/generator'
-import debounceEvent from '~/middleware'
+import {debounceEvent} from '~/middleware'
 import 'animate.css';
 
 export default {
@@ -39,6 +39,7 @@ export default {
       lastPosition: 0,
       currentHexColor:  '#0ABC5C',
       currentRgbaColor:  ['rgba(10, 185, 95, 0.2)', '10, 185, 95'],
+      isEffect: false
     }
   },
   mounted: function () {
@@ -71,6 +72,11 @@ export default {
 
       localStorage.setItem('hexColor', colors[0]);
       localStorage.setItem('rgbaColor', JSON.stringify(colors[1]));
+    },
+    setEffect: function() {
+      console.log(123)
+      // this.isEffect = true;
+      // setTimeout(()=> this.isEffect = false, 1500) ;
     }
   }
 }
