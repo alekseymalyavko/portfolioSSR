@@ -1,11 +1,17 @@
 <template>
   <div id="content">
+    <style>
+      :root {
+        --active: {{currentHexColor}};
+        --light-active: {{currentRgbaColor[0]}};
+      }
+    </style>
     <Header :isScrolled="isScrolled" :isActive="isActive"/>
     <nuxt class="main container"/>
-    <ColorGenerator/>
+    <ColorGenerator :currentHexColor="currentHexColor" @changeColor="changeColor"/>
     <Social/>
     <Footer/>
-    <Bg/>
+    <Bg :currentRgbaColor="currentRgbaColor[1]"/>
   </div>
 </template>
 <script>
@@ -14,8 +20,8 @@ import Social from '~/components/main/social'
 import Footer from '~/components/main/footer'
 import Bg from '~/components/main/bg'
 import ColorGenerator from '~/components/main/generator'
-
 import debounceEvent from '~/middleware'
+import 'animate.css';
 
 export default {
   components: {
@@ -30,11 +36,16 @@ export default {
       limitPosition: 400,
       isScrolled: false,
       isActive: true,
-      lastPosition: 0
+      lastPosition: 0,
+      currentHexColor:  '#0ABC5C',
+      currentRgbaColor:  ['rgba(10, 185, 95, 0.2)', '10, 185, 95'],
     }
   },
   mounted: function () {
-      window.addEventListener('scroll', debounceEvent(this.handleScroll, 100));
+    this.currentHexColor = localStorage.getItem('hexColor') ? localStorage.getItem('hexColor') : this.currentHexColor;
+    this.currentRgbaColor = localStorage.getItem('rgbaColor') ? JSON.parse(localStorage.getItem('rgbaColor')) : this.currentRgbaColor;
+
+    window.addEventListener('scroll', debounceEvent(this.handleScroll, 100));
   },
   destroyed: function () {
       window.removeEventListener('scroll', debounceEvent(this.handleScroll, 100));
@@ -53,6 +64,13 @@ export default {
         this.isActive = false
       }
       this.lastPosition = window.scrollY;
+    },
+    changeColor: function(colors) {
+      this.currentHexColor = colors[0];
+      this.currentRgbaColor = colors[1];
+
+      localStorage.setItem('hexColor', colors[0]);
+      localStorage.setItem('rgbaColor', JSON.stringify(colors[1]));
     }
   }
 }

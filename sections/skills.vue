@@ -178,7 +178,7 @@ export default {
         width: 100%;
         position: absolute;
         text-align: center;
-        border: 1px solid var(--green);
+        border: 1px solid var(--active);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -186,7 +186,7 @@ export default {
         transition: 0.35s;
 
         // &:hover {
-        //   background: var(--light-green);
+        //   background: var(--light-active);
         // }
 
         &.front {

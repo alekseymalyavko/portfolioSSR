@@ -1,10 +1,12 @@
 <template>
-  <section class="about" @mousemove="e => parralaxEl(e)">
-    <h6 class="subtitle">who i am</h6>
-    <h2 class="title">about me</h2>
-
+  <section class="about" @mousemove="e => parralaxEl(e)" v-waypoint="{ active: true, callback: e => onWaypoint(e), options: { threshold: [0.45, 0.55] } }">
+    <div class="section__heading animated" :class="{'animate__animated animate__fadeInDown': isActive}">
+      <h6 class="subtitle">who i am</h6>
+      <h2 class="title">about me</h2>
+    </div>
+    
     <div class="row">
-      <div class="col-6 about__photo__wrapper" >
+      <div class="col-6 about__photo__wrapper animated" v-animate.fade="'animate__fadeInDown'">
         <div class="about__photo">
           <div class="about__photo__square first" ref="firstSquare"></div>
           <div class="about__photo__square second" ref="secondSquare"></div>
@@ -53,6 +55,11 @@ export default {
   components: {
     
   },
+  data() {
+    return {
+      isActive: false
+    }
+  },
   methods: {
     parralaxEl: function(e) {
       debounceEvent(this.parallax(e, this.$refs.firstSquare, 1), 50);
@@ -67,6 +74,12 @@ export default {
       let y = Math.round(target.offsetHeight / k2 - (e.pageY - this.$el.offsetHeight / k1) / layer_coeff);
       target.style.top = y +'px';
       target.style.left = x +'px';
+    },
+    onWaypoint(e) {
+      console.log(1, this)
+      // if (going === this.$waypointMap.GOING_IN) {
+      //   this.isActive = true;
+      // }
     }
   }
 }
@@ -91,14 +104,14 @@ export default {
         position: absolute;
         top: 0;
         left: 0;
-        border: 1px solid var(--green);
+        border: 1px solid var(--active);
         width: 90%;
         height: 90%;
         z-index: 0;
         transition: background 0.35s;
 
         &:hover {
-          background: var(--light-green)
+          background: var(--light-active)
         }
 
         &.second {
@@ -119,7 +132,7 @@ export default {
           width: 80px;
           height: 80px;
           border-radius: 100%;
-          background: var(--green);
+          background: var(--active);
           margin-bottom: 10px;
         }
       }

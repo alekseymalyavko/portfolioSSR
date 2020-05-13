@@ -1,9 +1,9 @@
 <template>
-  <div class="generator" :class="{active: isActive}">
+  <div class="generator" :class="{active: isActive}" @focusout="isActive = false" tabindex="0">
     <div class="generator__wrapper">
-      <div class="generator__list" @click="e => this.changeColor(e)">
+      <div class="generator__list" @click="e => this.chooseColor(e)">
         <div class="generator__list__item" style="background: #fe0000" data-color="#fe0000"></div>
-        <div class="generator__list__item" style="background: #b202b5" data-color="#b202b5"></div>
+        <div class="generator__list__item" style="background: #0ABC5C" data-color="#0ABC5C"></div>
         <div class="generator__list__item" style="background: #fee600" data-color="#fee600"></div>
         <div class="generator__list__item" style="background: #00bcf9" data-color="#00bcf9"></div>
       </div>
@@ -17,31 +17,21 @@
         <WaterIcon/>
       </div>
     </div>
-    <style>
-      :root {
-        --green: {{currentHexColor}};
-        --light-green: {{currentRgbaColor}};
-      }
-    </style>
   </div>
 </template>
 
 <script>
-import { WaterIcon } from '~/components/icons/index'
+import { WaterIcon } from '~/components/icons/index';
 
 export default {
+  props: ['currentHexColor'],
   components: {
     WaterIcon
   },
   data() {
     return {
       isActive: false,
-      currentHexColor: '#0ABC5C',
-      currentRgbaColor: 'rgba(10, 185, 95, 0.2)'
     }
-  },
-  mounted() {
-
   },
   methods: {
     toggleGenerator: function() {
@@ -56,20 +46,22 @@ export default {
         }
         return color;
       }
+      let currentColor = randomColor()
+      this.changeColor([currentColor, this.convertToRgba(currentColor, 0.2)])
 
-      this.currentHexColor = randomColor();
-      this.currentRgbaColor = this.convertToRgba(this.currentHexColor, 0.2);
     },
     convertToRgba: function(hex, alpha = 1) {
       const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
-      return `rgba(${r},${g},${b},${alpha})`;
+      return [`rgba(${r},${g},${b},${alpha})`, `${r},${g},${b}`];
     },
-    changeColor: function(e) {
+    chooseColor: function(e) {
       const color = e.target.getAttribute('data-color');
       if (color) {
-        this.currentHexColor = color;
-        this.currentRgbaColor = this.convertToRgba(this.currentHexColor, 0.2);
+        this.changeColor([color, this.convertToRgba(color, 0.2)])
       }
+    },
+    changeColor: function(colors) {
+      this.$emit('changeColor', colors)
     }
   }
 }
@@ -91,7 +83,7 @@ export default {
       position: relative;
       text-align: center;
       width: 115px;
-      border: 1px solid var(--green);
+      border: 1px solid var(--active);
       background: var(--black);     
       box-shadow: #020c1b 0px 10px 30px -10px;
       transition: border 0.35s;
@@ -108,7 +100,7 @@ export default {
         margin: 5px;
         width: 25px;
         height: 25px;
-        background: var(--green);
+        background: var(--active);
         border: 1px solid transparent;
         border-radius: 2px;
         cursor: pointer;
@@ -133,7 +125,7 @@ export default {
       width: 70px;
       height: 70px;
       padding: 10px;
-      border: 1px solid var(--green);
+      border: 1px solid var(--active);
       background: var(--black);
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
@@ -142,7 +134,7 @@ export default {
 
       svg {
         transition: fill 0.35s;
-        fill: var(--green)
+        fill: var(--active)
       }
     }
     &__button {

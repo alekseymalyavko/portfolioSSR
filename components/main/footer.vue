@@ -36,6 +36,7 @@ export default {
 
     &__text {
       text-align: center;
+      user-select: none;
       margin: 0;
     }
 

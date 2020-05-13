@@ -64,6 +64,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
+   transpile: ['vue-agile'],
    vendor: ['axios'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {

@@ -9,6 +9,31 @@ html {
   box-sizing: border-box;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--active) var(--dark);
+}
+*::-moz-selection { 
+  background: var(--active);
+  color: var(--white);
+}
+*::selection { 
+  background: var(--active);
+  color: var(--white);
+}
+*::-webkit-scrollbar {
+  width: 9px;
+}
+*::-webkit-scrollbar-track {
+  width: 9px;
+	background-color: var(--dark);
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: var(--active);
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
@@ -16,8 +41,8 @@ html {
 }
 
 :root {
-  --green: #0ABC5C;
-  --light-green: rgba(10, 185, 95, 0.2);
+  --active: #0ABC5C;
+  --light-active: rgba(10, 185, 95, 0.2);
   --dark: #242424;
   --dark-blue: #000a14;
   --light-blue: rgb(0, 10, 20, .7);
@@ -25,7 +50,8 @@ html {
   --white: #fff;
   --grey: #A4A4A4;
   --light-grey: #C4C4C4;
-  /* --dark- */
+  --animate-duration: 800ms;
+  --animation-delay: 0.9s;
 }
 
 img {
@@ -108,7 +134,7 @@ h5 {
 }
 .subtitle {
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--active);
   font-weight: 300;
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -134,7 +160,7 @@ h5 {
   left: 0;
   width: 2px;
   height: 26px;
-  background: var(--green);
+  background: var(--active);
 }
 .subheading {
   font-size: 1.125rem;
@@ -157,7 +183,7 @@ h5 {
 }
 .bold {
   font-weight: 500;
-  color: var(--green);
+  color: var(--active);
 }
 .link {
   font-size: 1rem;
@@ -178,11 +204,11 @@ h5 {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--green);
+  background: var(--active);
   transition: 0.35s;
 }
 .link:hover {
-  color: var(--green);
+  color: var(--active);
 }
 .link:hover:after {
   width: 100%;
@@ -198,7 +224,7 @@ h5 {
   margin-top: 25px;
   margin-right: 10px;
   border-radius: 2px;
-  background: var(--green);
+  background: var(--active);
   border: 1px solid transparent;
   color: var(--dark);
   cursor: pointer;
@@ -209,8 +235,8 @@ h5 {
 }
 .button.button_secondary {
   background: transparent;
-  border: 1px solid var(--green);
-  color: var(--green);
+  border: 1px solid var(--active);
+  color: var(--active);
 }
 .button:not(.button_secondary):after {
   content: '';
@@ -225,7 +251,7 @@ h5 {
   width: 50px;
 }
 .button.button_secondary:hover {
-  background: var(--light-green);
+  background: var(--light-active);
 }
 .button:hover:after {
  left: 110%;
@@ -262,7 +288,7 @@ h5 {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--active);
 }
 .list.without-dots .list__item {
   padding-left: 0;
@@ -293,7 +319,7 @@ h5 {
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 1px solid var(--green);
+  border: 1px solid var(--active);
   transition: 0.35s;
 }
 .list__item:hover .icon:after,
@@ -304,7 +330,7 @@ h5 {
 .list__item:hover .icon svg,
 /* .icon.active svg, */
 .icon:hover svg {
-  fill: var(--green);
+  fill: var(--active);
 }
 .color {
   transition: border 0.35s ease-out, color 0.35s ease-out, fill 0.35s ease-out, background 0.35s ease-out !important;
@@ -355,6 +381,13 @@ h5 {
   padding-left: 15px;
 }
 
+.animated {
+  visibility: hidden;
+}
+.animated.animate__animated {
+  visibility: visible;
+  animation-duration: 0.55s;
+}
 
 .page-enter-active, .page-leave-active {
   transition: 0.25s;

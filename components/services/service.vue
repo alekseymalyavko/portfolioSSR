@@ -40,7 +40,7 @@ export default {
       justify-content: center;
       width: 150px;
       height: 150px;
-      border: 2px solid var(--green);
+      border: 2px solid var(--active);
     }
 
     .caption {

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="progress">
+  <div class="progress" v-waypoint="{ active: true, callback: onWaypoint }">
     <div class="progress__wrapper">
       <div class="caption">
         {{title}}
@@ -27,9 +27,6 @@ export default {
       progressIndicator: 0,
     }
   },
-  mounted() {
-    this.startCounter()
-  },
   methods: {
     startCounter: function() {
       let duration = (Math.abs(this.startCount - this.stopCount) / 100) * 8000,
@@ -42,6 +39,11 @@ export default {
         this.progressIndicator = this.startCount;
         this.startCount > this.stopCount ? this.startCount-- : this.startCount++
       }, intervalTime / 2);
+    },
+    onWaypoint ({ going, direction }) {
+      if (going === this.$waypointMap.GOING_IN) {
+        this.startCounter();
+      }
     }
   }
 }
@@ -61,8 +63,8 @@ export default {
     }
 
     &__indicator {
-      height: 5px;
-      border: 1px solid var(--green);
+      height: 7px;
+      border: 1px solid var(--active);
       margin: 10px 0;
       position: relative;
 
@@ -72,7 +74,7 @@ export default {
         left: 0;
         height: 100%;
         width: 50%;
-        background: var(--green);
+        background: var(--active);
         // transition: 0.4s;
       }
     }

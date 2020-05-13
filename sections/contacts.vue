@@ -100,7 +100,7 @@ export default {
           width: 0;
           height: 1px;
           background: #0ABC5C;
-          background: var(--green);
+          background: var(--active);
           transition: 0.45s;
         }
         &.active:after {

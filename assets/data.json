@@ -1,0 +1,159 @@
+{
+  "name": "John",
+  "age": 30,
+  "isAdmin": false,
+  "header": {
+    "nav": [
+      "about me", "skills", "portfolio", "contacts"
+    ]
+  },
+  "social": {
+    "title": "follow me"
+  },
+  "generator": {
+    "btn": "random"
+  },
+  "hero": {
+    "title": "Hi, I'm Aleks Software Developer",
+    "skills": "ReactJS / VueJs / HTML5 / CSS3",
+    "caption": "and i love to create.",
+    "btn": "look portfolio"
+  },
+  "about": {
+    "section-subtitle": "who i am",
+    "section-title": "about me",
+    "title": "I'm Software Developer",
+    "descr": "Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd asdasdasd asdasdasd asdasda asdasdasd asdasdasd Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd",
+    "image": {
+      "text": "aleks malyavko"
+    },
+    "personal": [
+      {
+        "full-name": "aleks"
+      },
+      {
+        "location": "minsk belarus"
+      }
+    ],
+    "btn": [
+      {
+        "text": "downoload cv"
+      },
+      {
+        "text": "contact me"
+      }
+    ]
+  },
+  "directions": [
+    {
+      "direction": "development",
+      "procent": 57,
+      "descr": "dsad asd asd asdasdasda sd asda"
+    },
+    {
+      "direction": "development",
+      "procent": 57,
+      "descr": "dsad asd asd asdasdasda sd asda"
+    },
+    {
+      "direction": "development",
+      "procent": 57,
+      "descr": "dsad asd asd asdasdasda sd asda"
+    }
+  ],
+  "services": {
+    "section-subtitle": "who i am",
+    "section-title": "about me",
+    "section-note": "asdasdasd",
+    "services": [
+      {
+        "title": "title",
+        "descr": "descr"
+      },
+      {
+        "title": "title",
+        "descr": "descr"
+      },
+      {
+        "title": "title",
+        "descr": "descr"
+      },
+      {
+        "title": "title",
+        "descr": "descr"
+      }
+    ]
+  },
+  "skills": {
+    "section-subtitle": "my background",
+    "section-title": "skills & experience",
+    "title": "my work experience",
+    "descr": "dsad asd asd asdasdasda sd asda",
+    "skills": [
+      "html5", "css", "jquery"
+    ],
+    "btn": "look"
+  },
+  "portfolio": {
+    "section-subtitle": "my projects",
+    "section-title": "portfolio",
+    "projects": [
+      {
+        "type": "app",
+        "title": "metrica",
+        "descr": "resda sdas dasd asd asd",
+        "stack": "UX/UI/HTML/CSS/JS/SEO"
+      },
+      {
+        "type": "app",
+        "title": "metrica",
+        "descr": "resda sdas dasd asd asd",
+        "stack": "UX/UI/HTML/CSS/JS/SEO"
+      },
+      {
+        "type": "app",
+        "title": "metrica",
+        "descr": "resda sdas dasd asd asd",
+        "stack": "UX/UI/HTML/CSS/JS/SEO"
+      },
+      {
+        "type": "app",
+        "title": "metrica",
+        "descr": "resda sdas dasd asd asd",
+        "stack": "UX/UI/HTML/CSS/JS/SEO"
+      },
+      {
+        "type": "app",
+        "title": "metrica",
+        "descr": "resda sdas dasd asd asd",
+        "stack": "UX/UI/HTML/CSS/JS/SEO"
+      }
+    ]
+  },
+  "contacts": {
+    "section-subtitle": "get in touch",
+    "section-title": "contacts",
+    "title": "just say hello",
+    "descr": "Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd asdasdasd asdasdasd asdasda asdasdasd ",
+    "contacts": [
+      {
+        "tel": "21131123"
+      },
+      {
+        "mail": "asda@asd"
+      },
+      {
+        "location": "minsk"
+      }
+    ],
+    "form": {
+      "name": "kdas",
+      "subject": "subject",
+      "message": "your message",
+      "submin": "send"
+    }
+  },
+  "footer": {
+    "title": "Designed & Built by Aleks Malyavko 👽"
+  }
+}

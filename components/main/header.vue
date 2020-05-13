@@ -109,7 +109,7 @@ export default {
       }
 
       &:hover &__line {
-        background: var(--green);
+        background: var(--active);
       }
 
     }
