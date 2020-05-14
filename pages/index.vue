@@ -1,6 +1,5 @@
 <template>
-  <main class="container">
-    <!-- <nuxt-link to="/about">About Page</nuxt-link> -->
+  <main>
     <Hero/>
     <About id="about"/>
     <Directions/>
@@ -29,7 +28,7 @@ export default {
     Skills,
     Portfolio,
     Contacts
-  }
+  },
 }
 </script>
 

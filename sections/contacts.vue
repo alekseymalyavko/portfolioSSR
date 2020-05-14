@@ -1,14 +1,15 @@
 <template>
   <section class="contacts">
-    <h6 class="subtitle">get in touch</h6>
-    <h2 class="title">Contacts</h2>
-    
+    <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
+      <h6 class="subtitle">get in touch</h6>
+      <h2 class="title">Contacts</h2>
+    </div>
     <!-- <p class="contacts__note text">
       Adasd asda sd asdasdasd asdasdasd asda sdasdasdasd aasdasd.
     </p> -->
     
     <div class="row">
-      <div class="contacts__info col-6">
+      <div class="contacts__info col-6" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <h3 class="contacts__info__heading heading">JUST SAY HELLO !</h3>
         <p class="text">The idea of the site is to purchasing big varietty of balloons in Canada. The idea of the site is to purchasing big varietty of balloons in Canada.</p>
         <ul class="contacts__info__list list without-dots">
@@ -23,7 +24,7 @@
           </li>
         </ul>
       </div>
-      <div class="contacts__form col-6">
+      <div class="contacts__form col-6" data-animate="animate__animated animate__fadeInRight delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <form class="form">
           <div class="form__row">
             <div class="form__input__wrapper">
@@ -63,6 +64,12 @@ export default {
         e.target.parentNode.classList.add('active')
       } else {
         e.target.parentNode.classList.remove('active')
+      }
+    },
+    onWaypoint({el, going}) {
+      if (going === this.$waypointMap.GOING_IN) {
+        let naming = el.getAttribute('data-animate').split(' ');
+        el.classList.add(...naming)
       }
     }
   }

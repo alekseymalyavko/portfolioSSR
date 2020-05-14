@@ -95,8 +95,8 @@ export default {
     z-index: 0;
 
     .hero-icon {
-      transition: 0.55s;
-      
+      transition: 0.70s;
+      opacity: 0;      
       svg {
         fill: transparent;
         transition: 0.35s;
@@ -121,6 +121,7 @@ export default {
     
     &.active {
       .hero-icon {
+        opacity: 1;
         &.left {
           transform: translate(60%, 0);
         }

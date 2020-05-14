@@ -1,16 +1,18 @@
 <template>
   <section class="services">
-    <h6 class="subtitle">what i do</h6>
-    <h2 class="title">services</h2>
+    <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
+      <h6 class="subtitle">what i do</h6>
+      <h2 class="title">services</h2>
+    </div>
 
     <div class="row">
       <div class="col-3" v-for="(service, index) in services" :key="index">
-        <Service :title="service.title" :descr="service.descr"/>
+        <Service :title="service.title" :descr="service.descr" :data-animate="`animate__animated animate__fadeInUp delay-${3*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }"/>
       </div>
       
     </div>
 
-    <p class="services__note text">
+    <p class="services__note text" data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
       Adasd asda sd asdasdasd asdasdasd asda sdasdasdasd aasdasd.
     </p>
   </section>
@@ -43,6 +45,14 @@ export default {
           descr: 'descr asd asdasdasd asdasd'
         }
       ]
+    }
+  },
+  methods: {
+    onWaypoint({el, going}) {
+      if (going === this.$waypointMap.GOING_IN) {
+        let naming = el.getAttribute('data-animate').split(' ');
+        el.classList.add(...naming)
+      }
     }
   }
 }

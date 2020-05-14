@@ -1,66 +1,66 @@
 <template>
-  <div class="project">
-    <div class="section__heading">
-      <h6 class="subtitle">site</h6>
-      <h2 class="title">METRICA</h2>
-    </div>
-    <div class="project__info">
-      <div class="project__info__container row">
-        <div class="project__info__item col-8">
-          <span class="text bold">Stack:</span>
-          <span class="caption">UX / UI / SEO / HTML / CSS / JS / jQuery</span>
+  <main>
+    <section class="project">
+      <div class="section__heading" data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+        <h6 class="subtitle">site</h6>
+        <h2 class="title">METRICA</h2>
+      </div>
+      <div class="project__info" data-animate="animate__animated animate__fadeInDown delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+        <div class="project__info__container row">
+          <div class="project__info__item col-8">
+            <span class="text bold">Stack:</span>
+            <span class="caption">UX / UI / SEO / HTML / CSS / JS / jQuery</span>
+          </div>
+          <div class="project__info__item col-2">
+            <span class="text bold">URL:</span>
+            <span class="caption">metrica.by</span>
+          </div>
+          <div class="project__info__item col-2">
+            <span class="text bold">Codebase:</span>
+            <span class="caption">github</span>
+          </div>
         </div>
-        <div class="project__info__item col-2">
-          <span class="text bold">URL:</span>
-          <span class="caption">metrica.by</span>
-        </div>
-        <div class="project__info__item col-2">
-          <span class="text bold">Codebase:</span>
-          <span class="caption">github</span>
+        <div class="row">
+          <div class="project__info__item descr col-8">
+            <span class="text bold">Description:</span>
+            <p class="text">
+              fsdfsdfsdef fsdfsd fsdfsdf fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef 
+            </p>
+            <p class="text">
+              fsdfsdfsdef fsdfsd fsdfsdf fsdfsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef 
+            </p>
+          </div>
+          <div class="project__info__item col-4">
+            <img class="project__info__logo" src="/images/portfolio/metrica-0.png" alt=""/>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="project__info__item descr col-8">
-          <span class="text bold">Description:</span>
-          <p class="text">
-            fsdfsdfsdef fsdfsd fsdfsdf fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef 
-          </p>
-          <p class="text">
-            fsdfsdfsdef fsdfsd fsdfsdf fsdfsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef 
-          </p>
+      
+      <div class="project__content browser" data-animate="animate__animated animate__fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+        <div class="browser__actions">
+          <span></span><span></span><span></span>
         </div>
-        <div class="project__info__item col-4">
-          <img class="project__info__logo" src="/images/portfolio/metrica-0.png" alt=""/>
-        </div>
-      </div>
-    </div>
-    
-    <div class="project__content browser">
-      <div class="browser__actions">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-      <div class="project__content__container slider">
-        
-        <no-ssr placeholder="Loading...">
-            <div class="project__content__main">
-              <!-- <agile ref="main" :options="options1" :as-nav-for="asNavFor1"> -->
-              <agile ref="main" :options="options1">
-                <div class="slide" v-for="(slide, index) in slides" :key="index" :class="`slide--${index}`">
-                  <div class="project__content__image">
-                    <img :src="slide"/>
+        <div class="project__content__container slider">
+          
+          <no-ssr placeholder="Loading...">
+              <div class="project__content__main">
+                <!-- <agile ref="main" :options="options1" :as-nav-for="asNavFor1"> -->
+                <agile ref="main" :options="options1">
+                  <div class="slide" v-for="(slide, index) in slides" :key="index" :class="`slide--${index}`">
+                    <div class="project__content__image">
+                      <img :src="slide"/>
+                    </div>
                   </div>
-                </div>
-                <template slot="prevButton">←</template>
-                <template slot="nextButton">→</template>
-              </agile>
-            </div>
-        </no-ssr>
+                  <template slot="prevButton">←</template>
+                  <template slot="nextButton">→</template>
+                </agile>
+              </div>
+          </no-ssr>
 
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -101,7 +101,12 @@ export default {
     }
   },
   methods: {
-
+    onWaypoint({el, going}) {
+      if (going === this.$waypointMap.GOING_IN) {
+        let naming = el.getAttribute('data-animate').split(' ');
+        el.classList.add(...naming)
+      }
+    }
   },
   mounted() {
   
@@ -198,8 +203,8 @@ export default {
 
   .project {
     width: 100%;
-    padding-bottom: 60px;
-    margin-top: 80px;
+    // padding-bottom: 60px;
+    // margin-top: 80px;
 
     .row {
       margin: 0;

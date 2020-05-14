@@ -9,7 +9,7 @@
     <Header :isScrolled="isScrolled" :isActive="isActive"/>
     <nuxt class="main container"/>
     <ColorGenerator :currentHexColor="currentHexColor" @changeColor="changeColor"/>
-    <Social/>
+    <Social data-animate="animate__animated animate__fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }"/>
     <Footer/>
     <Bg :currentRgbaColor="currentRgbaColor[1]"/>
   </div>
@@ -77,6 +77,12 @@ export default {
       console.log(123)
       // this.isEffect = true;
       // setTimeout(()=> this.isEffect = false, 1500) ;
+    },
+    onWaypoint({el, going}) {
+      if (going === this.$waypointMap.GOING_IN) {
+        let naming = el.getAttribute('data-animate').split(' ');
+        el.classList.add(...naming)
+      }
     }
   }
 }

@@ -1,10 +1,12 @@
 <template>
   <section class="skills">
-    <h6 class="subtitle">my background</h6>
-    <h2 class="title">Skills & Experience</h2>
-
+    <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
+      <h6 class="subtitle">my background</h6>
+      <h2 class="title">Skills & Experience</h2>
+    </div>
+    
     <div class="row">
-      <div class="col-6">
+      <div class="col-6" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <h3 class="heading">My work Experience</h3>
         <p class="text">
           Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd asdasdasd asdasdasd asdasda asdasdasd asdasdasd
@@ -16,10 +18,10 @@
           Look
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-6" @mouseenter="handleAnimation(false)" @mouseleave="handleAnimation(true)"  data-animate="animate__animated animate__fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="cube__wrapper" @mousedown="e => startEvent(e)" @mousemove="e => rotate(e)" @mouseup="e => finishEvent(e)">
           <div class="cube-container">
-            <div class="cube" ref="cube">
+            <div class="cube" ref="cube" :style="{'transform': `${transform}`}">
               <div class="side front">
                 <ul class="skills-list">
                   <li class="caption">HTML</li>
@@ -80,7 +82,8 @@ export default {
       cube: null,
       drag: false,
       x0: null,
-      y0: null
+      y0: null,
+      transform: null
     }
   },
   mounted() {
@@ -103,6 +106,14 @@ export default {
         this.x0 = this.y0 = null;
       }
     },
+    handleAnimation: function(isOut) {
+      
+      if(isOut) {
+        this.cube.style.animation = 'spin 20s infinite linear'
+      } else {
+        this.cube.style.animation = 'none';
+      }
+    },
     rotate: function(event) {
       if(this.drag) {
         let e = this.getEvent(event), 
@@ -111,11 +122,17 @@ export default {
             dx = x - this.x0, 
             dy = y - this.y0, 
             d = Math.hypot(dx, dy);
-        if(d) {                  
-          this.cube.style.transform = `rotate3d(${+(-dy).toFixed(2)}, ${+(dx).toFixed(2)}, 0, ${+(0.4*d).toFixed(2)}deg) ${getComputedStyle(this.cube).transform.replace('none', '')}`
+        if(d) {
+          this.transform = `rotate3d(${+(-dy).toFixed(2)}, ${+(dx).toFixed(2)}, 0, ${+(0.4*d).toFixed(2)}deg) ${getComputedStyle(this.cube).transform.replace('none', '')}`; 
           this.x0 = x;
           this.y0 = y;
         }
+      }
+    },
+    onWaypoint({el, going}) {
+      if (going === this.$waypointMap.GOING_IN) {
+        let naming = el.getAttribute('data-animate').split(' ');
+        el.classList.add(...naming)
       }
     }
   }
@@ -133,10 +150,7 @@ export default {
       justify-content: space-between;
     }
 
-    &__text {
-      width: 50%;
-
-    }
+    
 
     .cube {
       animation: spin 20s infinite linear;
@@ -148,11 +162,11 @@ export default {
       user-select: none;
       // transition: 0.35s;
 
-      &:hover {
+      &.paused {
         animation-play-state:paused;
-
+        
         .side {
-          // backface-visibility: hidden;
+          backface-visibility: hidden;
         }
       }
 
@@ -184,11 +198,7 @@ export default {
         align-items: center;
         background: var(--light-blue);
         transition: 0.35s;
-
-        // &:hover {
-        //   background: var(--light-active);
-        // }
-
+        
         &.front {
           transform: translateZ(125px);
         }

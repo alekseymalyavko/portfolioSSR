@@ -1,12 +1,12 @@
 <template>
-  <section class="about" @mousemove="e => parralaxEl(e)" v-waypoint="{ active: true, callback: e => onWaypoint(e), options: { threshold: [0.45, 0.55] } }">
-    <div class="section__heading animate__animated" :class="{'animate__fadeInDown': isActive}">
+  <section class="about" @mousemove="e => parralaxEl(e)">
+    <div class="section__heading" data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
       <h6 class="subtitle">who i am</h6>
       <h2 class="title">about me</h2>
     </div>
     
     <div class="row">
-      <div class="col-6 about__photo__wrapper">
+      <div class="col-6 about__photo__wrapper" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="about__photo">
           <div class="about__photo__square first" ref="firstSquare"></div>
           <div class="about__photo__square second" ref="secondSquare"></div>
@@ -19,7 +19,7 @@
         </div>
       </div>
       
-      <div class="col-6">
+      <div class="col-6" data-animate="animate__animated animate__fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="about__text">
           <h3 class="about__text__heading heading">I'm Software Developer</h3>
           <p class="about__text__text text">Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd asdasdasd asdasdasd asdasda asdasdasd asdasdasd</p>
@@ -76,12 +76,12 @@ export default {
       target.style.top = y +'px';
       target.style.left = x +'px';
     },
-    // onWaypoint(e) {
-    //   if (e.going === this.$waypointMap.GOING_IN) {
-    //     this.isActive = true;
-    //     console.log(5555)
-    //   }
-    // }
+    onWaypoint({el, going}) {
+      if (going === this.$waypointMap.GOING_IN) {
+        let naming = el.getAttribute('data-animate').split(' ');
+        el.classList.add(...naming)
+      }
+    }
   }
 }
 </script>
