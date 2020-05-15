@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   server: {
-    port: 8000,
+    port: process.env.PORT || 8000,
   },
   head: {
     title: 'Portfolio page',
