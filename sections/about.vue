@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { debounceEvent } from '~/middleware'
+import debounceEvent from '~/middleware'
 
 export default {
   data() {
@@ -95,7 +95,7 @@ export default {
       height: 100%;
       max-width: 400px;
       max-height: 400px;
-      min-height: 300px;
+      min-height: 350px;
 
       &__square {
         position: absolute;
@@ -164,6 +164,19 @@ export default {
             margin-top: 0;
           }
         }
+      }
+    }
+    @media screen and (max-width: 430px) {
+      &__photo {
+        width: 350px;
+        height: 350px;
+        min-height: unset;
+      }
+    }
+    @media screen and (max-width: 360px) {
+      &__photo {
+        width: 290px;
+        height: 290px;
       }
     }
   }

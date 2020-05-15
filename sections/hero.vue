@@ -135,7 +135,7 @@ export default {
 
   @media screen and (max-width: 745px) {
     align-items: flex-end;
-    padding-bottom: 90px;
+    padding-bottom: 12vh;
 
     &__icons {
       width: 80%;
@@ -145,7 +145,7 @@ export default {
 
       .hero-icon {
         svg {
-          width: 100%;
+          // width: 100%;
         }
         &.left {
           transform: translate(-80vw, 0);

@@ -9,4 +9,4 @@ function debounceEvent(callback, time) {
   };
 }
 
-export { debounceEvent };
+export default debounceEvent;

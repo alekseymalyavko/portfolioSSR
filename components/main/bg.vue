@@ -73,7 +73,8 @@ export default {
       let pixelX, pixelY, pixelRadius;
       let color = this.currentRgbaColor;
       // console.log(1, color)
-      if(this.canvas.width != window.innerWidth || this.canvas.height != window.innerHeight) {
+      // if(this.canvas.width != window.innerWidth || this.canvas.height != window.innerHeight) {
+      if(this.canvas.width != window.innerWidth) {
         this.initializeStars();
       }
       // // if(warp==0) {

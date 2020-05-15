@@ -35,7 +35,13 @@ export default {
   props: ['isScrolled', 'isActive'],
   data() {
     return {
+      firstActive: false,
       isOpened: false,
+    }
+  },
+  mounted(){
+    if (window.scrollY > 40) {
+      this.firstActive = true
     }
   },
   methods: {

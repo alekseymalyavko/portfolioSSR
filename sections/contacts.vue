@@ -153,6 +153,7 @@ export default {
       }
 
       .button {
+        -webkit-appearance: none;
         margin-top: 10px;
       }
     }

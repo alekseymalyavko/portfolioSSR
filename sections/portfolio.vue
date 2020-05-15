@@ -72,7 +72,13 @@ export default {
       }
     }
     
-    @media screen and (max-width: 745px) {
+    @media screen and (max-width: 370px) {
+      &__item {
+        width: 330px;
+        height: 330px;
+      }
+    }
+    @media screen and (max-width: 330px) {
       &__item {
         width: 270px;
         height: 270px;

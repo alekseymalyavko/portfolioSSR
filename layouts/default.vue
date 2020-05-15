@@ -20,7 +20,7 @@ import Social from '~/components/main/social'
 import Footer from '~/components/main/footer'
 import Bg from '~/components/main/bg'
 import ColorGenerator from '~/components/main/generator'
-import {debounceEvent} from '~/middleware'
+import debounceEvent from '~/middleware'
 import 'animate.css';
 
 export default {
@@ -49,7 +49,7 @@ export default {
     window.addEventListener('scroll', debounceEvent(this.handleScroll, 100));
   },
   destroyed: function () {
-      window.removeEventListener('scroll', debounceEvent(this.handleScroll, 100));
+    window.removeEventListener('scroll', debounceEvent(this.handleScroll, 100));
   },
   methods: {
     handleScroll: function() {

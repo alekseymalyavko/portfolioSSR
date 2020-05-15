@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-      <div class="col-3" v-for="(service, index) in services" :key="index">
+      <div class="col-3 services__wrapper" v-for="(service, index) in services" :key="index">
         <Service :title="service.title" :descr="service.descr" :data-animate="`animate__animated animate__fadeInUp delay-${3*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }"/>
       </div>
       
@@ -61,9 +61,12 @@ export default {
 <style lang="scss">
   .services {
     &__note {
-      margin-top: 70px;
+      margin-top: 35px;
       text-align: center;
       font-style: italic;
+    }
+    &__wrapper {
+      margin-bottom: 35px;
     }
   }
 </style>
