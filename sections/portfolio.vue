@@ -72,7 +72,7 @@ export default {
       }
     }
     
-    @media screen and (max-width: 719px) {
+    @media screen and (max-width: 745px) {
       &__item {
         width: 270px;
         height: 270px;

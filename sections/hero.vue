@@ -100,7 +100,7 @@ export default {
       svg {
         fill: transparent;
         transition: 0.35s;
-        width: 100%;
+        max-width: 100%;
 
         path {
           stroke: var(--active);
@@ -133,7 +133,7 @@ export default {
   }
   
 
-  @media screen and (max-width: 719px) {
+  @media screen and (max-width: 745px) {
     align-items: flex-end;
     padding-bottom: 90px;
 
@@ -144,6 +144,9 @@ export default {
       transform: translate(-50%, -50%);
 
       .hero-icon {
+        svg {
+          width: 100%;
+        }
         &.left {
           transform: translate(-80vw, 0);
         }

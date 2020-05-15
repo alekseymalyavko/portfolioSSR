@@ -4,9 +4,6 @@
       <h6 class="subtitle">get in touch</h6>
       <h2 class="title">Contacts</h2>
     </div>
-    <!-- <p class="contacts__note text">
-      Adasd asda sd asdasdasd asdasdasd asda sdasdasdasd aasdasd.
-    </p> -->
     
     <div class="row">
       <div class="contacts__info col-6" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
@@ -59,7 +56,6 @@ export default {
   },
   methods: {
     isEmpty: function(e) {
-      
       if (e.target.value.length > 0) {
         e.target.parentNode.classList.add('active')
       } else {
@@ -161,7 +157,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 745px) {
       &__form {
         margin-top: 35px;
       }

@@ -1,6 +1,6 @@
 <template>
   <section class="about" @mousemove="e => parralaxEl(e)">
-    <div class="section__heading" data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+    <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
       <h6 class="subtitle">who i am</h6>
       <h2 class="title">about me</h2>
     </div>
@@ -49,13 +49,9 @@
 </template>
 
 <script>
-import {debounceEvent} from '~/middleware'
-import {onWaypoint} from '~/middleware'
+import { debounceEvent } from '~/middleware'
 
 export default {
-  components: {
-    
-  },
   data() {
     return {
       isActive: false
@@ -145,7 +141,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 745px) {
       &__photo {
         margin: 0 auto;
         &__square {
@@ -162,6 +158,12 @@ export default {
       }
       &__text {
         margin-top: 25px;
+
+        &__button {
+          .button:last-child {
+            margin-top: 0;
+          }
+        }
       }
     }
   }

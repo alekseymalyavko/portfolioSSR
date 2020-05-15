@@ -34,10 +34,10 @@ export default {
       this.executeFrame();
     },
     setStars: function() {
-      let media720 = window.matchMedia('screen and (max-width: 720px)');
+      let media745px = window.matchMedia('screen and (max-width: 745px)');
       let media1450 = window.matchMedia('screen and (min-width: 1450px)');
 
-      if (media720.matches) {
+      if (media745px.matches) {
         this.numStars = 900;
         this.starSize = 0.85;
         this.focalLength = this.canvas.width * 2;

@@ -12,7 +12,7 @@
       
     </div>
 
-    <p class="services__note text" data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
+    <p class="services__note text" data-animate="animate__animated animate__fadeInDown delay-12" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
       Adasd asda sd asdasdasd asdasdasd asda sdasdasdasd aasdasd.
     </p>
   </section>

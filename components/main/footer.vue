@@ -54,7 +54,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 719px){
+    @media screen and (max-width: 745px){
       &__icons {
         &__wrapper {
           display: flex;

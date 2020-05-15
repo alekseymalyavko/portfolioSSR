@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="project">
-      <div class="section__heading" data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <h6 class="subtitle">site</h6>
         <h2 class="title">METRICA</h2>
       </div>
@@ -22,7 +22,7 @@
         </div>
         <div class="row">
           <div class="project__info__item descr col-8">
-            <span class="text bold">Description:</span>
+            <p class="text bold">Description:</p>
             <p class="text">
               fsdfsdfsdef fsdfsd fsdfsdf fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef 
             </p>
@@ -30,21 +30,20 @@
               fsdfsdfsdef fsdfsd fsdfsdf fsdfsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef 
             </p>
           </div>
-          <div class="project__info__item col-4">
-            <img class="project__info__logo" src="/images/portfolio/metrica-0.png" alt=""/>
+          <div class="project__info__item image col-4">
+            <img src="/images/portfolio/metrica-0.png" alt=""/>
           </div>
         </div>
       </div>
       
-      <div class="project__content browser" data-animate="animate__animated animate__fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div class="project__content browser" data-animate="animate__animated animate__fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="browser__actions">
           <span></span><span></span><span></span>
         </div>
-        <div class="project__content__container slider">
+        <div class="project__content__container">
           
           <no-ssr placeholder="Loading...">
-              <div class="project__content__main">
-                <!-- <agile ref="main" :options="options1" :as-nav-for="asNavFor1"> -->
+              <div class="project__content__main" style="width: 100%">
                 <agile ref="main" :options="options1">
                   <div class="slide" v-for="(slide, index) in slides" :key="index" :class="`slide--${index}`">
                     <div class="project__content__image">
@@ -78,8 +77,6 @@ export default {
   data() {
     return {
       title: this.$route.params.project,
-      asNavFor1: [],
-			asNavFor2: [],
 			options1: {
 				dots: true,
         navButtons: true,
@@ -118,6 +115,9 @@ export default {
   .agile--ssr .agile__slides > * {
     overflow: hidden;
     width: 0
+  }
+  .agile__slide {
+    width: 100% !important;
   }
   .agile--ssr .agile__slides > *:first-child {
     width: 100%
@@ -216,6 +216,16 @@ export default {
           max-width: 800px;
         }
       }
+
+      .image {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        img {
+          max-width: 270px;
+        }
+      }
     }
 
     &__content {
@@ -248,7 +258,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 719px) {
+    @media screen and (max-width: 745px) {
       &__info {
         padding: 0 10px;
 

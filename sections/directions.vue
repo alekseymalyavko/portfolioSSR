@@ -3,7 +3,6 @@
     <h3 class="directions__heading heading" data-animate="animate__animated animate__fadeInUp" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
       My work areas
     </h3>
-
     <div class="row">  
 
       <div class="col-4" v-for="(progress, index) in directions" :key="index">
@@ -52,10 +51,4 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  .directions {
-
-  }
-</style>
 

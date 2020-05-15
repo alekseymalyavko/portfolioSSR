@@ -79,7 +79,7 @@ export default {
   @media screen and (min-width: 1280px) {
     right: calc(95vw / 2 - 1280px / 2);
   }
-  @media screen and (max-width: 719px) {
+  @media screen and (max-width: 745px) {
     display: none;
   }
 }

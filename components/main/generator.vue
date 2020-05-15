@@ -148,7 +148,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 719px) {
+    @media screen and (max-width: 745px) {
       &__wrapper {
         width: 100px;
       }

@@ -74,7 +74,6 @@ export default {
       localStorage.setItem('rgbaColor', JSON.stringify(colors[1]));
     },
     setEffect: function() {
-      console.log(123)
       // this.isEffect = true;
       // setTimeout(()=> this.isEffect = false, 1500) ;
     },

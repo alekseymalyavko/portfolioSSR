@@ -440,7 +440,7 @@ h5 {
     max-width: 900px;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 745px) {
   h1 {
     font-size: calc(0.875vw + 1.95rem);
   }
@@ -479,6 +479,7 @@ h5 {
   }
   section {
     padding: 50px 0;
+    overflow: hidden;
   }
   .heading {
     margin-bottom: 20px;
@@ -488,6 +489,9 @@ h5 {
   }
   .button {
     margin-bottom: 15px;
+  }
+  .delay-3,.delay-6,.delay-9,.delay-12,.delay-15,.delay-18 {
+    animation-delay: 0.3s;
   }
 }
 @media screen and (max-width: 480px) {

@@ -149,7 +149,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 720px){
+    @media screen and (max-width: 745px){
       &__menu {
         .opened & {
           transform: translateX(0vw);
