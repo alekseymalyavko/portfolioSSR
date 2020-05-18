@@ -44,6 +44,7 @@ export default {
       flex-direction: column;
       align-items: center;
       position: relative;
+      user-select: none;
     }
 
     &__text {

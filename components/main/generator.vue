@@ -85,7 +85,7 @@ export default {
       width: 115px;
       border: 1px solid var(--active);
       background: var(--black);     
-      box-shadow: #020c1b 0px 10px 30px -10px;
+      box-shadow: #000a1485 2px 2px 20px 10px;
       transition: border 0.35s;
 
     }
@@ -156,8 +156,8 @@ export default {
         padding: 10px;
       }
       &__color {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
       }
       &__button {
         .button {

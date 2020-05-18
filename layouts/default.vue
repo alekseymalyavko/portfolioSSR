@@ -21,7 +21,8 @@ import Footer from '~/components/main/footer'
 import Bg from '~/components/main/bg'
 import ColorGenerator from '~/components/main/generator'
 import debounceEvent from '~/middleware'
-import 'animate.css';
+import 'animate.css'
+import axios from 'axios'
 
 export default {
   components: {
@@ -30,6 +31,11 @@ export default {
     Footer,
     Bg,
     ColorGenerator
+  },
+  async text ({ params }) {
+    const data = await axios.get(`/data.json`)
+    console.log(111, data)
+    return data
   },
   data() {
     return {

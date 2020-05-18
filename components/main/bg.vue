@@ -72,15 +72,17 @@ export default {
     drawStars: function() {
       let pixelX, pixelY, pixelRadius;
       let color = this.currentRgbaColor;
-      // console.log(1, color)
+      let isBgCreative = this.$root.creativeBg || false;
+
       // if(this.canvas.width != window.innerWidth || this.canvas.height != window.innerHeight) {
       if(this.canvas.width != window.innerWidth) {
         this.initializeStars();
       }
-      // // if(warp==0) {
-        this.bg.fillStyle = 'rgba(0,10,20,1)';
+      this.bg.fillStyle = 'rgba(0,10,20,1)';
+      
+      if(!isBgCreative) {
         this.bg.fillRect(0,0, this.canvas.width, this.canvas.height);
-      // // }
+      }
       for(let i = 0; i < this.numStars; i++){
         let star = this.stars[i];
         

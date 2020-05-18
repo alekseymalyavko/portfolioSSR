@@ -1,10 +1,22 @@
 {
-  "name": "John",
-  "age": 30,
-  "isAdmin": false,
   "header": {
     "nav": [
-      "about me", "skills", "portfolio", "contacts"
+      {
+        "text": "about me",
+        "link": "#about"
+      },
+      {
+        "text": "skills",
+        "link": "#skills"
+      },
+      {
+        "text": "portfolio",
+        "link": "#portfolio"
+      },
+      {
+        "text": "contacts",
+        "link": "#contacts"
+      }
     ]
   },
   "social": {
@@ -14,25 +26,30 @@
     "btn": "random"
   },
   "hero": {
-    "title": "Hi, I'm Aleks Software Developer",
-    "skills": "ReactJS / VueJs / HTML5 / CSS3",
-    "caption": "and i love to create.",
+    "title": "Hi, <br/>I'm Aleks <br/> Software Developer",
+    "skills": "HTML5 / CSS3 / VueJs / ReactJS",
+    "caption": "and i",
+    "creative": " love ",
+    "caption": "to create.",
     "btn": "look portfolio"
   },
   "about": {
     "section-subtitle": "who i am",
     "section-title": "about me",
     "title": "I'm Software Developer",
-    "descr": "Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd asdasdasd asdasdasd asdasda asdasdasd asdasdasd Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd",
+    "descr": "I like all that connected with internet, so i'm developing web-applications and sites with minimalistic design and simplicity. <br/> I graduated from universities have a bachelor's degree in economic cybernetics as well as a master's degree in economic informatics. <br/> I have been developing for more than 3 years and open to new directions and opportunities.",
     "image": {
-      "text": "aleks malyavko"
+      "text": "Aleks Malyavko"
     },
     "personal": [
       {
-        "full-name": "aleks"
+        "full-name": "Aleks Malyavko"
       },
       {
-        "location": "minsk belarus"
+        "education": "Masters's Degree"
+      },
+      {
+        "location": "Minsk, Belarus"
       }
     ],
     "btn": [
@@ -46,87 +63,104 @@
   },
   "directions": [
     {
-      "direction": "development",
-      "procent": 57,
-      "descr": "dsad asd asd asdasdasda sd asda"
+      "direction": "Web-development",
+      "procent": 83,
+      "descr": "Creating web-applications (spa, ssr), responsive and cross-browser sites, working with different APIs."
     },
     {
-      "direction": "development",
-      "procent": 57,
-      "descr": "dsad asd asd asdasdasda sd asda"
+      "direction": "UX/UI design",
+      "procent": 67,
+      "descr": "Design minimalist and simple sites with big variety of animation effects"
     },
     {
-      "direction": "development",
-      "procent": 57,
-      "descr": "dsad asd asd asdasdasda sd asda"
+      "direction": "Analytics",
+      "procent": 59,
+      "descr": "Since I graduated from economic-cybernetics, I can analyze the data and draw conclusions based on them, build various models of processes"
     }
   ],
   "services": {
-    "section-subtitle": "who i am",
-    "section-title": "about me",
-    "section-note": "asdasdasd",
+    "section-subtitle": "what i do",
+    "section-title": "services",
+    "section-note": "Of course, I can provide other services that are related to the Internet, just contact me for the further details",
     "services": [
       {
-        "title": "title",
-        "descr": "descr"
+        "title": "Design",
+        "descr": "Design simple and minimalistic UI/UX interfaces (Figma)"
       },
       {
-        "title": "title",
-        "descr": "descr"
+        "title": "Development",
+        "descr": "Development web applications and sites with modern technologies (ReactJS, VueJS)"
       },
       {
-        "title": "title",
-        "descr": "descr"
+        "title": "Promotion",
+        "descr": "Promotion of sites as SEO in different search engines (Google, Yandex)"
       },
       {
-        "title": "title",
-        "descr": "descr"
+        "title": "Support",
+        "descr": "Support for existing projects bug fixing (WordPress, OpenCart, AEM)"
       }
     ]
   },
   "skills": {
-    "section-subtitle": "my background",
+    "section-subtitle": "personal background",
     "section-title": "skills & experience",
     "title": "my work experience",
-    "descr": "dsad asd asd asdasdasda sd asda",
+    "descr": "At the beginning of my career I was engaged in website promotion as SEO, then I studied HTML coding and created responsive websites for customers, after that I did an internship in one large company where i created a food delivery web application, after this internship I started working in a company which has own application for searching and buying tickets for all types of transports. Currently work in a company where I am engaged in creating an interface and maintaining for one of the largest technology companies.",
     "skills": [
-      "html5", "css", "jquery"
+      ["HTML", "CSS", "JS", "SCSS"],
+      ["ReactJs", "VueJs", "Web-components"],
+      ["jQuery", "LoDash", "Bootstrap", "Materialize", "ChartJs"],
+      ["NodeJs", "Mongoose", "NuxtJs", "WebPack"],
+      ["WordPress", "OpenCart", "AEM"],
+      ["SEO", "GoogleMap API", "VK API", "YMAPS API"]
     ],
     "btn": "look"
   },
   "portfolio": {
-    "section-subtitle": "my projects",
+    "section-subtitle": "projects",
     "section-title": "portfolio",
     "projects": [
       {
-        "type": "app",
+        "type": "site",
         "title": "metrica",
-        "descr": "resda sdas dasd asd asd",
+        "descr": "Responsive and cross-browser site with unique design for creative agency (RU)",
         "stack": "UX/UI/HTML/CSS/JS/SEO"
       },
       {
         "type": "app",
-        "title": "metrica",
-        "descr": "resda sdas dasd asd asd",
-        "stack": "UX/UI/HTML/CSS/JS/SEO"
+        "title": "rex-stat",
+        "descr": "Web-application for analyzing data from thematic communities from social network (DataVisualization)",
+        "stack": "NodeJs/MongoDB/ReactJs/JSX/ChartJs/VK API/CSS"
       },
       {
         "type": "app",
-        "title": "metrica",
-        "descr": "resda sdas dasd asd asd",
-        "stack": "UX/UI/HTML/CSS/JS/SEO"
+        "title": "restaraunt panel",
+        "descr": "SPA application for managing orders from customers in restaurant",
+        "stack": "HTML/CSS/VueJs/Vuex/MomentJs"
+      },
+      {
+        "type": "site",
+        "title": "ballonbar",
+        "descr": "Responsive site as online-shop, built on WordPress (CA)",
+        "stack": "WordPress/CSS/JS/jQuery/Woocomerce"
       },
       {
         "type": "app",
-        "title": "metrica",
-        "descr": "resda sdas dasd asd asd",
-        "stack": "UX/UI/HTML/CSS/JS/SEO"
+        "title": "nom",
+        "descr": "Web-application for food delivery from different vendors",
+        "stack": "VueJS/Vuex/SCSS/YMAPS API"
       },
       {
-        "type": "app",
-        "title": "metrica",
-        "descr": "resda sdas dasd asd asd",
-        "stack": "UX/UI/HTML/CSS/JS/SEO"
+        "type": "site",
+        "title": "yalash craft",
+        "descr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU)",
+        "stack": "UX/UI/HTML/CSS/JS/SEO/jQuery"
+      },
+      {
+        "type": "site",
+        "title": "kinghostels",
+        "descr": "Responsive site with bright and simple design for booking hostel (RU)",
+        "stack": "UX/UI/HTML/CSS/JS/jQuery"
       }
     ]
   },
@@ -134,23 +168,23 @@
     "section-subtitle": "get in touch",
     "section-title": "contacts",
     "title": "just say hello",
-    "descr": "Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd asdasdasd asdasdasd asdasda asdasdasd ",
+    "descr": "I am interested in freelance opportunitie. However, if you have other request or question, just fill the form, and I'll try my best to get back to you!",
     "contacts": [
       {
-        "tel": "21131123"
+        "tel": "+37529 396 54 23"
       },
       {
-        "mail": "asda@asd"
+        "mail": "aleksmalyavko@gmail.com"
       },
       {
-        "location": "minsk"
+        "location": "Minsk, Belarus"
       }
     ],
     "form": {
-      "name": "kdas",
-      "subject": "subject",
-      "message": "your message",
-      "submin": "send"
+      "name": "Name",
+      "subject": "Subject",
+      "message": "Your message",
+      "submin": "Send"
     }
   },
   "footer": {

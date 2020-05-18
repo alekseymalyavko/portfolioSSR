@@ -6,7 +6,7 @@
     </div>
     <div class="portfolio__wrapper">
       
-      <div class="portfolio__item" v-for="(progress, index) in [1,2,3,4,5,6]" :key="index" :data-animate="`animate__animated animate__fadeInUp delay-${3*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
+      <div class="portfolio__item" v-for="(progress, index) in [1,2,3,4,5,6]" :key="index" :data-animate="`animate__animated animate__fadeInUp delay-${2*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: undefined }">
         <Project />
       </div>
 

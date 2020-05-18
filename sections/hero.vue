@@ -8,7 +8,7 @@
           Software Developer
         </h1>
         <h5 class="hero__text light">ReactJS / VueJs / HTML5 / CSS3</h5>
-        <p class="caption">and i <span class="creative bold">love</span> to create.</p>
+        <p class="caption">and i <span class="creative bold" @click="setCreativeBg">love</span> to create.</p>
         <nuxt-link :to="{ path: '/', hash:'#portfolio'}">
           <div class="button ">
             Look Portfolio
@@ -52,6 +52,10 @@ export default {
       if (going === this.$waypointMap.GOING_IN) {
         this.isActive = true;
       }
+    },
+    setCreativeBg() {
+      this.$root.creativeBg = true;
+      setTimeout( () => this.$root.creativeBg = false, 1500)
     }
   }
 }
@@ -68,6 +72,7 @@ export default {
 
   &__content {
     z-index: 1;
+    text-shadow: 3px 3px 5px #0000009e;
   }
   &__text {
     margin: 12px 0;
@@ -96,7 +101,9 @@ export default {
 
     .hero-icon {
       transition: 0.70s;
-      opacity: 0;      
+      opacity: 0;
+      
+      
       svg {
         fill: transparent;
         transition: 0.35s;

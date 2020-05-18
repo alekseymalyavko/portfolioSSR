@@ -69,7 +69,7 @@ export default {
     top: 0;
     left: 0;
     padding: 10px 0;
-    z-index: 5;
+    z-index: 6;
     transform: translateY(0%);
     will-change: transform;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -97,7 +97,7 @@ export default {
     &__btn {
       cursor: pointer;
       display: none;
-      z-index: 5;
+      z-index: 7;
       position: relative;
 
       &__line {
@@ -176,7 +176,7 @@ export default {
         bottom: 0px;
         right: 0px;
         height: 100vh;
-        z-index: 3;
+        z-index: 6;
         transform: translateX(100vw);
         visibility: hidden;
         transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;

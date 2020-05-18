@@ -12,7 +12,7 @@
           <div class="about__photo__square second" ref="secondSquare"></div>
           <div class="about__photo__image" ref="picture">
             <div class="about__photo__image__wrapper">
-              <img class="" src="" alt="" />
+              <img class="" src="/images/me1.jpg" alt="aleks malyavko" />
             </div>
             <p class="about__photo__name">Aleks Malyavko</p>
           </div>
@@ -64,7 +64,7 @@ export default {
       debounceEvent(this.parallax(e, this.$refs.picture, 0.35), 50);
     },
     parallax: function (e, target, layer) {
-      let layer_coeff = 14 / layer;
+      let layer_coeff = 16 / layer;
       let k1 = -2.5
       let k2 = 2
       let x =  Math.round(target.offsetWidth / k2 - (e.pageX - this.$el.offsetWidth / k1) / layer_coeff);
@@ -124,13 +124,20 @@ export default {
         flex-direction: column;
         align-items: center;
         position: relative;
+        z-index: 4;
 
         &__wrapper {
-          width: 80px;
-          height: 80px;
-          border-radius: 100%;
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
           background: var(--active);
           margin-bottom: 10px;
+          overflow: hidden;
+          transition: 0.35s ease-in-out;
+
+          &:hover {
+            transform: scale(1.2)
+          }
         }
       }
 

@@ -42,11 +42,7 @@ module.exports = {
 
       if (to.hash) {
         let el = await findEl(to.hash)
-        if ('scrollBehavior' in document.documentElement.style) {
-          return window.scrollTo({ top: el.offsetTop - 20, behavior: 'smooth' })
-        } else {
-          return window.scrollTo(0, el.offsetTop - 20)
-        }
+        return window.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' })
       }
 
       return { x: 0, y: 0 }

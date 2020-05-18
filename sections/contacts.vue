@@ -139,6 +139,7 @@ export default {
         resize: none;
         color: var(--white);
         border-radius: 2px;
+        display: flex;
       }
       
       &__row {
