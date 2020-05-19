@@ -159,6 +159,7 @@ h5 {
   padding-left: 10px;
   line-height: 1.5;
   margin-bottom: 30px;
+  text-transform: capitalize;
 }
 .heading:before {
   content: '';
@@ -183,6 +184,10 @@ h5 {
   margin-bottom: 10px;
   color: var(--grey);
   font-weight: 300;
+  transition: 0.25s;
+}
+.row .text {
+  background: rgba(0, 10, 20, 0.8);
 }
 .light {
   color: var(--grey);

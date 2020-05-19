@@ -1,8 +1,8 @@
 <template>
   <section class="about" @mousemove="e => parralaxEl(e)">
     <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
-      <h6 class="subtitle">who i am</h6>
-      <h2 class="title">about me</h2>
+      <h6 class="subtitle">{{text.sectionSubtitle}}</h6>
+      <h2 class="title">{{text.sectionTitle}}</h2>
     </div>
     
     <div class="row">
@@ -12,35 +12,27 @@
           <div class="about__photo__square second" ref="secondSquare"></div>
           <div class="about__photo__image" ref="picture">
             <div class="about__photo__image__wrapper">
-              <img class="" src="/images/me1.jpg" alt="aleks malyavko" />
+              <img src="/images/me1.jpg" :alt="`${text.image.text}`" />
             </div>
-            <p class="about__photo__name">Aleks Malyavko</p>
+            <p class="about__photo__name">{{text.image.text}}</p>
           </div>
         </div>
       </div>
       
       <div class="col-6" data-animate="animate__animated animate__fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="about__text">
-          <h3 class="about__text__heading heading">I'm Software Developer</h3>
-          <p class="about__text__text text">Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd asdasdasd asdasdasd asdasda asdasdasd asdasdasd</p>
-          <p class="about__text__text text">Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd</p>
+          <h3 class="about__text__heading heading">{{text.title}}</h3>
+          <p class="about__text__text text" v-for="(item, index) in text.descr" :key="index">
+            {{item}}
+          </p>
           <ul class="about__text__list list">
-            <li class="list__item">
-              <span class="caption">Full Name:</span><span class="text">Aleks Malyavko</span>
-            </li>
-            <li class="list__item">
-              <span class="caption">Full Name:</span><span class="text">Aleks Malyavko</span>
-            </li>
-            <li class="list__item">
-              <span class="caption">Full Name:</span><span class="text">Aleks Malyavko</span>
-            </li>
-            <li class="list__item">
-              <span class="caption">Full Name:</span><span class="text">Aleks Malyavko</span>
+            <li class="list__item"  v-for="(item, index) in text.personal" :key="index">
+              <span class="caption">{{item.category}}:</span><span class="text">{{item.value}}</span>
             </li>
           </ul>
           <div class="about__text__button button__container">
-            <div class="button ">Downoload CV</div>
-            <div class="button button_secondary">Contact me</div>
+            <div class="button ">{{text.btn[0].text}}</div>
+            <div class="button button_secondary">{{text.btn[1].text}}</div>
           </div>
         </div>
       </div>
@@ -52,6 +44,7 @@
 import debounceEvent from '~/middleware'
 
 export default {
+  props: ['text'],
   data() {
     return {
       isActive: false
@@ -84,6 +77,12 @@ export default {
 
 <style lang="scss">
   .about {
+
+    &__text {
+      .list__item {
+        align-items: baseline;
+      }
+    }
 
     &__photo {
       display: flex;

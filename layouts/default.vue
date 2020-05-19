@@ -22,7 +22,6 @@ import Bg from '~/components/main/bg'
 import ColorGenerator from '~/components/main/generator'
 import debounceEvent from '~/middleware'
 import 'animate.css'
-import axios from 'axios'
 
 export default {
   components: {
@@ -32,11 +31,6 @@ export default {
     Bg,
     ColorGenerator
   },
-  async text ({ params }) {
-    const data = await axios.get(`/data.json`)
-    console.log(111, data)
-    return data
-  },
   data() {
     return {
       limitPosition: 400,
@@ -45,7 +39,7 @@ export default {
       lastPosition: 0,
       currentHexColor:  '#0ABC5C',
       currentRgbaColor:  ['rgba(10, 185, 95, 0.2)', '10, 185, 95'],
-      isEffect: false
+      isEffect: false,
     }
   },
   mounted: function () {
@@ -78,10 +72,6 @@ export default {
 
       localStorage.setItem('hexColor', colors[0]);
       localStorage.setItem('rgbaColor', JSON.stringify(colors[1]));
-    },
-    setEffect: function() {
-      // this.isEffect = true;
-      // setTimeout(()=> this.isEffect = false, 1500) ;
     },
     onWaypoint({el, going}) {
       if (going === this.$waypointMap.GOING_IN) {

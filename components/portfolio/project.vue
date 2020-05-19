@@ -1,13 +1,13 @@
 <template lang="html">
   <div class="project-item">
     <span class="bold">
-      app
+      {{info.type}}
     </span>
     <h6 class="caption">
-      METRICA
+      {{info.title}}
     </h6>
-    <p class="light">UX / UI / HTML / CSS / JS / SEO</p>
-    <p class="text">The idea of the site is about marketing agency which provides their services to customers.</p>
+    <p class="light">{{info.stack}}</p>
+    <p class="text">{{info.descr}}</p>
     <nuxt-link to="/portfolio/metrica">
       <div class="button ">
         More
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  props: ['pre-title', 'title', 'descr'],
+  props: ['info'],
   data() {
     return {
       
@@ -33,14 +33,19 @@ export default {
 <style lang="scss">
   .project-item {
     .caption {
+      text-transform: uppercase; 
       margin: 5px 0;
-    }
-    .bold {
-      font-weight: 300;
+
+      & + .light {
+        margin: 5px 0;
+      }
     }
     .text {
       margin-top: 5px;
       color: var(--white);
+    }
+    .button {
+      margin-top: 13px;
     }
   }
 </style>

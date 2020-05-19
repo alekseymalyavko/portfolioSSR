@@ -43,7 +43,7 @@
         </div>
         <div class="project__content__container">
           
-          <no-ssr placeholder="Loading...">
+          <client-only placeholder="Loading...">
               <div class="project__content__main" style="width: 100%">
                 <agile ref="main" :options="options1">
                   <div class="slide" v-for="(slide, index) in slides" :key="index" :class="`slide--${index}`">
@@ -55,7 +55,7 @@
                   <template slot="nextButton">→</template>
                 </agile>
               </div>
-          </no-ssr>
+          </client-only>
 
         </div>
       </div>

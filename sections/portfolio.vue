@@ -1,13 +1,13 @@
 <template>
   <section class="portfolio">
     <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
-      <h6 class="subtitle">my works</h6>
-      <h2 class="title">PORTFOLIO</h2>
+      <h6 class="subtitle">{{text.sectionSubtitle}}</h6>
+      <h2 class="title">{{text.sectionTitle}}</h2>
     </div>
     <div class="portfolio__wrapper">
       
-      <div class="portfolio__item" v-for="(progress, index) in [1,2,3,4,5,6]" :key="index" :data-animate="`animate__animated animate__fadeInUp delay-${2*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: undefined }">
-        <Project />
+      <div class="portfolio__item" v-for="(info, index) in text.projects" :key="index" :data-animate="`animate__animated animate__fadeInUp delay-${2*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: undefined }">
+        <Project :info="info"/>
       </div>
 
     </div>
@@ -18,6 +18,7 @@
 import Project from '~/components/portfolio/project';
 
 export default {
+  props: ['text'],
   components: {
     Project
   },
@@ -57,18 +58,6 @@ export default {
       &:hover {
         top: -8px;
         background: var(--light-active)
-      }
-      .project-item {
-        .caption {
-          margin: 5px 0;
-        }
-        .bold {
-          font-weight: 300;
-        }
-        .text {
-          margin-top: 5px;
-          color: var(--white);
-        }
       }
     }
     

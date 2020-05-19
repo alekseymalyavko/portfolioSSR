@@ -1,23 +1,23 @@
 <template>
   <section class="contacts">
     <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
-      <h6 class="subtitle">get in touch</h6>
-      <h2 class="title">Contacts</h2>
+      <h6 class="subtitle">{{text.sectionSubtitle}}</h6>
+      <h2 class="title">{{text.sectionTitle}}</h2>
     </div>
     
     <div class="row">
       <div class="contacts__info col-6" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
-        <h3 class="contacts__info__heading heading">JUST SAY HELLO !</h3>
-        <p class="text">The idea of the site is to purchasing big varietty of balloons in Canada. The idea of the site is to purchasing big varietty of balloons in Canada.</p>
+        <h3 class="contacts__info__heading heading">{{text.title}}</h3>
+        <p class="text">{{text.descr}}</p>
         <ul class="contacts__info__list list without-dots">
           <li class="list__item ">
-            <i class="icon"><PhoneIcon/></i> <a href="/"><span class="caption">Minsk, Belarus</span></a>
+            <i class="icon"><PhoneIcon/></i> <a href="/"><span class="caption">{{text.contacts.tel}}</span></a>
           </li>
           <li class="list__item ">
-            <i class="icon"><MailIcon/></i> <a href="/"><span class="caption">Minsk, Belarus</span></a>
+            <i class="icon"><MailIcon/></i> <a href="/"><span class="caption">{{text.contacts.mail}}</span></a>
           </li>
           <li class="list__item ">
-            <i class="icon"><LocationIcon/></i> <a href="/"><span class="caption">Minsk, Belarus</span></a>
+            <i class="icon"><LocationIcon/></i> <a href="/"><span class="caption">{{text.contacts.location}}</span></a>
           </li>
         </ul>
       </div>
@@ -26,18 +26,18 @@
           <div class="form__row">
             <div class="form__input__wrapper">
               <input class="input form__input" type="text" placeholder="" required @blur="e => isEmpty(e)"/>
-              <label>Name</label>
+              <label>{{text.form.name}}</label>
             </div>
             <div class="form__input__wrapper">
               <input class="input form__input" type="text" placeholder="" required @blur="e => isEmpty(e)"/>
-              <label>Subject</label>
+              <label>{{text.form.subject}}</label>
             </div>
           </div>
           <div class="form__input__wrapper">
             <textarea class="input form__input" rows="6" placeholder="" required @blur="e => isEmpty(e)"/>
-            <label>Your message</label>
+            <label>{{text.form.message}}</label>
           </div>
-          <input class="button " type="submit" value="Send"/>
+          <input class="button" type="submit" :value="text.form.submit"/>
         </form>
       </div>
     </div>
@@ -49,6 +49,7 @@
 import { PhoneIcon, MailIcon, LocationIcon } from '~/components/icons/index'
 
 export default {
+  props: ['text'],
   components: {
     PhoneIcon,
     MailIcon,

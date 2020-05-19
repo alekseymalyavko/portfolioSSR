@@ -1,11 +1,20 @@
+const isDev = process.env.NODE_ENV !== 'production'
+
 module.exports = {
-  /*
-  ** Headers of the page
-  */
+  mode: 'universal',
+  ...(!isDev && {
+    modern: 'client'
+  }),
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:8000'
+  },
   server: {
     port: process.env.PORT || 8000,
   },
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: 'Portfolio page',
     meta: [
       { charset: 'utf-8' },
@@ -17,10 +26,12 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
     ]
   },
-  /*
-  ** Customize the progress bar color
-  */
-  loading: 'components/loading.vue',
+  rootDir: __dirname,
+  serverMiddleware: [
+    
+  ],
+  // loading: { color: 'red', height: '5px'},
+  // loading: '~/components/loading.vue',
   css: [
     'assets/main.css'
   ],
@@ -61,7 +72,7 @@ module.exports = {
     ** Run ESLint on save
     */
    transpile: ['vue-agile'],
-   vendor: ['axios'],
+  //  vendor: ['axios'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({

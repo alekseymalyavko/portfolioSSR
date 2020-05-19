@@ -1,19 +1,19 @@
 <template>
   <section class="services">
     <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
-      <h6 class="subtitle">what i do</h6>
-      <h2 class="title">services</h2>
+      <h6 class="subtitle">{{text.sectionSubtitle}}</h6>
+      <h2 class="title">{{text.sectionTitle}}</h2>
     </div>
 
     <div class="row">
-      <div class="col-3 services__wrapper" v-for="(service, index) in services" :key="index">
-        <Service :title="service.title" :descr="service.descr" :data-animate="`animate__animated animate__fadeInUp delay-${3*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }"/>
+      <div class="col-3 services__wrapper" v-for="(service, index) in text.services" :key="index">
+        <Service :icon="service.icon" :title="service.title" :descr="service.descr" :data-animate="`animate__animated animate__fadeInUp delay-${3*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }"/>
       </div>
       
     </div>
 
     <p class="services__note text" data-animate="animate__animated animate__fadeInDown delay-12" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
-      Adasd asda sd asdasdasd asdasdasd asda sdasdasdasd aasdasd.
+      {{text.sectionNote}}
     </p>
   </section>
 </template>
@@ -22,29 +22,13 @@
 import Service from '~/components/services/service'
 
 export default {
+  props: ['text'],
   components: {
     Service
   },
   data() {
     return {
-      services: [
-        {
-          title: 'title asda',
-          descr: 'aadasd asdasdasd asdasdasd asdasdasd '
-        },
-        {
-          title: 'title asdaasd',
-          descr: 'descr asdasd asdasd asd'
-        },
-        {
-          title: 'title ads asdadxa',
-          descr: 'descr asda dasdasda asdasdasd asdasd'
-        },
-        {
-          title: 'title asdadsasd',
-          descr: 'descr asd asdasdasd asdasd'
-        }
-      ]
+
     }
   },
   methods: {

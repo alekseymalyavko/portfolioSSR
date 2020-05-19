@@ -1,5 +1,7 @@
-<template lang="html">
+<template>
   <div class="page-loader" v-if="loading">
+    <p>Загрузка...</p>
+    <p>Загрузка...</p>
     <p>Загрузка...</p>
   </div>
 </template>
@@ -11,6 +13,7 @@ export default {
   }),
   methods: {
     start () {
+      console.log(12123)
       this.loading = true
     },
     finish () {
@@ -27,10 +30,12 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  text-align: center;
+  background: red;
+  display: center;
+  align-items: center;
+  justify-content: center;
   padding-top: 200px;
   font-size: 30px;
-  font-family: sans-serif;
+  z-index: 99999;
 }
 </style>

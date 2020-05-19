@@ -1,12 +1,12 @@
 <template>
   <main>
-    <Hero/>
-    <About id="about"/>
-    <Directions/>
-    <Services/>
-    <Skills id="skills"/>
-    <Portfolio id="portfolio"/>
-    <Contacts id="contacts"/>
+    <Hero :text="textInfo.hero"/>
+    <About :text="textInfo.about" id="about"/>
+    <Directions :text="textInfo.directions"/>
+    <Services :text="textInfo.services"/>
+    <Skills :text="textInfo.skills" id="skills"/>
+    <Portfolio :text="textInfo.portfolio" id="portfolio"/>
+    <Contacts :text="textInfo.contacts" id="contacts"/>
   </main>
 </template>
 
@@ -19,6 +19,8 @@ import Skills from '~/sections/skills'
 import Portfolio from '~/sections/portfolio'
 import Contacts from '~/sections/contacts'
 
+import textInfo from '~/assets/data.json';
+
 export default {
   components: {
     Hero,
@@ -29,6 +31,14 @@ export default {
     Portfolio,
     Contacts
   },
+  asyncData () {
+    return {
+      textInfo      
+    }
+  },
+  mounted() {
+
+  }
 }
 </script>
 

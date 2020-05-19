@@ -6,3 +6,7 @@ export { default as PhoneIcon } from './phone';
 export { default as MailIcon } from './mail';
 export { default as LocationIcon } from './location';
 export { default as WaterIcon } from './water';
+export { default as SeoIcon } from './seo';
+export { default as DesignIcon } from './design';
+export { default as DevelopmentIcon } from './development';
+export { default as SupportIcon } from './support';

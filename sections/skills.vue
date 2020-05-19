@@ -1,67 +1,33 @@
 <template>
   <section class="skills">
     <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
-      <h6 class="subtitle">my background</h6>
-      <h2 class="title">Skills & Experience</h2>
+      <h6 class="subtitle">{{text.sectionSubtitle}}</h6>
+      <h2 class="title">{{text.sectionTitle}}</h2>
     </div>
     
     <div class="row">
       <div class="col-6" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
-        <h3 class="heading">My work Experience</h3>
-        <p class="text">
-          Aasdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd asdasdasd asdasdasd asdasda asdasdasd asdasdasd
-        </p>
-        <p class="text">
-          Aasdasdasd asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd adfsaf asdasdasd asdasdasd asdasdasd asdasdasd asdasda asdasdasd asdasdasd
+        <h3 class="heading">{{text.title}}</h3>
+        <p class="text" v-for="(text, index) in text.descr" :key="index">
+          {{text}}
         </p>
         <div class="button button_secondary">
-          Look
+          {{text.btn}}
         </div>
       </div>
       <div class="col-6" @mouseenter="handleAnimation(false)" @mouseleave="handleAnimation(true)"  data-animate="animate__animated animate__fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="cube__wrapper" @mousedown="e => startEvent(e)" @mousemove="e => rotate(e)" @mouseup="e => finishEvent(e)">
           <div class="cube-container">
             <div class="cube" ref="cube" :style="{'transform': `${transform}`}">
-              <div class="side front">
+
+              <div class="side" v-for="(skill, index) in text.skills" :key="index">
                 <ul class="skills-list">
-                  <li class="caption">HTML</li>
-                  <li class="caption">CSS</li>
-                  <li class="caption">SCSS</li>
-                  <li class="caption">JS</li>
+                  <li class="caption" v-for="(item, index) in skill" :key="index">
+                    {{item}}
+                  </li>
                 </ul>
               </div>
-              <div class="side back">
-                <ul class="skills-list">
-                  <li class="caption">VueJS</li>
-                  <li class="caption">ReactJs</li>
-                </ul>
-              </div>
-              <div class="side right">
-                <ul class="skills-list">
-                  <li class="caption">jQuery</li>
-                  <li class="caption">ChartJS</li>
-                </ul>
-              </div>
-              <div class="side left">
-                <ul class="skills-list">
-                  <li class="caption">WordPress</li>
-                  <li class="caption">OpenCart</li>
-                </ul>
-              </div>
-              <div class="side top">
-                <ul class="skills-list">
-                  <li class="caption">NodeJS</li>
-                  <li class="caption">Express</li>
-                  <li class="caption">NuxtJs</li>
-                  <li class="caption">MongoDb</li>
-                </ul>
-              </div>
-              <div class="side bottom">
-                <ul class="skills-list">
-                  <li class="caption">Webpack</li>
-                  <li class="caption">Gulp</li>
-                </ul>
-              </div>
+
             </div>
           </div>
         </div>
@@ -74,9 +40,7 @@
 <script>
 
 export default {
-  components: {
-    
-  },
+  props: ['text'],
   data() {
     return {
       cube: null,
@@ -107,7 +71,6 @@ export default {
       }
     },
     handleAnimation: function(isOut) {
-      
       if(isOut) {
         this.cube.style.animation = 'spin 20s infinite linear'
       } else {
@@ -199,22 +162,22 @@ export default {
         background: var(--light-blue);
         transition: 0.35s;
         
-        &.front {
+        &:nth-child(1) {
           transform: translateZ(125px);
         }
-        &.back {
+        &:nth-child(2) {
           transform: rotateY(180deg) rotateX(0deg) translateZ(125px);
         }
-        &.left {
-          transform: rotateY(-90deg) translateZ(125px);
-        }
-        &.right {
+        &:nth-child(3) {
           transform: rotateY(90deg) translateZ(125px);
         }
-        &.top {
+        &:nth-child(4) {
+          transform: rotateY(-90deg) translateZ(125px);
+        }
+        &:nth-child(5) {
           transform: rotateX(90deg) translateZ(125px);
         }
-        &.bottom {
+        &:nth-child(6) {
           transform: rotateX(-90deg) rotateZ(-180deg) translateZ(125px);
         }
       }
@@ -230,10 +193,10 @@ export default {
 
       @-webkit-keyframes spin {
         from {
-          transform: rotateX(0) rotateY(0) rotateZ(0);
+          transform: rotateX(0) rotateY(0);
         }
         to {
-          transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+          transform: rotateX(360deg) rotateY(360deg);
         }
       }
     }
