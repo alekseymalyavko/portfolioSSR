@@ -1,0 +1,83 @@
+[
+  {
+    "type": "site",
+    "title": "metrica",
+    "descr": "Responsive and cross-browser site with unique design for creative agency (RU)",
+    "fullDescr": "Responsive and cross-browser site with unique design for creative agency (RU)",
+    "logo": "/images/portfolio/metrica-0.png",
+    "link": "metrica.by",
+    "stack": "UX / UI / HTML / CSS / JS / SEO",
+    "images": [
+      "/images/portfolio/metrica-1.png",
+      "/images/portfolio/metrica-4.png",
+      "/images/portfolio/metrica-2.png",
+      "/images/portfolio/metrica-3.png"
+    ]
+  },
+  {
+    "type": "app",
+    "title": "rest-app",
+    "descr": "SPA application for managing orders from customers in restaurant",
+    "fullDescr": "SPA application for managing orders from customers in restaurant",
+    "stack": "HTML / CSS / VueJs / Vuex / MomentJs",
+    "images": [
+      "/images/portfolio/rest-app-1.png",
+      "/images/portfolio/rest-app-2.png",
+      "/images/portfolio/rest-app-3.png"
+    ]
+  },
+  {
+    "type": "site",
+    "title": "ballonbar",
+    "descr": "Responsive site as online-shop, built on WordPress (CA)",
+    "fullDescr": "Responsive site as online-shop, built on WordPress (CA)",
+    "link": "ballonbar.ca",
+    "stack": "WordPress / CSS / JS / jQuery / Woocomerce",
+    "images": [
+      "/images/portfolio/ballonbar-1.png",
+      "/images/portfolio/ballonbar-2.png",
+      "/images/portfolio/ballonbar-3.png",
+      "/images/portfolio/ballonbar-4.png"
+    ]
+  },
+  {
+    "type": "app",
+    "title": "rex-stat",
+    "descr": "Web-application for analyzing data from thematic communities from social network (DataVisualization)",
+    "fullDescr": "Web-application for analyzing data from thematic communities from social network (DataVisualization)",
+    "link": "rex-stat-frontend.herokuapp.com",
+    "stack": "NodeJs / MongoDB / ReactJs / JSX / ChartJs / VK API / CSS",
+    "images": [
+      "/images/portfolio/rex-stat-1.png",
+      "/images/portfolio/rex-stat-2.png",
+      "/images/portfolio/rex-stat-3.png",
+      "/images/portfolio/rex-stat-4.png"
+    ]
+  },
+  {
+    "type": "app",
+    "title": "nom",
+    "descr": "Web-application for food delivery from different vendors",
+    "fullDescr": "Web-application for food delivery from different vendors",
+    "link": "nom.by",
+    "stack": "VueJS / Vuex / SCSS / YMAPS API",
+    "images": [
+      "/images/portfolio/nom-1.png",
+      "/images/portfolio/nom-2.png",
+      "/images/portfolio/nom-3.png",
+      "/images/portfolio/nom-4.png"
+    ]
+  },
+  {
+    "type": "site",
+    "title": "yalash-craft",
+    "descr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU)",
+    "fullDescr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU)",
+    "link": "yalash-craft.by",
+    "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery",
+    "images": [
+      "/images/portfolio/yalash-craft-1.png",
+      "/images/portfolio/yalash-craft-2.png"
+    ]
+  }
+]

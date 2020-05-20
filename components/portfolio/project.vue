@@ -8,7 +8,7 @@
     </h6>
     <p class="light">{{info.stack}}</p>
     <p class="text">{{info.descr}}</p>
-    <nuxt-link to="/portfolio/metrica">
+    <nuxt-link :to="`/portfolio${info.link}`">
       <div class="button ">
         More
       </div>

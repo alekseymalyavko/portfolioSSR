@@ -35,9 +35,6 @@ export default {
     return {
       textInfo      
     }
-  },
-  mounted() {
-
   }
 }
 </script>

@@ -141,43 +141,49 @@
         "type": "site",
         "title": "metrica",
         "descr": "Responsive and cross-browser site with unique design for creative agency (RU)",
-        "stack": "UX/UI/HTML/CSS/JS/SEO",
-        "btn": "More"
+        "stack": "UX / UI / HTML / CSS / JS / SEO",
+        "btn": "More",
+        "link": "/metrica"
       },
       {
         "type": "app",
-        "title": "restaraunt panel",
+        "title": "rest-app",
         "descr": "SPA application for managing orders from customers in restaurant",
-        "stack": "HTML/CSS/VueJs/Vuex/MomentJs",
-        "btn": "More"
+        "stack": "HTML / CSS / VueJs / Vuex / MomentJs",
+        "btn": "More",
+        "link": "/rest-app"
       },
       {
         "type": "site",
         "title": "ballonbar",
         "descr": "Responsive site as online-shop, built on WordPress (CA)",
-        "stack": "WordPress/CSS/JS/jQuery/Woocomerce",
-        "btn": "More"
+        "stack": "WordPress / CSS / JS / jQuery / Woocomerce",
+        "btn": "More",
+        "link": "/ballonbar"
       },
       {
         "type": "app",
         "title": "rex-stat",
         "descr": "Web-application for analyzing data from thematic communities from social network (DataVisualization)",
-        "stack": "NodeJs/MongoDB/ReactJs/JSX/ChartJs/VK API/CSS",
-        "btn": "More"
+        "stack": "NodeJs / MongoDB / ReactJs / JSX / ChartJs / VK API / CSS",
+        "btn": "More",
+        "link": "/rex-stat"
       },
       {
         "type": "app",
         "title": "nom",
         "descr": "Web-application for food delivery from different vendors",
-        "stack": "VueJS/Vuex/SCSS/YMAPS API",
-        "btn": "More"
+        "stack": "VueJS / Vuex / SCSS / YMAPS API",
+        "btn": "More",
+        "link": "/nom"
       },
       {
         "type": "site",
-        "title": "yalash craft",
+        "title": "yalash-craft",
         "descr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU)",
-        "stack": "UX/UI/HTML/CSS/JS/SEO/jQuery",
-        "btn": "More"
+        "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery",
+        "btn": "More",
+        "link": "/yalash-craft"
       }
     ]
   },

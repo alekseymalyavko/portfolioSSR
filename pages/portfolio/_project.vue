@@ -2,22 +2,21 @@
   <main>
     <section class="project">
       <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
-        <h6 class="subtitle">site</h6>
-        <h2 class="title">METRICA</h2>
+        <h6 class="subtitle">{{currentProject.type}}</h6>
+        <h2 class="title">{{currentProject.title}}</h2>
       </div>
       <div class="project__info">
         <div class="project__info__container row" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
           <div class="project__info__item col-10">
             <span class="text bold">Stack:</span>
-            <span class="caption">UX / UI / SEO / HTML / CSS / JS / jQuery</span>
+            <span class="caption">{{currentProject.stack}}</span>
           </div>
           <div class="project__info__item resourses col-2">
-            <div>
-              <LinkIcon/>
-              <span class="caption">metrica.by</span>
-            </div>
-            <div>
-              <GhIcon/>
+            <div v-if="currentProject.link">
+              <a :href="`http://${currentProject.link}`" class="link" target="_blank">            
+                <LinkIcon/>
+                <span class="caption">{{currentProject.link}}</span>
+              </a>
             </div>
           </div>
         </div>
@@ -25,14 +24,11 @@
           <div class="project__info__item descr col-8">
             <p class="text bold">Description:</p>
             <p class="text">
-              fsdfsdfsdef fsdfsd fsdfsdf fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef 
-            </p>
-            <p class="text">
-              fsdfsdfsdef fsdfsd fsdfsdf fsdfsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef fsdfsdfsdef 
+              {{currentProject.fullDescr}}
             </p>
           </div>
-          <div class="project__info__item image col-4">
-            <img src="/images/portfolio/metrica-0.png" alt=""/>
+          <div class="project__info__item image col-4" v-if="currentProject.logo">
+            <img :src="currentProject.logo" alt="project logo"/>
           </div>
         </div>
       </div>
@@ -44,9 +40,9 @@
         <div class="project__content__container">
           
           <client-only placeholder="Loading...">
-              <div class="project__content__main" style="width: 100%">
+              <div class="project__content__main" style="width: 100%" v-if="currentProject.images.length">
                 <agile ref="main" :options="options1">
-                  <div class="slide" v-for="(slide, index) in slides" :key="index" :class="`slide--${index}`">
+                  <div class="slide" v-for="(slide, index) in currentProject.images" :key="index" :class="`slide--${index}`">
                     <div class="project__content__image">
                       <img :src="slide"/>
                     </div>
@@ -56,7 +52,6 @@
                 </agile>
               </div>
           </client-only>
-
         </div>
       </div>
     </section>
@@ -64,13 +59,13 @@
 </template>
 
 <script>
-import { LinkIcon, GhIcon } from '~/components/icons/index'
+import { LinkIcon } from '~/components/icons/index'
 import { VueAgile } from 'vue-agile';
+import projects from '~/assets/projects.json';
 
 export default {
   components: {
     LinkIcon,
-    GhIcon,
     agile: VueAgile
   },
   validate({ params, query }) {
@@ -80,24 +75,20 @@ export default {
   },
   data() {
     return {
-      title: this.$route.params.project,
+      title: `Project ${String(this.$route.params.project).toUpperCase()} | Aleks Malyavko`,
 			options1: {
 				dots: true,
         navButtons: true,
         infinite: false,
-			},
-			slides: [
-        '/images/portfolio/metrica-1.png',
-        '/images/portfolio/metrica-2.png',
-        '/images/portfolio/metrica-0.png',
-      ]
+      },
+      text: this.projects,
     }
   },
   head() {
     return {
       title: this.title,
       meta: [
-        { hid: 'description', name: 'description', content: 'description' }
+        { hid: 'description', name: 'description', content: `Project ${String(this.$route.params.project).toUpperCase()}, information about project, images links and stack which was used.` }
       ]
     }
   },
@@ -109,9 +100,15 @@ export default {
       }
     }
   },
-  mounted() {
-  
+  asyncData ({route}) {
+    const currentProject = projects.filter((item)=> item.title == route.params.project);
+    return {
+      currentProject: currentProject[0]
+    }
   },
+  mounted() {
+
+  }
 }
 </script>
 
