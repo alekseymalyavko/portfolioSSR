@@ -70,6 +70,9 @@ export default {
       this.currentHexColor = colors[0];
       this.currentRgbaColor = colors[1];
 
+      document.documentElement.style.setProperty('--active', this.currentHexColor);
+      document.documentElement.style.setProperty('--light-active', this.currentRgbaColor[0]);
+
       localStorage.setItem('hexColor', colors[0]);
       localStorage.setItem('rgbaColor', JSON.stringify(colors[1]));
     },
