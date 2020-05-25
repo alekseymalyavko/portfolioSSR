@@ -31,8 +31,12 @@
             </li>
           </ul>
           <div class="about__text__button button__container">
-            <div class="button ">{{text.btn[0].text}}</div>
-            <div class="button button_secondary">{{text.btn[1].text}}</div>
+            <nuxt-link to="#contacts">
+              <div class="button ">{{text.btn[0].text}}</div>
+            </nuxt-link>
+            <nuxt-link to="#contacts">
+              <div class="button button_secondary">{{text.btn[1].text}}</div>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -41,7 +45,7 @@
 </template>
 
 <script>
-import debounceEvent from '~/middleware'
+import debounceEvent from '~/utils'
 
 export default {
   props: ['text'],

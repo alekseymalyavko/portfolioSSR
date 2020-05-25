@@ -55,7 +55,7 @@ export default {
     },
     setCreativeBg() {
       this.$root.creativeBg = true;
-      setTimeout( () => this.$root.creativeBg = false, 1500)
+      setTimeout( () => this.$root.creativeBg = false, 1700)
     }
   }
 }
