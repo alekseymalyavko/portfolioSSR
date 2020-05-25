@@ -1,7 +1,7 @@
 <template>
   <section class="hero" v-waypoint="{ active: true, callback: onWaypoint }">
     <div class="row">
-      <div class="hero__content col-12 animated"  :class="{'animate__animated animate__fadeInLeft': isActive}">
+      <div class="hero__content col-12 animated"  :class="{'animated fadeInLeft': isActive}">
         <h1 class="hero__title" v-html="text.title" @click="$store.commit('increment')"></h1>
         <h5 class="hero__text light">{{text.skills}}</h5>
         <p class="caption">

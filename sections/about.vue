@@ -1,12 +1,12 @@
 <template>
   <section class="about" @mousemove="e => parralaxEl(e)">
-    <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+    <div data-animate="animated fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
       <h6 class="subtitle">{{text.sectionSubtitle}}</h6>
       <h2 class="title">{{text.sectionTitle}}</h2>
     </div>
     
     <div class="row">
-      <div class="col-6 about__photo__wrapper" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div class="col-6 about__photo__wrapper" data-animate="animated fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="about__photo">
           <div class="about__photo__square first" ref="firstSquare"></div>
           <div class="about__photo__square second" ref="secondSquare"></div>
@@ -19,7 +19,7 @@
         </div>
       </div>
       
-      <div class="col-6" data-animate="animate__animated animate__fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div class="col-6" data-animate="animated fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="about__text">
           <h3 class="about__text__heading heading">{{text.title}}</h3>
           <p class="about__text__text text" v-for="(item, index) in text.descr" :key="index">

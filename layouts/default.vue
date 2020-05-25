@@ -3,7 +3,7 @@
     <Header :content="content.header"/>
     <nuxt class="main container"/>
     <ColorGenerator :currentHexColor="currentHexColor" @changeColor="changeColor"/>
-    <Social :content="content.social" data-animate="animate__animated animate__fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }"/>
+    <Social :content="content.social" data-animate="animated fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }"/>
     <Footer :content="content.footer" />
     <Bg :currentRgbaColor="currentRgbaColor[1]"/>
   </div>

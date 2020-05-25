@@ -1,12 +1,12 @@
 <template>
   <section class="portfolio">
-    <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
+    <div data-animate="animated fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
       <h6 class="subtitle">{{text.sectionSubtitle}}</h6>
       <h2 class="title">{{text.sectionTitle}}</h2>
     </div>
     <div class="portfolio__wrapper">
       
-      <div class="portfolio__item" v-for="(info, index) in text.projects" :key="index" :data-animate="`animate__animated animate__fadeInUp delay-${2*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: undefined }">
+      <div class="portfolio__item" v-for="(info, index) in text.projects" :key="index" :data-animate="`animated fadeInUp delay-${2*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: undefined }">
         <Project :info="info"/>
       </div>
 

@@ -1,12 +1,12 @@
 <template>
   <section class="contacts">
-    <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
+    <div data-animate="animated fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
       <h6 class="subtitle">{{text.sectionSubtitle}}</h6>
       <h2 class="title">{{text.sectionTitle}}</h2>
     </div>
     
     <div class="row">
-      <div class="contacts__info col-6" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div class="contacts__info col-6" data-animate="animated fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <h3 class="contacts__info__heading heading">{{text.title}}</h3>
         <p class="text">{{text.descr}}</p>
         <ul class="contacts__info__list list without-dots">
@@ -17,11 +17,11 @@
             <i class="icon"><MailIcon/></i> <a :href="`mailto:${text.contacts.mail}`"><span class="caption">{{text.contacts.mail}}</span></a>
           </li>
           <li class="list__item ">
-            <i class="icon"><LocationIcon/></i> <a href="https://goo.gl/maps/vkNhdqywazneYsPr9" target="_blank"><span class="caption">{{text.contacts.location}}</span></a>
+            <i class="icon"><LocationIcon/></i> <a href="https://goo.gl/maps/vkNhdqywazneYsPr9" target="_blank" rel="noopener"><span class="caption">{{text.contacts.location}}</span></a>
           </li>
         </ul>
       </div>
-      <div class="contacts__form col-6" data-animate="animate__animated animate__fadeInRight delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div class="contacts__form col-6" data-animate="animated fadeInRight delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="contact__message" :class="{active: isSubmitted}">
           <h5>{{text.message.success}}</h5>
           <p class="text">{{text.message.success2}}</p>

@@ -1,12 +1,12 @@
 <template>
   <main>
     <section class="project">
-      <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div data-animate="animated fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <h6 class="subtitle">{{currentProject.type}}</h6>
         <h2 class="title">{{currentProject.title}}</h2>
       </div>
       <div class="project__info">
-        <div class="project__info__container row" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+        <div class="project__info__container row" data-animate="animated fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
           <div class="project__info__item col-10">
             <span class="text bold">Stack:</span>
             <span class="caption">{{currentProject.stack}}</span>
@@ -20,7 +20,7 @@
             </div>
           </div>
         </div>
-        <div class="row" data-animate="animate__animated animate__fadeInRight delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+        <div class="row" data-animate="animated fadeInRight delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
           <div class="project__info__item descr col-8">
             <p class="text bold">Description:</p>
             <p class="text">
@@ -33,7 +33,7 @@
         </div>
       </div>
       
-      <div class="project__content browser" data-animate="animate__animated animate__fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0, 1] } }">
+      <div class="project__content browser" data-animate="animated fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0, 1] } }">
         <div class="browser__actions">
           <span></span><span></span><span></span>
         </div>

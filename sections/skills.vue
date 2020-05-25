@@ -1,12 +1,12 @@
 <template>
   <section class="skills">
-    <div data-animate="animate__animated animate__fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
+    <div data-animate="animated fadeInDown" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }">
       <h6 class="subtitle">{{text.sectionSubtitle}}</h6>
       <h2 class="title">{{text.sectionTitle}}</h2>
     </div>
     
     <div class="row">
-      <div class="col-6" data-animate="animate__animated animate__fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div class="col-6" data-animate="animated fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <h3 class="heading">{{text.title}}</h3>
         <p class="text" v-for="(text, index) in text.descr" :key="index">
           {{text}}
@@ -15,7 +15,7 @@
           {{text.btn}}
         </div>
       </div>
-      <div class="col-6" @mouseenter="handleAnimation(false)" @mouseleave="handleAnimation(true)"  data-animate="animate__animated animate__fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div class="col-6" @mouseenter="handleAnimation(false)" @mouseleave="handleAnimation(true)"  data-animate="animated fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="cube__wrapper" @mousedown="e => startEvent(e)" @mousemove="e => rotate(e)" @mouseup="e => finishEvent(e)">
           <div class="cube-container">
             <div class="cube" ref="cube" :style="{'transform': `${transform}`}">
