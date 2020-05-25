@@ -21,7 +21,6 @@ import Footer from '~/components/main/footer'
 import Bg from '~/components/main/bg'
 import ColorGenerator from '~/components/main/generator'
 import debounceEvent from '~/middleware'
-import 'animate.css'
 
 export default {
   components: {

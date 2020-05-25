@@ -62,6 +62,19 @@ export default {
 </script>
 
 <style lang="scss">
+@keyframes pulse {
+  0% {
+		transform: scale(0.85);
+	}
+
+	60% {
+		transform: scale(1.15);
+	}
+
+	100% {
+		transform: scale(0.85);
+	}
+}
 .hero {
   display: flex;
   align-items: center;
@@ -84,9 +97,10 @@ export default {
     display: inline-block;
     transform-origin: bottom;
     transition: 0.3s;
+    animation: pulse 2.5s infinite linear;
   }
   .creative:hover {
-    transform: scale(1.15)
+    animation-play-state: paused;
   }
 
   &__icons {

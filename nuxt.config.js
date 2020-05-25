@@ -33,7 +33,8 @@ module.exports = {
   // loading: { color: 'red', height: '5px'},
   // loading: '~/components/loading.vue',
   css: [
-    'assets/main.css'
+    'assets/main.css',
+    'animate.css/animate.min.css'
   ],
   router: {
     scrollBehavior: async (to, from, savedPosition) => {

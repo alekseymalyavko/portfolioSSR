@@ -70,7 +70,7 @@ export default {
 
       span {
         position: absolute;
-        top: 0;
+        top: -1px;
         left: 0;
         height: calc(100% + 1px);
         width: 50%;

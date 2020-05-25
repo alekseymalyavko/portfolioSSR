@@ -115,7 +115,7 @@ export default {
 <style lang="scss">
   .agile--ssr .agile__slides > * {
     overflow: hidden;
-    width: 0
+    width: 0;
   }
   .agile__slide {
     width: 100% !important;
