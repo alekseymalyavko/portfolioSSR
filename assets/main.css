@@ -502,6 +502,9 @@ h5 {
   .heading {
     margin-bottom: 20px;
   }
+  .heading:before {
+    top: 5px;
+  }
   .title {
     margin-bottom: 40px;
   }

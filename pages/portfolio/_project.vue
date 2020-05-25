@@ -217,10 +217,6 @@ export default {
           display: flex;
           align-items: center;
           justify-content: space-between;
-
-          div:last-child {
-            margin-left: 20px;
-          }
         }
         svg {
           width: 25px;
@@ -282,9 +278,14 @@ export default {
       .agile__nav-button {
         position: static;
       }
-      &__info {
-        padding: 0 10px;
-        
+      &__info {        
+        &__item {
+          padding: 12px 0;
+
+          svg {
+            width: 20px;
+          }
+        }
         &__container {
           display: block;
         }

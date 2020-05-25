@@ -31,20 +31,38 @@
 </template>
 
 <script>
+import debounceEvent from '~/utils'
+
 export default {
-  props: ['isScrolled', 'isActive'],
   data() {
     return {
-      firstActive: false,
+      limitPosition: 400,
+      isScrolled: false,
+      isActive: true,
+      lastPosition: 0,
       isOpened: false,
     }
   },
-  mounted(){
-    if (window.scrollY > 40) {
-      this.firstActive = true
+  watch: {
+    isOpened(value) {
+      value ? document.body.classList.add('hidden') : document.body.classList.remove('hidden');
     }
   },
   methods: {
+    handleScroll: function() {
+      if (this.lastPosition < window.scrollY && this.limitPosition < window.scrollY) {
+        this.isScrolled = true;
+      } 
+      if (this.lastPosition > window.scrollY) {
+        this.isScrolled = false;
+      }
+      if (window.scrollY < 40) {
+        this.isActive = true
+      } else {
+        this.isActive = false
+      }
+      this.lastPosition = window.scrollY;
+    },
     toggleMenu: function() {
       this.isOpened = !this.isOpened;
     },
@@ -54,11 +72,16 @@ export default {
       }
     }
   },
-  watch: {
-    isOpened(value) {
-      value ? document.body.classList.add('hidden') : document.body.classList.remove('hidden');
+  mounted() {
+    if (window.scrollY > 40) {
+      this.isActive = false
     }
-  }
+
+    window.addEventListener('scroll', debounceEvent(this.handleScroll, 100));
+  },
+  destroyed: function () {
+    window.removeEventListener('scroll', debounceEvent(this.handleScroll, 100));
+  },
 }
 </script>
 
@@ -99,6 +122,7 @@ export default {
       display: none;
       z-index: 7;
       position: relative;
+      padding: 10px 5px;
 
       &__line {
         display: block;

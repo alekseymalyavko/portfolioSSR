@@ -191,7 +191,7 @@ export default {
         }
       }
 
-      @-webkit-keyframes spin {
+      @keyframes spin {
         from {
           transform: rotateX(0) rotateY(0);
         }

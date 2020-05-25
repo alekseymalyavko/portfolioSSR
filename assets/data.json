@@ -197,9 +197,14 @@
       "mail": "aleksmalyavko@gmail.com",
       "location": "Minsk, Belarus"
     },
+    "message": {
+      "success": "Message was sent",
+      "success2": "Thank you for your reply!",
+      "error": "Oops! Error here :("
+    },
     "form": {
       "name": "Name",
-      "subject": "Subject",
+      "mail": "Email",
       "message": "Your message",
       "submit": "Send"
     }

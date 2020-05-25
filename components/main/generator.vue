@@ -68,6 +68,17 @@ export default {
 </script>
 
 <style lang="scss">
+  @keyframes play {
+    0% {
+      transform: translateX(100%);
+    }
+    50% {
+      transform: translateX(115%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
   .generator {
     position: fixed;
     right: 0;
@@ -75,6 +86,10 @@ export default {
     transform: translateX(100%);
     z-index: 5;
     transition: all 0.35s ease-in-out;
+
+    animation: play 0.55s ease-in-out;
+    animation-delay: 3s;
+    animation-iteration-count: 3;
     
     &.active {
       transform: translateX(0);    
@@ -139,11 +154,11 @@ export default {
       }
     }
     &__button {
-      padding: 15px 0 10px;
+      margin: 12px 0 7px;
 
       .button {
         margin: 0;
-        padding: 5px 13px;
+        padding: 8px 13px;
         font-size: 16px;
       }
     }
@@ -161,7 +176,7 @@ export default {
       }
       &__button {
         .button {
-          padding: 4px 10px;
+          padding: 7px 10px;
         }
       }
     }

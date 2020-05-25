@@ -15,7 +15,7 @@ module.exports = {
     htmlAttrs: {
       lang: 'en'
     },
-    title: 'Portfolio page',
+    title: 'Aleks Malyako | Software Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -28,10 +28,9 @@ module.exports = {
   },
   rootDir: __dirname,
   serverMiddleware: [
-    
+    '~/api/index'
   ],
-  // loading: { color: 'red', height: '5px'},
-  // loading: '~/components/loading.vue',
+  loading: { color: 'var(--active)', height: '3px', throttle: 0 },
   css: [
     'assets/main.css',
     'animate.css/animate.min.css'
@@ -41,7 +40,6 @@ module.exports = {
       if (savedPosition) {
         return savedPosition
       }
-
       const findEl = async (hash, x) => {
         return document.querySelector(hash) ||
           new Promise((resolve, reject) => {
@@ -51,19 +49,21 @@ module.exports = {
             setTimeout(() => { resolve(findEl(hash, ++x || 1)) }, 100)
           })
       }
-
       if (to.hash) {
         let el = await findEl(to.hash)
         return window.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' })
       }
-
       return { x: 0, y: 0 }
     }
   },
   plugins: [    
-    { src: "~/plugins",
+    { 
+      src: "~/plugins",
       mode: 'client'
     }
+  ],
+  modules: [
+    ['@nuxtjs/axios', { baseURL: '/api/' }],
   ],
   /*
   ** Build configuration
