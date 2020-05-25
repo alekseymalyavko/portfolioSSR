@@ -6,7 +6,7 @@ module.exports = {
     modern: 'client'
   }),
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:8000'
+    baseUrl: process.env.BASE_URL || 'https://aleks-malyavko-site.herokuapp.com/'
   },
   server: {
     port: process.env.PORT || 8000,

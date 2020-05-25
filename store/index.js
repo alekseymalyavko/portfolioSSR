@@ -16,7 +16,7 @@ export const getters = {
 
 export const actions = {
   async nuxtServerInit ({commit}) {
-    const data = await fetch(`${process.env.baseUrl}/api/data`)
+    const data = await fetch(`${process.env.BASE_URL || 'http://localhost:8000'}/api/data`)
     .then(res => res.json())
     commit('setData', data);
   }
