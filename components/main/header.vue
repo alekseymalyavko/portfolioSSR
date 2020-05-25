@@ -11,17 +11,8 @@
         </div>
 
         <ul class="header__menu" @click="e => navigateTo(e)">
-          <li class="header__menu__item">
-            <nuxt-link class="header__menu__link link" :to="{ path: '/', hash:'#about'}">about me</nuxt-link>
-          </li>
-          <li class="header__menu__item">
-            <nuxt-link class="header__menu__link link" :to="{ path: '/', hash:'#skills'}">skills</nuxt-link>
-          </li>
-          <li class="header__menu__item">
-            <nuxt-link class="header__menu__link link" :to="{ path: '/', hash:'#portfolio'}">portfolio</nuxt-link>
-          </li>
-          <li class="header__menu__item">
-            <nuxt-link class="header__menu__link link" :to="{ path: '/', hash:'#contacts'}">contacts</nuxt-link>
+          <li class="header__menu__item" v-for="(link, index) in content.nav" :key="index">
+            <nuxt-link class="header__menu__link link" :to="{ path: '/', hash: link.link }">{{link.text}}</nuxt-link>
           </li>
         </ul>
       </div>
@@ -34,6 +25,7 @@
 import debounceEvent from '~/utils'
 
 export default {
+  props: ['content'],
   data() {
     return {
       limitPosition: 400,

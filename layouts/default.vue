@@ -1,10 +1,10 @@
 <template>
   <div id="content">
-    <Header/>
+    <Header :content="content.header"/>
     <nuxt class="main container"/>
     <ColorGenerator :currentHexColor="currentHexColor" @changeColor="changeColor"/>
-    <Social data-animate="animate__animated animate__fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }"/>
-    <Footer/>
+    <Social :content="content.social" data-animate="animate__animated animate__fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }"/>
+    <Footer :content="content.footer" />
     <Bg :currentRgbaColor="currentRgbaColor[1]"/>
   </div>
 </template>
@@ -14,7 +14,7 @@ import Social from '~/components/main/social'
 import Footer from '~/components/main/footer'
 import Bg from '~/components/main/bg'
 import ColorGenerator from '~/components/main/generator'
-import 'animate.css'
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -24,6 +24,9 @@ export default {
     Bg,
     ColorGenerator
   },
+  computed: mapGetters({
+    content: 'getData',
+  }),
   data() {
     return {
       currentHexColor:  '#0ABC5C',

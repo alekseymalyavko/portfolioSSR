@@ -11,7 +11,7 @@
         <p class="text">{{text.descr}}</p>
         <ul class="contacts__info__list list without-dots">
           <li class="list__item ">
-            <i class="icon"><PhoneIcon/></i> <a :href="text.contacts.tel"><span class="caption">{{text.contacts.tel}}</span></a>
+            <i class="icon"><PhoneIcon/></i> <a :href="`tel:${text.contacts.tel}`"><span class="caption">{{text.contacts.tel}}</span></a>
           </li>
           <li class="list__item ">
             <i class="icon"><MailIcon/></i> <a :href="`mailto:${text.contacts.mail}`"><span class="caption">{{text.contacts.mail}}</span></a>
@@ -152,14 +152,14 @@ export default {
       max-width: 550px;
       height: 0;
       opacity: 0;
-      visibility: hidden;
+      // visibility: hidden;
       transform: translateY(50px);
       transition: 0.5s;
 
       &.active {
         height: auto;
         opacity: 1;
-        visibility: visible;
+        // visibility: visible;
         transform: translateY(0);
       }
       &__btn__wrapper {
@@ -178,7 +178,6 @@ export default {
           left: 0;
           width: 0;
           height: 1px;
-          background: #0ABC5C;
           background: var(--active);
           transition: 0.45s;
         }

@@ -13,7 +13,7 @@
         </li>
       </ul>
     </div>
-    <p class="footer__text text light">Designed & Built by Aleks Malyavko 👽</p>
+    <p class="footer__text text light">{{content.title}}</p>
   </footer>
 </template>
 
@@ -21,6 +21,7 @@
 import { InIcon, GhIcon, FbIcon } from '~/components/icons/index'
 
 export default {
+  props: ['content'],
   components: {
     InIcon,
     GhIcon,

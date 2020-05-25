@@ -61,7 +61,6 @@
 <script>
 import { LinkIcon } from '~/components/icons/index'
 import { VueAgile } from 'vue-agile';
-import projects from '~/assets/projects.json';
 
 export default {
   components: {
@@ -100,14 +99,14 @@ export default {
       }
     }
   },
-  asyncData ({route}) {
-    const currentProject = projects.filter((item)=> item.title == route.params.project);
+  async asyncData ({route}) {
+    const currentProject = await fetch(`${process.env.baseUrl}/api/projects`)
+    .then(res => res.json())
+    .then(res => res.filter((item)=> item.title == route.params.project))
+    
     return {
       currentProject: currentProject[0]
     }
-  },
-  mounted() {
-
   }
 }
 </script>

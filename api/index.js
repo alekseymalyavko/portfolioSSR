@@ -1,5 +1,7 @@
 const express = require('express')
 const nodemailer = require('nodemailer')
+const data = require('../assets/data.json')
+const projects = require('../assets/projects.json')
 
 const app = express()
 
@@ -7,6 +9,12 @@ app.use(express.json())
 
 app.get('/', function (req, res) {
   res.status(405).json({ error: 'error' })
+})
+app.get('/data', function (req, res) {
+  res.status(200).json(data);
+})
+app.get('/projects', function (req, res) {
+  res.status(200).json(projects);
 })
 app.post('/contact', function (req, res) {
   const data = {

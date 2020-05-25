@@ -1,12 +1,12 @@
 <template>
   <main>
-    <Hero :text="textInfo.hero"/>
-    <About :text="textInfo.about" id="about"/>
-    <Directions :text="textInfo.directions"/>
-    <Services :text="textInfo.services"/>
-    <Skills :text="textInfo.skills" id="skills"/>
-    <Portfolio :text="textInfo.portfolio" id="portfolio"/>
-    <Contacts :text="textInfo.contacts" id="contacts"/>
+    <Hero :text="content.hero"/>
+    <About :text="content.about" id="about"/>
+    <Directions :text="content.directions"/>
+    <Services :text="content.services"/>
+    <Skills :text="content.skills" id="skills"/>
+    <Portfolio :text="content.portfolio" id="portfolio"/>
+    <Contacts :text="content.contacts" id="contacts"/>
   </main>
 </template>
 
@@ -19,8 +19,7 @@ import Skills from '~/sections/skills'
 import Portfolio from '~/sections/portfolio'
 import Contacts from '~/sections/contacts'
 
-import textInfo from '~/assets/data.json';
-
+import { mapGetters } from 'vuex'
 export default {
   components: {
     Hero,
@@ -31,11 +30,9 @@ export default {
     Portfolio,
     Contacts
   },
-  asyncData () {
-    return {
-      textInfo      
-    }
-  }
+  computed: mapGetters({
+    content: 'getData',
+  })
 }
 </script>
 

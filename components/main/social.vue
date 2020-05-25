@@ -1,7 +1,7 @@
 <template>
   <div class="social">
     <div class="social__content">
-      <p class="social__text text">Follow me</p>
+      <p class="social__text text">{{content.title}}</p>
       <ul class="social__icons ">
         <li class="icon">
           <InIcon/>
@@ -20,6 +20,7 @@
 <script>
 import { InIcon, GhIcon, FbIcon } from '~/components/icons/index'
 export default {
+  props: ['content'],
   components: {
     InIcon,
     GhIcon,

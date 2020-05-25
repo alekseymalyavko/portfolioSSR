@@ -22,9 +22,6 @@
   "social": {
     "title": "follow me"
   },
-  "generator": {
-    "btn": "random"
-  },
   "hero": {
     "title": "Hi, <br/>I'm Aleks <br/> Software Developer",
     "skills": "HTML5 / CSS3 / VueJs / ReactJS",
