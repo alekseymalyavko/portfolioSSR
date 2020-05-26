@@ -87,6 +87,23 @@ module.exports = {
   manifest: {
     name: 'Aleks Malyako Site',
     short_name: 'Aleks Malyako',
+    icons: [
+      {
+        'src': '/images/icon-512.png',
+        'sizes': '512x512',
+        'type': 'image/png'
+      },
+      {
+        'src': '/images/icon-192.png',
+        'sizes': '192x192',
+        'type': 'image/png'
+      },
+      {
+        'src': '/images/icon-64.png',
+        'sizes': '64x64',
+        'type': 'image/png'
+      }
+    ],
     start_url: '/',
     display: 'standalone',
     background_color: '#000a14',
@@ -122,7 +139,7 @@ module.exports = {
   },
   plugins: [    
     { 
-      src: "~/plugins",
+      src: '~/plugins',
       mode: 'client'
     }
   ],

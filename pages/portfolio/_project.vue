@@ -32,7 +32,6 @@
           </div>
         </div>
       </div>
-      
       <div class="project__content browser" data-animate="animated fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0, 1] } }">
         <div class="browser__actions">
           <span></span><span></span><span></span>
@@ -60,7 +59,7 @@
 
 <script>
 import { LinkIcon } from '~/components/icons/index'
-import { VueAgile } from 'vue-agile';
+import { VueAgile } from 'vue-agile'
 
 export default {
   components: {
@@ -99,10 +98,8 @@ export default {
       }
     }
   },
-  async asyncData ({route}) {
-    const currentProject = await fetch(`${process.env.baseUrl}/api/projects`)
-    .then(res => res.json())
-    .then(res => res.filter((item)=> item.title == route.params.project))
+  async asyncData ({store, route}) {
+    const currentProject = store.getters.getProjects.filter((item)=> item.title == route.params.project);
     
     return {
       currentProject: currentProject[0]
