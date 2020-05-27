@@ -14,7 +14,9 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@naumstory/nuxtjs-yandex-metrika": "^1.0.5",
     "@nuxtjs/axios": "^5.10.3",
+    "@nuxtjs/google-analytics": "^2.3.0",
     "@nuxtjs/pwa": "^2.0.8",
     "axios": "^0.19.2",
     "cssnano": "4.1.10",

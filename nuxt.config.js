@@ -24,6 +24,8 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme-color', content: '#0abc5c'},
+      { name: 'google-site-verification', content: 'kldZKnqh3EzUwX1NeeN62bS6NhmvXSQjwKigawiuDzE'},
+      { name: 'yandex-verification', content: '23beb911b3dca8f4'},
       { hid: 'description', name: 'description', content: 'Hire Professional Freelancer VueJS / ReactJS Developer. Building applications & websites, design UX/UI, creating animations and interactive experiences.' }
     ],
     noscript: [{ innerHTML: 'This website requires JavaScript.' }],
@@ -147,9 +149,24 @@ module.exports = {
   ],
   modules: [
     ['@nuxtjs/axios', { baseURL: '/api/' }],
+    [
+      '@naumstory/nuxtjs-yandex-metrika',
+      {
+        id: '64408966',
+        webvisor: true,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+      }
+    ]
   ],
   buildModules: [
     '@nuxtjs/pwa',
+    ['@nuxtjs/google-analytics', 
+      {
+        id: 'UA-167804682-1'
+      }
+    ]
   ],
   build: {
     optimizeCss: false,
