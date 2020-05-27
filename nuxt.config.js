@@ -1,4 +1,4 @@
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = false;
 const BASE_URL = 'https://aleks-malyavko-site.herokuapp.com';
 // const BASE_URL = 'http://localhost:8000';
 
@@ -111,7 +111,7 @@ module.exports = {
     theme_color: '#0abc5c'
   },
   serverMiddleware: [
-    // 'redirect-ssl',
+    'redirect-ssl',
     '~/api/index'
   ],
   loading: { color: 'var(--active)', height: '3px', throttle: 0 },
