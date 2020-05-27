@@ -1,6 +1,6 @@
 const isDev = process.env.NODE_ENV !== 'production';
-// const BASE_URL = process.env.BASE_URL ||  'https://aleks-malyavko-site.herokuapp.com';
-const BASE_URL = process.env.BASE_URL ||  'http://localhost:8000';
+const BASE_URL = process.env.BASE_URL ||  'https://aleks-malyavko-site.herokuapp.com';
+// const BASE_URL = process.env.BASE_URL ||  'http://localhost:8000';
 
 process.noDeprecation = true;
 
