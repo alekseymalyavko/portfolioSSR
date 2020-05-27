@@ -14,19 +14,19 @@
         <div class="button" @click="e => this.generateColor()">random</div>
       </div>
       <div class="generator__color" @click="e => this.toggleGenerator(e)">
-        <WaterIcon/>
+        <PipetteIcon/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { WaterIcon } from '~/components/icons/index';
+import { PipetteIcon } from '~/components/icons/index';
 
 export default {
   props: ['currentHexColor'],
   components: {
-    WaterIcon
+    PipetteIcon
   },
   data() {
     return {
@@ -171,8 +171,8 @@ export default {
         padding: 10px;
       }
       &__color {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
       }
       &__button {
         .button {

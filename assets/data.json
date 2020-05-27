@@ -24,7 +24,7 @@
   },
   "hero": {
     "title": "Hi, <br/>I'm Aleks <br/> Software Developer",
-    "skills": "HTML5 / CSS3 / VueJS / ReactJS",
+    "skills": "HTML5 / CSS3 / JS / VueJS / ReactJS",
     "caption1": "and i",
     "creative": " love ",
     "caption2": "to create.",
@@ -35,8 +35,9 @@
     "sectionTitle": "about me",
     "title": "I'm Software Developer",
     "descr": [
-      "I like all that connected with internet, so i'm developing web-applications and sites with minimalistic design and simplicity.",
-      "I graduated from universities have a bachelor's degree in economic cybernetics as well as a master's degree in economic informatics.",
+      "I like all things that live on the internet, whether that be websites, applications, or anything in between, so i'm developing with passion any kind of web-applications or web-sites with minimalistic design and simplicity. My goal is to build products with high perfomanse and quality.",
+      "Well-organised and person, independent employee with high attention to details, problem solver and perfectionist. Fan of sport, any outdoor activities, also like reading literature about marketing & psychology.",
+      "Graduated from university have a bachelor's degree in economic cybernetics as well as a master's degree in economic informatics, has sience work about spreading information in social networks (data analysis & forecast).",
       "I have been developing for more than 3 years and open to new directions and opportunities."
     ],
     "image": {
@@ -117,8 +118,10 @@
     "sectionTitle": "skills & experience",
     "title": "Work experience",
     "descr": [
-      "At the beginning of my career I was engaged in website promotion as SEO, then I studied HTML coding and created responsive websites for customers.",
-      "Then I did an internship in one large company where i created a food delivery web application, after this internship I started working in a company which has own application for searching and buying tickets for all types of transports. Currently work in a company where I am engaged in creating an interface and maintaining for one of the largest technology companies."
+      "The main side of my experience in web is front-end side (client side of the web).",
+      "HTML5, CSS3, JS, building small and medium web apps with VueJS or ReactJS, features, animations, working with APIs, creating and designing responsive web-sites. Also engaged in websites promotion as SEO (Google, Yandex). Have experience working with such CMS as Wordpress, OpenCart, AEM.",
+      "Have a large plenty of freelance projects with various stack including full-stack development (NodeJS, NuxtJS, Express, MongoDb). As well as I worked in start-up company that was engaged in the search and sale of tickets for any kind off transport. Now I'm working in a large outsourcing company.",
+      "All my skills and stack which I used while developing is placed on a cube."
     ],
     "skills": [
       ["HTML", "CSS", "JS", "SCSS"],
@@ -208,5 +211,10 @@
   },
   "footer": {
     "title": "Designed & Built by Aleks Malyavko 👽"
+  },
+  "error": {
+    "notFound": "Page not found 👽",
+    "title": "An error occurred",
+    "goBack": "Go back to the main page"
   }
 }

@@ -119,8 +119,6 @@ export default {
 
 <style lang="scss">
   .contacts {
-    padding-bottom: 120px;
-
     &__info {
 
       .list__item {
@@ -235,6 +233,8 @@ export default {
     }
 
     @media screen and (max-width: 745px) {
+      padding-bottom: 30px;
+
       &__form {
         margin-top: 35px;
       }

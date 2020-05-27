@@ -1,5 +1,6 @@
 const isDev = process.env.NODE_ENV !== 'production';
-const BASE_URL = 'https://aleks-malyavko-site.herokuapp.com';
+// const BASE_URL = process.env.BASE_URL ||  'https://aleks-malyavko-site.herokuapp.com';
+const BASE_URL = process.env.BASE_URL ||  'http://localhost:8000';
 
 process.noDeprecation = true;
 
@@ -9,7 +10,7 @@ module.exports = {
     modern: 'client'
   }),
   env: {
-    baseUrl: process.env.BASE_URL || BASE_URL
+    baseUrl: BASE_URL
   },
   server: {
     port: process.env.PORT || 8000,
@@ -77,7 +78,7 @@ module.exports = {
     description: 'Hire Professional Freelancer VueJS / ReactJS Developer. Building applications & websites, design UX/UI, creating animations and interactive experiences.',
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
     author: 'Aleks Malyako',
-    ogHost: process.env.BASE_URL || BASE_URL,
+    ogHost: BASE_URL,
     ogImage: {
       path: '/images/icon.png'
     },
@@ -110,6 +111,7 @@ module.exports = {
     theme_color: '#0abc5c'
   },
   serverMiddleware: [
+    'redirect-ssl',
     '~/api/index'
   ],
   loading: { color: 'var(--active)', height: '3px', throttle: 0 },
@@ -144,7 +146,6 @@ module.exports = {
     }
   ],
   modules: [
-    // '@nuxtjs/pwa',
     ['@nuxtjs/axios', { baseURL: '/api/' }],
   ],
   buildModules: [

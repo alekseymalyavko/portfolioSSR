@@ -2,6 +2,8 @@ const express = require('express')
 const nodemailer = require('nodemailer')
 const data = require('../assets/data.json')
 const projects = require('../assets/projects.json')
+const mail = process.env.MAIL;
+const pass = process.env.PASS;
 
 const app = express()
 
@@ -30,8 +32,8 @@ const sendMail = (data, res) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: "aleksmalyavko@gmail.com",
-      pass: "l6e8806xy92"
+      user: mail,
+      pass: pass
     }
   })
   transporter.sendMail({

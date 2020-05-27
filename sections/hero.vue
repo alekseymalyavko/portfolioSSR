@@ -2,7 +2,7 @@
   <section class="hero" v-waypoint="{ active: true, callback: onWaypoint }">
     <div class="row">
       <div class="hero__content col-12 animated"  :class="{'animated fadeInLeft': isActive}">
-        <h1 class="hero__title" v-html="text.title" @click="$store.commit('increment')"></h1>
+        <h1 class="hero__title" v-html="text.title"></h1>
         <h5 class="hero__text light">{{text.skills}}</h5>
         <p class="caption">
           {{text.caption1}} 
@@ -15,7 +15,7 @@
           </div>
         </nuxt-link>
       </div>
-      <div class="hero__icons" :class="{active: isActive}">
+      <div class="hero__icons" :class="{active: isActive, filled: fillIcons}">
         <div class="hero-icon left">
           <svg xmlns="http://www.w3.org/2000/svg" width="301" height="454" preserveAspectRatio="xMidYMid meet" viewBox="0 0 301 454" >
             <path d="M2 452L119.933 2H181.083L298.142 452H233.497L150.508 121.86L67.5181 452H2Z"/>
@@ -41,6 +41,7 @@ export default {
   },
   data() {
     return {
+      fillIcons: false,
       isActive: false,
     }
   },
@@ -54,8 +55,12 @@ export default {
       }
     },
     setCreativeBg() {
+      this.fillIcons = true;
       this.$root.creativeBg = true;
-      setTimeout( () => this.$root.creativeBg = false, 1700)
+      setTimeout( () => {
+        this.fillIcons = false;
+        this.$root.creativeBg = false
+      }, 1700)
     }
   }
 }
@@ -113,10 +118,14 @@ export default {
     transform: translate(0%, -50%);
     z-index: 0;
 
+    &.filled {
+      .hero-icon svg {
+        fill: var(--dark-blue);
+      }  
+    }
     .hero-icon {
       transition: 0.70s;
       opacity: 0;
-      
       
       svg {
         fill: transparent;

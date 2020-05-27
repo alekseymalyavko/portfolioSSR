@@ -10,3 +10,4 @@ export { default as SeoIcon } from './seo';
 export { default as DesignIcon } from './design';
 export { default as DevelopmentIcon } from './development';
 export { default as SupportIcon } from './support';
+export { default as PipetteIcon } from './pipette';
