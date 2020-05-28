@@ -113,7 +113,7 @@ module.exports = {
     theme_color: '#0abc5c'
   },
   serverMiddleware: [
-    'redirect-ssl',
+    // 'redirect-ssl',
     '~/api/index'
   ],
   loading: { color: 'var(--active)', height: '3px', throttle: 0 },
