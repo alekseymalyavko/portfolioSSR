@@ -1,6 +1,5 @@
-const isDev = false;
-const BASE_URL = 'https://aleks-malyavko-site.herokuapp.com';
-// const BASE_URL = 'http://localhost:8000';
+const isDev = process.env.NODE_ENV !== 'production';
+const BASE_URL = isDev ? 'http://localhost:8000' : 'https://aleks-malyavko-site.herokuapp.com';
 
 process.noDeprecation = true;
 
@@ -24,8 +23,8 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme-color', content: '#0abc5c'},
-      { name: 'google-site-verification', content: '5xveBIMAKbrs8XryW38TaiRi53IVyyAJXyUk7h43xt8'},
-      { name: 'yandex-verification', content: 'd8c1b9feafc36f72'},
+      { name: 'google-site-verification', content: 'cXVFVrN_bN4YTo5u98cBSc4hAC93G9a7hO_oVkLJOnI'},
+      { name: 'yandex-verification', content: '40a5011ae7f8dc31'},
       { hid: 'description', name: 'description', content: 'Hire Professional Freelancer VueJS / ReactJS Developer. Building applications & websites, design UX/UI, creating animations and interactive experiences.' }
     ],
     noscript: [{ innerHTML: 'This website requires JavaScript.' }],
@@ -113,7 +112,7 @@ module.exports = {
     theme_color: '#0abc5c'
   },
   serverMiddleware: [
-    // 'redirect-ssl',
+    'redirect-ssl',
     '~/api/index'
   ],
   loading: { color: 'var(--active)', height: '3px', throttle: 0 },
@@ -152,7 +151,7 @@ module.exports = {
     [
       '@naumstory/nuxtjs-yandex-metrika',
       {
-        id: '64461661',
+        id: '64463779',
         webvisor: true,
         clickmap:true,
         trackLinks:true,
@@ -164,7 +163,7 @@ module.exports = {
     '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', 
       {
-        id: 'UA-167955443-1'
+        id: 'UA-167804682-2'
       }
     ]
   ],
