@@ -4,13 +4,19 @@
       <p class="social__text text">{{content.title}}</p>
       <ul class="social__icons ">
         <li class="icon">
-          <InIcon/>
+          <a href="https://www.linkedin.com/in/aleks-malyavko-8b745b1ab/" target="_blank" rel="nofollow noopener noreferrer">
+            <InIcon/>
+          </a>
         </li>
         <li class="icon">
-          <GhIcon/>
+          <a href="https://github.com/alekseymalyavko" target="_blank" rel="nofollow noopener noreferrer">
+            <GhIcon/>
+          </a>
         </li>
         <li class="icon">
-          <FbIcon/>
+          <a href="https://t.me/aleksmalyavko" target="_blank" rel="nofollow noopener noreferrer">
+            <TgIcon/>
+          </a>
         </li>
       </ul>
     </div>
@@ -18,13 +24,13 @@
 </template>
 
 <script>
-import { InIcon, GhIcon, FbIcon } from '~/components/icons/index'
+import { InIcon, GhIcon, TgIcon } from '~/components/icons/index'
 export default {
   props: ['content'],
   components: {
     InIcon,
     GhIcon,
-    FbIcon
+    TgIcon
   }
 }
 </script>

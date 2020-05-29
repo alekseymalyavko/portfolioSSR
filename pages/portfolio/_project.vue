@@ -75,6 +75,9 @@ export default {
     return {
       title: `Project ${String(this.$route.params.project).toUpperCase()} | Aleks Malyavko`,
 			options1: {
+        slidestoShow: 1,
+        autoplaySpeed: 4500,
+        autoplay: true,
 				dots: true,
         navButtons: true,
         infinite: false,

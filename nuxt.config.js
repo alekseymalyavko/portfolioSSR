@@ -65,8 +65,8 @@ module.exports = {
                 'jobTitle': 'Software Developer',
                 'sameAs': [
                   `${BASE_URL}`,
-                  'https://github.com/______me',
-                  'https://linkedin.com/in/______me'
+                  'https://github.com/alekseymalyavko',
+                  'https://linkedin.com/in/aleks-malyavko-8b745b1ab'
                 ]
               }
             ]

@@ -11,3 +11,4 @@ export { default as DesignIcon } from './design';
 export { default as DevelopmentIcon } from './development';
 export { default as SupportIcon } from './support';
 export { default as PipetteIcon } from './pipette';
+export { default as TgIcon } from './tg';

@@ -3,13 +3,19 @@
     <div class="footer__icons__wrapper">
       <ul class="footer__icons">
         <li class="icon active">
-          <InIcon/>
+          <a href="https://www.linkedin.com/in/aleks-malyavko-8b745b1ab/" target="_blank" rel="nofollow noopener noreferrer">
+            <InIcon/>
+          </a>
         </li>
         <li class="icon active">
-          <GhIcon/>
+          <a href="https://github.com/alekseymalyavko" target="_blank" rel="nofollow noopener noreferrer">
+            <GhIcon/>
+          </a>
         </li>
         <li class="icon active">
-          <FbIcon/>
+          <a href="https://t.me/aleksmalyavko" target="_blank" rel="nofollow noopener noreferrer">
+            <TgIcon/>
+          </a>
         </li>
       </ul>
     </div>
@@ -18,14 +24,14 @@
 </template>
 
 <script>
-import { InIcon, GhIcon, FbIcon } from '~/components/icons/index'
+import { InIcon, GhIcon, TgIcon } from '~/components/icons/index'
 
 export default {
   props: ['content'],
   components: {
     InIcon,
     GhIcon,
-    FbIcon
+    TgIcon
   }
 }
 </script>
