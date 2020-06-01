@@ -1,5 +1,5 @@
 const isDev = process.env.NODE_ENV !== 'production';
-const BASE_URL = isDev ? 'http://localhost:8000' : 'https://aleksmalyavko.site';
+const BASE_URL = isDev ? 'http://localhost:8000' : 'https://aleks-malyavko-site.herokuapp.com/';
 
 process.noDeprecation = true;
 
@@ -42,12 +42,12 @@ module.exports = {
               'addressLocality': 'Minsk'
             },
             'name': 'Aleks Malyako',
-            'image': `${BASE_URL}/images/me1.png`,
+            'image': 'https://www.aleksmalyavko.site/images/me1.png',
             'email': 'mailto:aleksmalyavko@gmail.com',
-            'url': `${BASE_URL}`,
+            'url': 'https://www.aleksmalyavko.site/',
             'jobTitle': 'Software Engineer',
             'sameAs': [
-              `${BASE_URL}`,
+              'https://www.aleksmalyavko.site/',
               'https://github.com/alekseymalyavko',
               'https://linkedin.com/in/aleks-malyavko-8b745b1ab'
             ]
@@ -61,7 +61,7 @@ module.exports = {
     description: 'Hire Professional Freelancer VueJS / ReactJS Developer. Building applications & websites, design UX/UI, creating animations and interactive experiences.',
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
     author: 'Aleks Malyako',
-    ogHost: process.env.BASE_URL || BASE_URL,
+    ogHost: 'https://www.aleksmalyavko.site/',
     ogImage: {
       path: '/images/icon.png'
     },
