@@ -32,17 +32,17 @@
         <form class="form" :class="{active: !isSubmitted && !isError}" @submit.prevent="sendMessage">
           <div class="form__row">
             <div class="form__input__wrapper">
-              <input class="input form__input" type="text" placeholder="" v-model="name" required @blur="e => isEmpty(e)"/>
-              <label>{{text.form.name}}</label>
+              <input id="name" class="input form__input" type="text" placeholder="" v-model="name" required @blur="e => isEmpty(e)"/>
+              <label for="name">{{text.form.name}}</label>
             </div>
             <div class="form__input__wrapper">
-              <input class="input form__input" type="email" placeholder="" v-model="email" required @blur="e => isEmpty(e)"/>
-              <label>{{text.form.mail}}</label>
+              <input id="email" class="input form__input" type="email" placeholder="" v-model="email" required @blur="e => isEmpty(e)"/>
+              <label for="email">{{text.form.mail}}</label>
             </div>
           </div>
           <div class="form__input__wrapper">
-            <textarea class="input form__input" rows="6" placeholder="" v-model="message" required @blur="e => isEmpty(e)"/>
-            <label>{{text.form.message}}</label>
+            <textarea id="message" class="input form__input" rows="6" placeholder="" v-model="message" required @blur="e => isEmpty(e)"/>
+            <label for="message">{{text.form.message}}</label>
           </div>
           <div class="form__btn__wrapper">
             <input class="button" type="submit" :value="text.form.submit" :disabled="isSending"/> <Spinner v-if="isSending"/>

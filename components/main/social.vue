@@ -4,17 +4,17 @@
       <p class="social__text text">{{content.title}}</p>
       <ul class="social__icons ">
         <li class="icon">
-          <a href="https://www.linkedin.com/in/aleks-malyavko-8b745b1ab/" target="_blank" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/aleks-malyavko-8b745b1ab/" target="_blank" aria-label="Linkedin" rel="nofollow noopener noreferrer">
             <InIcon/>
           </a>
         </li>
         <li class="icon">
-          <a href="https://github.com/alekseymalyavko" target="_blank" rel="nofollow noopener noreferrer">
+          <a href="https://github.com/alekseymalyavko" target="_blank" aria-label="Github" rel="nofollow noopener noreferrer">
             <GhIcon/>
           </a>
         </li>
         <li class="icon">
-          <a href="https://t.me/aleksmalyavko" target="_blank" rel="nofollow noopener noreferrer">
+          <a href="https://t.me/aleksmalyavko" target="_blank" aria-label="Telegram" rel="nofollow noopener noreferrer">
             <TgIcon/>
           </a>
         </li>

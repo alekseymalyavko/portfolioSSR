@@ -1,5 +1,5 @@
 const isDev = process.env.NODE_ENV !== 'production';
-const BASE_URL = isDev ? 'http://localhost:8000' : 'https://aleks-malyavko-site.herokuapp.com';
+const BASE_URL = isDev ? 'http://localhost:8000' : 'https://aleksmalyavko.site';
 
 process.noDeprecation = true;
 
@@ -18,7 +18,7 @@ module.exports = {
     htmlAttrs: {
       lang: 'en'
     },
-    title: 'Aleks Malyako | Software Developer',
+    title: 'Aleks Malyako | Software Engineer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -28,54 +28,36 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Hire Professional Freelancer VueJS / ReactJS Developer. Building applications & websites, design UX/UI, creating animations and interactive experiences.' }
     ],
     noscript: [{ innerHTML: 'This website requires JavaScript.' }],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/images/icon.png' },
-      { rel: 'apple-touch-icon', href: '/images/icon.png' }
-    ],
+    __dangerouslyDisableSanitizers: ['script'],
     script: [
       {
         type: 'application/ld+json',
         innerHTML: JSON.stringify(
           {
             '@context': 'http://schema.org',
-            '@type': 'Site',
-            'name': 'Aleks Malyako',
-            'legalName': 'Aleks Malyako | Software Developer',
+            '@type': 'Person',
             'address': {
               '@type': 'PostalAddress',
               'addressCountry': 'BLR',
               'addressLocality': 'Minsk'
             },
-            'logo': `${BASE_URL}/images/icon.png`,
+            'name': 'Aleks Malyako',
+            'image': `${BASE_URL}/images/me1.png`,
             'email': 'mailto:aleksmalyavko@gmail.com',
             'url': `${BASE_URL}`,
-            'foundingDate': ' 2018-09-01',
-            'founders': [
-              {
-                '@context': 'http://schema.org',
-                '@type': 'Person',
-                'address': {
-                  '@type': 'PostalAddress',
-                  'addressCountry': 'BLR',
-                  'addressLocality': 'Minsk'
-                },
-                'name': 'Aleks Malyako',
-                'image': `${BASE_URL}/images/me1.png`,
-                'email': 'mailto:aleksmalyavko@gmail.com',
-                'jobTitle': 'Software Developer',
-                'sameAs': [
-                  `${BASE_URL}`,
-                  'https://github.com/alekseymalyavko',
-                  'https://linkedin.com/in/aleks-malyavko-8b745b1ab'
-                ]
-              }
+            'jobTitle': 'Software Engineer',
+            'sameAs': [
+              `${BASE_URL}`,
+              'https://github.com/alekseymalyavko',
+              'https://linkedin.com/in/aleks-malyavko-8b745b1ab'
             ]
-          })
+          }
+        )
       }
     ]
   },
   meta: {
-    name: 'Aleks Malyako | Software Developer',
+    name: 'Aleks Malyako | Software Engineer',
     description: 'Hire Professional Freelancer VueJS / ReactJS Developer. Building applications & websites, design UX/UI, creating animations and interactive experiences.',
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
     author: 'Aleks Malyako',
