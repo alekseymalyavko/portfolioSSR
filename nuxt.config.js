@@ -1,5 +1,5 @@
 const isDev = process.env.NODE_ENV !== 'production';
-const BASE_URL = isDev ? 'http://localhost:8000' : 'https://aleks-malyavko-site.herokuapp.com/';
+const BASE_URL = isDev ? 'http://localhost:8000' : 'https://aleks-malyavko-site.herokuapp.com';
 
 process.noDeprecation = true;
 
