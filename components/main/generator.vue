@@ -79,6 +79,17 @@ export default {
       transform: translateX(100%);
     }
   }
+  @keyframes pulsate {
+    0% {
+      box-shadow: 0 0 0 0 var(--light-active);
+    }
+    50% {
+      box-shadow: 0 0 10px 20px var(--light-active);
+    }
+    100% {
+      box-shadow: 0 0 0 0 var(--light-active);
+    }
+  }
   .generator {
     position: fixed;
     right: 0;
@@ -89,7 +100,7 @@ export default {
 
     animation: play 0.55s ease-in-out;
     animation-delay: 3s;
-    animation-iteration-count: 3;
+    animation-iteration-count: 5;
     
     &.active {
       transform: translateX(0);    
@@ -147,6 +158,10 @@ export default {
       border-right: none;
       box-shadow: #020c1b 0px 10px 30px -10px;
       transition: border 0.35s;
+      
+      animation: pulsate 0.55s ease-in-out;
+      animation-iteration-count: 5;
+      animation-delay: 3s;
 
       svg {
         transition: fill 0.35s;

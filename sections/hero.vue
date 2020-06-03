@@ -69,15 +69,18 @@ export default {
 <style lang="scss">
 @keyframes pulse {
   0% {
-		transform: scale(0.85);
+    box-shadow: 0 0 0 0 none;
+		transform: scale(0.75);
 	}
 
 	60% {
-		transform: scale(1.15);
+    box-shadow: 0 0 3px 10px var(--light-active);
+		transform: scale(1.1);
 	}
 
 	100% {
-		transform: scale(0.85);
+    box-shadow: 0 0 0 0 none;
+		transform: scale(0.75);
 	}
 }
 .hero {
@@ -100,9 +103,11 @@ export default {
     user-select: none;
     cursor: pointer;
     display: inline-block;
+    padding: 0 4px;
+    border-radius: 1px;
     transform-origin: bottom;
     transition: 0.3s;
-    animation: pulse 2.5s infinite linear;
+    animation: pulse 2.65s infinite linear;
   }
   .creative:hover {
     animation-play-state: paused;

@@ -27,6 +27,11 @@ module.exports = {
       { name: 'yandex-verification', content: '40a5011ae7f8dc31'},
       { hid: 'description', name: 'description', content: 'Hire Professional Freelancer VueJS / ReactJS Developer. Building applications & websites, design UX/UI, creating animations and interactive experiences.' }
     ],
+    link: [
+      { rel: 'icon', type: 'image/png', href: '/images/icon.png' },
+      { rel: 'apple-touch-icon', href: '/images/icon.png' },
+      { rel: 'shortcut icon', type: 'image/png', href: '/images/icon.png' },
+    ],
     noscript: [{ innerHTML: 'This website requires JavaScript.' }],
     __dangerouslyDisableSanitizers: ['script'],
     script: [
@@ -44,10 +49,10 @@ module.exports = {
             'name': 'Aleks Malyako',
             'image': 'https://www.aleksmalyavko.site/images/me1.png',
             'email': 'mailto:aleksmalyavko@gmail.com',
-            'url': 'https://www.aleksmalyavko.site/',
+            'url': 'https://www.aleksmalyavko.site',
             'jobTitle': 'Software Engineer',
             'sameAs': [
-              'https://www.aleksmalyavko.site/',
+              'https://www.aleksmalyavko.site',
               'https://github.com/alekseymalyavko',
               'https://linkedin.com/in/aleks-malyavko-8b745b1ab'
             ]
@@ -61,11 +66,11 @@ module.exports = {
     description: 'Hire Professional Freelancer VueJS / ReactJS Developer. Building applications & websites, design UX/UI, creating animations and interactive experiences.',
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
     author: 'Aleks Malyako',
-    ogHost: 'https://www.aleksmalyavko.site/',
+    twitterCard: 'summary',
+    ogHost: 'https://www.aleksmalyavko.site',
     ogImage: {
-      path: '/images/icon.png'
-    },
-    twitterCard: 'summary'
+      path: '/images/icon-192.png'
+    }
   },
   rootDir: __dirname,
   manifest: {

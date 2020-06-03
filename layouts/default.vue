@@ -39,6 +39,7 @@ export default {
     },
     currentRgbaColor: function (val) {
       document.documentElement.style.setProperty('--light-active', val[0]);
+      document.documentElement.style.setProperty('--light-active', val[0]);
     }
   },
   mounted: function () {
