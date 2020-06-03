@@ -67,9 +67,7 @@ export default {
     agile: VueAgile
   },
   validate({ params, query }) {
-    // console.log(123, { params, query })
-    return true // 
-    // return false // 
+    return /^[a-z\-]+$/g.test(params.project)
   },
   data() {
     return {
@@ -92,6 +90,9 @@ export default {
         { hid: 'description', name: 'description', content: `Project ${String(this.$route.params.project).toUpperCase()}, information about project, images links and stack which was used.` }
       ]
     }
+  },
+  mounted() {
+    setTimeout( () => this.$refs.main.reload(), 1000)
   },
   methods: {
     onWaypoint({el, going}) {
@@ -248,7 +249,7 @@ export default {
       }
       &__image {
         min-height: 400px;
-        height: 75vh;
+        height: 66vh;
         overflow-y: auto;
       }
       &__gallery {
@@ -273,6 +274,7 @@ export default {
     @media screen and (max-width: 745px) {
       .browser {
         padding: 5px;
+        margin-top: 20px;
       }
       .agile__nav-button {
         position: static;
@@ -291,7 +293,8 @@ export default {
       }
       &__content {
         &__image {
-          height: 60vh;
+          min-height: auto;
+          height: 55vh;
         }
       }
     }
