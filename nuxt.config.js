@@ -28,6 +28,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Hire Professional Freelancer VueJS / ReactJS Developer. Building applications & websites, design UX/UI, creating animations and interactive experiences.' }
     ],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', type: 'image/png', href: '/images/icon.png' },
       { rel: 'apple-touch-icon', href: '/images/icon.png' },
       { rel: 'shortcut icon', type: 'image/png', href: '/images/icon.png' },

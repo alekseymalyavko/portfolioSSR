@@ -31,9 +31,9 @@
             </li>
           </ul>
           <div class="about__text__button button__container">
-            <nuxt-link to="#contacts">
+            <a href="/AleksMalyavko_CV.pdf" target="_blank" aria-label="resume" rel="nofollow noopener noreferrer">
               <div class="button ">{{text.btn[0].text}}</div>
-            </nuxt-link>
+            </a>
             <nuxt-link to="#contacts">
               <div class="button button_secondary">{{text.btn[1].text}}</div>
             </nuxt-link>
