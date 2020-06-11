@@ -125,7 +125,6 @@ export default {
       transform-style: preserve-3d;
       transform: rotateX(-20deg) rotateY(28deg);
       user-select: none;
-      // transition: 0.35s;
 
       &.paused {
         animation-play-state:paused;
