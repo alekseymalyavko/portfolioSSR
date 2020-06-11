@@ -102,6 +102,9 @@ export default {
     animation-delay: 3s;
     animation-iteration-count: 5;
     
+    &:hover {
+      animation-play-state:paused;
+    }
     &.active {
       transform: translateX(0);    
     }

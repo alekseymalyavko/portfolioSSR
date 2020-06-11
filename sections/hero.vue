@@ -107,6 +107,7 @@ export default {
     border-radius: 1px;
     transform-origin: bottom;
     transition: 0.3s;
+    box-shadow: 0 0 0 0 var(--light-active);
     animation: pulse 2.65s infinite linear;
   }
   .creative:hover {

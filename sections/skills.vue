@@ -11,9 +11,11 @@
         <p class="text" v-for="(text, index) in text.descr" :key="index">
           {{text}}
         </p>
-        <div class="button button_secondary">
-          {{text.btn}}
-        </div>
+        <nuxt-link to="#contacts">
+          <div class="button button_secondary">
+            {{text.btn}}
+          </div>
+        </nuxt-link>
       </div>
       <div class="col-6" @mouseenter="handleAnimation(false)" @mouseleave="handleAnimation(true)"  data-animate="animated fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="cube__wrapper" @mousedown="e => startEvent(e)" @mousemove="e => rotate(e)" @mouseup="e => finishEvent(e)">

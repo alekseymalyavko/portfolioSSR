@@ -131,7 +131,7 @@
       ["WordPress", "OpenCart", "AEM"],
       ["SEO", "GoogleMap API", "VK API", "YMAPS API"]
     ],
-    "btn": "look"
+    "btn": "Contact me"
   },
   "portfolio": {
     "sectionSubtitle": "projects",
@@ -191,7 +191,7 @@
     "sectionSubtitle": "get in touch",
     "sectionTitle": "contacts",
     "title": "just say hello!",
-    "descr": "I am interested in freelance opportunitie. However, if you have other request or question, just fill the form, and I'll try my best to get back to you!",
+    "descr": "I am interested in freelance opportunities. However, if you have other request or question, just fill the form, and I'll try my best to get back to you!",
     "contacts": {
       "tel": "+37529 396 54 23",
       "mail": "aleksmalyavko@gmail.com",

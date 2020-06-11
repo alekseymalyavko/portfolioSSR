@@ -76,6 +76,7 @@ export default {
         slidestoShow: 1,
         autoplaySpeed: 4500,
         autoplay: true,
+        pauseOnDotsHover: true,
 				dots: true,
         navButtons: true,
         infinite: false,
@@ -244,6 +245,9 @@ export default {
     &__content {
       margin-top: 60px;
       
+      &__main {
+        overflow: hidden;
+      }
       .agile__actions {
         padding-top: 10px;
       }
