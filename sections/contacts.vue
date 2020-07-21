@@ -10,9 +10,9 @@
         <h3 class="contacts__info__heading heading">{{text.title}}</h3>
         <p class="text">{{text.descr}}</p>
         <ul class="contacts__info__list list without-dots">
-          <li class="list__item ">
+          <!-- <li class="list__item ">
             <i class="icon"><PhoneIcon/></i> <a :href="`tel:${text.contacts.tel}`"><span class="caption">{{text.contacts.tel}}</span></a>
-          </li>
+          </li> -->
           <li class="list__item ">
             <i class="icon"><MailIcon/></i> <a :href="`mailto:${text.contacts.mail}`"><span class="caption">{{text.contacts.mail}}</span></a>
           </li>
