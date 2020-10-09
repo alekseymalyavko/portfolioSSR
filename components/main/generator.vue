@@ -1,5 +1,5 @@
 <template>
-  <div class="generator" :class="{active: isActive}" @focusout="isActive = false" tabindex="0">
+  <div class="generator" :class="{active: isActive, animated: isAnimated}"  @focusout="isActive = false" tabindex="0">
     <div class="generator__wrapper">
       <div class="generator__list" @click="e => this.chooseColor(e)">
         <div class="generator__list__item" style="background: #fe0000" data-color="#fe0000"></div>
@@ -22,6 +22,7 @@
 
 <script>
 import { PipetteIcon } from '~/components/icons/index';
+import debounceEvent from '~/utils'
 
 export default {
   props: ['currentHexColor'],
@@ -31,11 +32,15 @@ export default {
   data() {
     return {
       isActive: false,
+      isAnimated: true,
+      lastPosition: 0
     }
   },
   methods: {
     toggleGenerator: function() {
-      this.isActive = !this.isActive;
+      this.isAnimated = false;
+      setTimeout(() => this.isActive = !this.isActive, 0)
+      
     },
     generateColor: function() {
       const randomCharacters = "1234567890abcdef".split("");
@@ -62,8 +67,21 @@ export default {
     },
     changeColor: function(colors) {
       this.$emit('changeColor', colors)
+    },
+    handleScroll: function(e) {
+      const scrollHeight = Math.abs(window.scrollY - this.lastPosition);
+      if (scrollHeight > 200) {
+        this.lastPosition = window.scrollY
+        this.isActive = false;
+      }
     }
-  }
+  },
+  mounted() {
+    window.addEventListener('scroll', debounceEvent(this.handleScroll, 100));
+  },
+  destroyed: function () {
+    window.removeEventListener('scroll', debounceEvent(this.handleScroll, 100));
+  },
 }
 </script>
 
@@ -72,8 +90,29 @@ export default {
     0% {
       transform: translateX(100%);
     }
+    10% {
+      transform: translateX(115%);
+    }
+    20% {
+      transform: translateX(100%);
+    }
+    30% {
+      transform: translateX(115%);
+    }
+    40% {
+      transform: translateX(100%);
+    }
     50% {
       transform: translateX(115%);
+    }
+    60% {
+      transform: translateX(100%);
+    }
+    70% {
+      transform: translateX(100%);
+    }
+    80% {
+      transform: translateX(100%);
     }
     100% {
       transform: translateX(100%);
@@ -83,8 +122,29 @@ export default {
     0% {
       box-shadow: 0 0 0 0 var(--light-active);
     }
+    10% {
+      box-shadow: 0 0 10px 20px var(--light-active);
+    }
+    20% {
+      box-shadow: 0 0 0 0 var(--light-active);
+    }
+    30% {
+      box-shadow: 0 0 10px 20px var(--light-active);
+    }
+    40% {
+      box-shadow: 0 0 0 0 var(--light-active);
+    }
     50% {
       box-shadow: 0 0 10px 20px var(--light-active);
+    }
+    60% {
+      box-shadow: 0 0 0 0 var(--light-active);
+    }
+    70% {
+      box-shadow: 0 0 0 0 var(--light-active);
+    }
+    80% {
+      box-shadow: 0 0 0 0 var(--light-active);
     }
     100% {
       box-shadow: 0 0 0 0 var(--light-active);
@@ -94,16 +154,19 @@ export default {
     position: fixed;
     right: 0;
     top: 80px;
-    transform: translateX(100%);
     z-index: 5;
-    transition: all 0.35s ease-in-out;
+    transform: translateX(100%);
+    transition: transform 0.35s ease-in-out;
 
-    animation: play 0.55s ease-in-out;
-    animation-delay: 3s;
-    animation-iteration-count: 5;
+    &.animated {
+      animation: play 2.3s ease-in-out infinite;
+      animation-delay: 3s;
+    }
     
-    &:hover {
-      animation-play-state:paused;
+    &:hover,
+    &:hover &__color,
+    &__color:hover {
+      animation-play-state: paused;
     }
     &.active {
       transform: translateX(0);    
@@ -116,7 +179,6 @@ export default {
       background: var(--black);     
       box-shadow: #000a1485 2px 2px 20px 10px;
       transition: border 0.35s;
-
     }
     &__list {
       display: flex;
@@ -160,15 +222,19 @@ export default {
       border-bottom-left-radius: 2px;
       border-right: none;
       box-shadow: #020c1b 0px 10px 30px -10px;
-      transition: border 0.35s;
+      transition: border 0.35s, background 0.35s;
       
-      animation: pulsate 0.55s ease-in-out;
-      animation-iteration-count: 5;
-      animation-delay: 3s;
+      .animated & {
+        animation: pulsate 2.3s ease-in-out infinite;
+        animation-delay: 3s;
+      }
 
       svg {
         transition: fill 0.35s;
         fill: var(--active)
+      }
+      &:hover {
+        background: var(--light-blue);
       }
     }
     &__button {
@@ -189,8 +255,8 @@ export default {
         padding: 10px;
       }
       &__color {
-        width: 55px;
-        height: 55px;
+        width: 60px;
+        height: 60px;
       }
       &__button {
         .button {

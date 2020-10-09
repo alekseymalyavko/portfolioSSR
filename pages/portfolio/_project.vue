@@ -5,33 +5,6 @@
         <h6 class="subtitle">{{currentProject.type}}</h6>
         <h2 class="title">{{currentProject.title}}</h2>
       </div>
-      <div class="project__info">
-        <div class="project__info__container row" data-animate="animated fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
-          <div class="project__info__item col-10">
-            <span class="text bold">Stack:</span>
-            <span class="caption">{{currentProject.stack}}</span>
-          </div>
-          <div class="project__info__item resourses col-2">
-            <div v-if="currentProject.link">
-              <a :href="`http://${currentProject.link}`" class="link" target="_blank">            
-                <LinkIcon/>
-                <span class="caption">{{currentProject.link}}</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="row" data-animate="animated fadeInRight delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
-          <div class="project__info__item descr col-8">
-            <p class="text bold">Description:</p>
-            <p class="text">
-              {{currentProject.fullDescr}}
-            </p>
-          </div>
-          <div class="project__info__item image col-4" v-if="currentProject.logo">
-            <img :src="currentProject.logo" alt="project logo"/>
-          </div>
-        </div>
-      </div>
       <div class="project__content browser" data-animate="animated fadeInUp delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0, 1] } }">
         <div class="browser__actions">
           <span></span><span></span><span></span>
@@ -51,6 +24,33 @@
                 </agile>
               </div>
           </client-only>
+        </div>
+      </div>
+      <div class="project__info">
+        <div class="project__info__container row" data-animate="animated fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+          <div class="project__info__item col-10">
+            <span class="text bold">Stack:</span>
+            <span class="caption">{{currentProject.stack}}</span>
+          </div>
+          <div class="project__info__item resourses col-2" v-if="currentProject.link">
+            <div v-if="currentProject.link">
+              <a :href="`http://${currentProject.link}`" class="link" target="_blank">            
+                <LinkIcon/>
+                <span class="caption">{{currentProject.link}}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-animate="animated fadeInRight delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+          <div class="project__info__item descr col-8">
+            <p class="text bold">Description:</p>
+            <p class="text">
+              {{currentProject.fullDescr}}
+            </p>
+          </div>
+          <div class="project__info__item image col-4" v-if="currentProject.logo">
+            <img :src="currentProject.logo" alt="project logo"/>
+          </div>
         </div>
       </div>
     </section>
@@ -206,11 +206,18 @@ export default {
 
   .project {
     width: 100%;
+    padding-top: 40px;
 
+    .title {
+      margin-bottom: 0;
+    }
+  
     .row {
       margin: 0;
     }
     &__info {
+      margin-top: 40px;
+
       &__item {
         padding: 15px 0;
         
@@ -243,7 +250,7 @@ export default {
     }
 
     &__content {
-      margin-top: 60px;
+      margin-top: 30px;
       
       &__main {
         overflow: hidden;
@@ -298,7 +305,7 @@ export default {
       &__content {
         &__image {
           min-height: auto;
-          height: 55vh;
+          height: 50vh;
         }
       }
     }
