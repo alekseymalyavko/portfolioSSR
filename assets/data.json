@@ -200,7 +200,7 @@
     "message": {
       "success": "Message was sent",
       "success2": "Thank you for your reply!",
-      "error": "Oops! Error here :("
+      "error": "Oops! Something went wrong :("
     },
     "form": {
       "name": "Name",

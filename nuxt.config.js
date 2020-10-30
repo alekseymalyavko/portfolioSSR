@@ -145,6 +145,14 @@ module.exports = {
         trackLinks:true,
         accurateTrackBounce:true
       }
+    ],
+    [
+      '@nuxtjs/recaptcha', {
+        hideBadge: false,
+        siteKey: process.env.RECAPTCHA || '6LeCMd0ZAAAAAK-Z599-UTWZj5_Vpbrj5F7gYhw_',
+        version: 2,
+        size: 'invisible'
+      }
     ]
   ],
   buildModules: [

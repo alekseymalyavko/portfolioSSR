@@ -29,7 +29,7 @@
         <div class="contact__message" :class="{active: isError}">
           <h5>{{text.message.error}}</h5>
         </div>
-        <form class="form" :class="{active: !isSubmitted && !isError}" @submit.prevent="sendMessage">
+        <form class="form" :class="{active: !isSubmitted && !isError}" ref="contactForm" @submit.prevent="sendMessage">
           <div class="form__row">
             <div class="form__input__wrapper">
               <input id="name" class="input form__input" type="text" placeholder="" v-model="name" required @blur="e => isEmpty(e)"/>
@@ -44,9 +44,13 @@
             <textarea id="message" class="input form__input" rows="6" placeholder="" v-model="message" required @blur="e => isEmpty(e)"/>
             <label for="message">{{text.form.message}}</label>
           </div>
-          <div class="form__btn__wrapper">
-            <input class="button" type="submit" :value="text.form.submit" :disabled="isSending"/> <Spinner v-if="isSending"/>
+          <div class="form__btn__wrapper end">
+            <div class="form__btn__wrapper">
+              <input class="button" type="submit" :value="text.form.submit" :disabled="isSending"/> <Spinner v-if="isSending"/>
+            </div>
+            <recaptcha  class="recaptcha-field" @error="onError" @success="onSuccess" @expired="onExpired"/>
           </div>
+          
         </form>
       </div>
     </div>
@@ -74,7 +78,7 @@ export default {
       isSubmitted: false,
       name: null,
       email: null,
-      message: null,
+      message: null
     }
   },
   methods: {
@@ -94,11 +98,31 @@ export default {
           }
         })
       } catch (e) {
+        this.isError = true;
         console.error(e)
       }
     },
-    sendMessage: function() {
-      this.submitForm()
+    async sendMessage() {
+      await this.submitRecaptcha();
+      await this.submitForm();
+    },
+    async submitRecaptcha() {
+      try {
+        const token = await this.$recaptcha.getResponse();
+        await this.$recaptcha.reset();
+      } catch (e) {
+        this.isError = true;
+        console.error(e)
+      }
+    },
+    onError(error) {
+      console.log('Error happened:', error)
+    },
+    onSuccess(token) {
+      console.log('Recaptcha success')
+    },
+    onExpired() {
+      console.log('Expired')
     },
     isEmpty: function(e) {
       if (e.target.value.length > 0) {
@@ -124,6 +148,11 @@ export default {
       .list__item {
         padding-left: 15px;
         margin-bottom: 15px;
+        transition: margin 0.3s;
+
+        &:hover {
+          margin-left: 10px;
+        }
       }
       .text {
         margin-bottom: 25px;
@@ -164,6 +193,10 @@ export default {
         display: flex;
         align-items: center;
         margin-top: 10px;
+
+        &.end {
+          align-items: flex-start;
+        }
       }
       &__input__wrapper {
         position: relative;
@@ -229,6 +262,15 @@ export default {
       .button {
         -webkit-appearance: none;
         margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .recaptcha-field {
+        margin-left: auto;
+        
+        .grecaptcha-badge {
+          position: static !important;
+        }
       }
     }
 
@@ -237,6 +279,7 @@ export default {
 
       &__form {
         margin-top: 35px;
+        min-height: 300px;
       }
 
       .form, 
