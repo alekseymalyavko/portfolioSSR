@@ -41,7 +41,7 @@ const sendMail = (data, res) => {
     to: 'aleksmalyavko@gmail.com',
     subject: 'New Message | Portfolio Site',
     text: `From: ${data.name}, message: ${data.msg}`,
-    html: `<h3>Contact Form</h3> <p>Name: ${data.name}</p> <p>Message: ${data.msg}</p> `,
+    html: `<h3>Contact Form</h3> <p>Email: ${data.email}</p> <p>Name: ${data.name}</p> <p>Message: ${data.msg}</p> `,
   }, (err, info) => {
     if (err) {
       console.log(err)

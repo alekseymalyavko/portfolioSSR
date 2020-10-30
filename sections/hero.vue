@@ -51,7 +51,7 @@ export default {
   methods: {
     onWaypoint ({ going, direction }) {
       if (going === this.$waypointMap.GOING_IN) {
-        this.isActive = true;
+        setTimeout(() => this.isActive = true, 700)
       }
     },
     setCreativeBg() {
