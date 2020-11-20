@@ -38,15 +38,15 @@ export default {
       let media1450 = window.matchMedia('screen and (min-width: 1450px)');
 
       if (media745px.matches) {
-        this.numStars = 900;
+        this.numStars = 800;
         this.starSize = 0.85;
         this.focalLength = this.canvas.width * 2;
       } else if (media1450.matches) {
-        this.numStars = 2000;
+        this.numStars = 1800;
         this.starSize = 1.25;
-        this.focalLength = this.canvas.width * 0.6;
+        this.focalLength = this.canvas.width * 0.75;
       } else {
-        this.numStars = 1500;
+        this.numStars = 1300;
         this.starSize = 1;
       }
     },
@@ -78,7 +78,7 @@ export default {
       if(this.canvas.width != window.innerWidth) {
         this.initializeStars();
       }
-      this.bg.fillStyle = 'rgba(0,10,20,1)';
+      this.bg.fillStyle = 'rgba(0,10,20,0.3)';
       
       if(!isBgCreative) {
         this.bg.fillRect(0,0, this.canvas.width, this.canvas.height);

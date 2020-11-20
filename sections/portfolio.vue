@@ -54,10 +54,11 @@ export default {
       align-items: center;
       padding: 30px;
       transition: 0.35s ease-out;
+      background: var(--light-blue);
 
       &:hover {
         top: -8px;
-        background: var(--light-active)
+        background: var(--light-active);
       }
     }
     

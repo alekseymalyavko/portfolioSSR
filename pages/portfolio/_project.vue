@@ -52,6 +52,15 @@
             <img :src="currentProject.logo" alt="project logo"/>
           </div>
         </div>
+        <div class="project__works" data-animate="animated fadeInUp delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+          <h3 class="contacts__info__heading heading">Other works</h3>
+          <div class="project__works__wrapper">
+            <div class="project__work" v-for="(project, index) in otherProjects" :key="index">
+              <nuxt-link :title="project.descr" :to="`/portfolio/${project.title}`"></nuxt-link>
+              <span>{{project.title}}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -104,9 +113,12 @@ export default {
     }
   },
   async asyncData ({store, route}) {
-    const currentProject = store.getters.getProjects.filter((item)=> item.title == route.params.project);
-    
+    const projects = store.getters.getProjects;
+    const currentProject = projects.filter((item)=> item.title == route.params.project);
+    const otherProjects = projects.filter((item)=> item.title != route.params.project);
+console.log(otherProjects)
     return {
+      otherProjects: otherProjects,
       currentProject: currentProject[0]
     }
   }
@@ -215,9 +227,58 @@ export default {
     .row {
       margin: 0;
     }
+
+    &__works {
+      margin-top: 30px;
+
+      &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    &__work {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      padding: 5px;
+      border: 1px solid var(--active);
+      margin-right: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.2s;
+      top: 0;
+      background: var(--light-blue);
+
+      &:hover {
+        top: -5px;
+        background: var(--light-active);
+      }
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      span {
+        max-width: 70px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+        transform: rotate(45deg);
+      }
+    }
+
     &__info {
       margin-top: 40px;
-
+      
       &__item {
         padding: 15px 0;
         
