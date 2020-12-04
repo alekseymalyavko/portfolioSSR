@@ -116,7 +116,7 @@ export default {
     const projects = store.getters.getProjects;
     const currentProject = projects.filter((item)=> item.title == route.params.project);
     const otherProjects = projects.filter((item)=> item.title != route.params.project);
-console.log(otherProjects)
+
     return {
       otherProjects: otherProjects,
       currentProject: currentProject[0]

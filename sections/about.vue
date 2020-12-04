@@ -6,7 +6,7 @@
     </div>
     
     <div class="row">
-      <div class="col-6 about__photo__wrapper" data-animate="animated fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+      <div class="col-6 about__photo__wrapper" ref="photoWrapper" data-animate="animated fadeInLeft delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
         <div class="about__photo">
           <div class="about__photo__square first" ref="firstSquare"></div>
           <div class="about__photo__square second" ref="secondSquare"></div>
@@ -56,18 +56,23 @@ export default {
   },
   methods: {
     parralaxEl: function(e) {
-      debounceEvent(this.parallax(e, this.$refs.firstSquare, 1), 50);
-      debounceEvent(this.parallax(e, this.$refs.secondSquare, 1.5), 50);
-      debounceEvent(this.parallax(e, this.$refs.picture, 0.35), 50);
+      debounceEvent(this.parallax(e, this.$refs.firstSquare, 1), 100);
+      debounceEvent(this.parallax(e, this.$refs.secondSquare, 1.5), 100);
+      debounceEvent(this.parallax(e, this.$refs.picture, 0.35), 150);
     },
     parallax: function (e, target, layer) {
+      const defaultX = 50;
       let layer_coeff = 16 / layer;
       let k1 = -2.5
       let k2 = 2
       let x =  Math.round(target.offsetWidth / k2 - (e.pageX - this.$el.offsetWidth / k1) / layer_coeff);
       let y = Math.round(target.offsetHeight / k2 - (e.pageY - this.$el.offsetHeight / k1) / layer_coeff);
-      target.style.top = y +'px';
-      target.style.left = x +'px';
+
+      let cond = this.$refs.photoWrapper.getBoundingClientRect().right - x > target.getBoundingClientRect().right;
+      if (cond) {
+        target.style.top = y +'px';
+        target.style.left = x +'px';
+      }
     },
     onWaypoint({el, going}) {
       if (going === this.$waypointMap.GOING_IN) {
