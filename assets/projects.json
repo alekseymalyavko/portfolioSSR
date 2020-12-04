@@ -82,10 +82,10 @@
   },
   {
     "type": "site",
-    "title": "bumgame",
+    "title": "bumpgame",
     "descr": "Responsive and cross-browser site with unique design for entertainment business",
     "fullDescr": "Website was developed for the entertainment buisness, where customers have ability to leave applications and comments. Developed unique design with high perfomance and also made SEO optimization in Google and Yandex search systems, where the website ranks is high(1-5 place).",
-    "link": "bumgame.by",
+    "link": "bumpgame.by",
     "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery",
     "images": [
       "/images/portfolio/bumpgame.jpg"
