@@ -172,18 +172,18 @@
       {
         "type": "app",
         "title": "nom",
-        "descr": "Web-application for food delivery from different vendors",
+        "descr": "Web-application for food delivery to customers from different restaraunt vendors",
         "stack": "VueJS / Vuex / SCSS / YMAPS API",
         "btn": "More",
         "link": "/nom"
       },
       {
-        "type": "site",
-        "title": "yalash-craft",
-        "descr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU)",
-        "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery",
+        "type": "sites",
+        "title": "other",
+        "descr": "Responsive, cross-browser and fast sites with unique design for business",
+        "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery / Bootstrap",
         "btn": "More",
-        "link": "/yalash-craft"
+        "link": "/other"
       }
     ]
   },

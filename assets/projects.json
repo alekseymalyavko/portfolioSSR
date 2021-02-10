@@ -90,5 +90,22 @@
     "images": [
       "/images/portfolio/bumpgame.jpg"
     ]
+  },
+  {
+    "type": "sites",
+    "title": "other",
+    "descr": "Responsive, cross-browser and fast sites with unique design for various type of business",
+    "fullDescr": "Other projects created with core web technologies. Also for some of them was made SEO and speed optimization. Minimalistic and clear design with animations.",
+    "link": "kinghostels.ca",
+    "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery / Bootstrap",
+    "images": [
+      "/images/portfolio/kinghostels.jpg",
+      "/images/portfolio/dieta.jpg",
+      "/images/portfolio/dveri.jpg",
+      "/images/portfolio/bus-1.jpg",
+      "/images/portfolio/bus-2.jpg",
+      "/images/portfolio/phones.jpg",
+      "/images/portfolio/manipulator.jpg"
+    ]
   }
 ]

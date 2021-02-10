@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="project__works" data-animate="animated fadeInUp delay-3" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
-          <h3 class="contacts__info__heading heading">Other works</h3>
+          <h3 class="contacts__info__heading heading">Other projects</h3>
           <div class="project__works__wrapper">
             <div class="project__work" v-for="(project, index) in otherProjects" :key="index">
               <nuxt-link :title="project.descr" :to="`/portfolio/${project.title}`"></nuxt-link>
@@ -219,6 +219,8 @@ export default {
   .project {
     width: 100%;
     padding-top: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
 
     .title {
       margin-bottom: 0;
