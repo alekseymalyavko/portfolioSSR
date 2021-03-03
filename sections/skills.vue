@@ -17,10 +17,26 @@
           </div>
         </nuxt-link>
       </div>
-      <div class="col-6" @mouseenter="handleAnimation(false)" @mouseleave="handleAnimation(true)"  data-animate="animated fadeInRight delay-6" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
-        <div class="cube__wrapper" @mousedown="e => startEvent(e)" @mousemove="e => rotate(e)" @mouseup="e => finishEvent(e)">
+      <div class="col-6" 
+        v-touch:start="e => handleAnimation(false)"
+        @mouseenter="handleAnimation(false)" 
+        @mouseleave="handleAnimation(true)"  
+        data-animate="animated fadeInRight delay-6" 
+        v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.45, 0.55] } }">
+        <div class="cube__wrapper" 
+          v-touch:start="e => startEvent(e)"
+          v-touch:moving="e => rotate(e)"
+          v-touch:end="e => finishEvent(e)"
+          :class="{'touch-device': isTouch}"
+          @mousedown="e => startEvent(e)" 
+          @mousemove="e => rotate(e)" 
+          @mouseup="e => finishEvent(e)">
           <div class="cube-container">
-            <div class="cube" ref="cube" :style="{'transform': `${transform}`}">
+            <div class="cube" 
+                 ref="cube"
+                 @transitionend="setTransition"
+                 :class="{'active-cube': isActive}" 
+                 :style="{'transform': `${transform}`}">
 
               <div class="side" v-for="(skill, index) in text.skills" :key="index">
                 <ul class="skills-list">
@@ -45,6 +61,8 @@ export default {
   props: ['text'],
   data() {
     return {
+      isActive: false,
+      isTouch: false,
       cube: null,
       drag: false,
       x0: null,
@@ -57,8 +75,12 @@ export default {
   },
   methods: {
     getEvent: function(event) {
-      // return event.touches ? event.touches[0] : event;
-      return event
+      if (event.touches) {
+        this.isTouch = true
+        return event.touches[0]
+      } else {
+        return event
+      }
     },
     startEvent: function(event) {
       let e = this.getEvent(event);
@@ -72,11 +94,19 @@ export default {
         this.x0 = this.y0 = null;
       }
     },
+    setTransition: function (event) {
+      if (event.currentTarget == event.srcElement) {
+        this.isActive = !this.isActive;
+      }
+    },
     handleAnimation: function(isOut) {
+      const curerntTransf = getComputedStyle(this.cube).transform;
       if(isOut) {
-        this.cube.style.animation = 'spin 20s infinite linear'
+        this.cube.style.transform = '';
+        this.cube.style.transition = '';
       } else {
-        this.cube.style.animation = 'none';
+        this.cube.style.transition = 'none'
+        this.cube.style.transform = curerntTransf;
       }
     },
     rotate: function(event) {
@@ -96,6 +126,7 @@ export default {
     },
     onWaypoint({el, going}) {
       if (going === this.$waypointMap.GOING_IN) {
+        this.isActive = true;
         let naming = el.getAttribute('data-animate').split(' ');
         el.classList.add(...naming)
       }
@@ -105,103 +136,116 @@ export default {
 </script>
 
 <style lang="scss">
-  .skills {
-    .row {
-      align-items: center;
+.skills {
+  .row {
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cube {
+    // animation: spin 20s infinite linear;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(28deg);
+    user-select: none;
+
+    transition: transform 20s linear;
+    &.active-cube {
+      transform: rotateX(380deg) rotateY(380deg);
     }
 
-    &__content {
+
+    &__wrapper {
+      padding: 80px 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+      cursor: grab;
+
+      &.touch-device {
+        touch-action: pan-x;
+      }
     }
 
-    
+    &-container {
+      --cube-size: 260px;
+      height: var(--cube-size);
+      width: var(--cube-size);
+      position: relative;
+      perspective: 600px;
+      perspective-origin: 50% 50%;
+      transition: .3s all ease;
+    }
 
-    .cube {
-      animation: spin 20s infinite linear;
+    .side {
+      --side-size: 130px;
       height: 100%;
       width: 100%;
       position: absolute;
-      transform-style: preserve-3d;
-      transform: rotateX(-20deg) rotateY(28deg);
-      user-select: none;
-
-      &.paused {
-        animation-play-state:paused;
-        
-        .side {
-          backface-visibility: hidden;
-        }
+      text-align: center;
+      border: 1px solid var(--active);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--light-blue);
+      transition: 0.35s;
+      
+      &:nth-child(1) {
+        transform: translateZ(var(--side-size));
       }
+      &:nth-child(2) {
+        transform: rotateY(180deg) rotateX(0deg) translateZ(var(--side-size));
+      }
+      &:nth-child(3) {
+        transform: rotateY(90deg) translateZ(var(--side-size));
+      }
+      &:nth-child(4) {
+        transform: rotateY(-90deg) translateZ(var(--side-size));
+      }
+      &:nth-child(5) {
+        transform: rotateX(90deg) translateZ(var(--side-size));
+      }
+      &:nth-child(6) {
+        transform: rotateX(-90deg) rotateZ(-180deg) translateZ(var(--side-size));
+      }
+    }
+    .skills-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin: 10px 0;
+      }
+    }
 
+    @keyframes spin {
+      from {
+        transform: rotateX(0) rotateY(0);
+      }
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+    @media screen and (max-width: 745px) {
       &__wrapper {
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: grab;
+        padding-top: 130px;
       }
-
+    }
+    @media screen and (max-width: 420px) {
       &-container {
-        height: 250px;
-        width: 250px;
-        position: relative;
-        perspective: 600px;
-        perspective-origin: 50% 50%;
-        transition: .3s all ease;
+        --cube-size: 230px;
       }
-
       .side {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        text-align: center;
-        border: 1px solid var(--active);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: var(--light-blue);
-        transition: 0.35s;
-        
-        &:nth-child(1) {
-          transform: translateZ(125px);
-        }
-        &:nth-child(2) {
-          transform: rotateY(180deg) rotateX(0deg) translateZ(125px);
-        }
-        &:nth-child(3) {
-          transform: rotateY(90deg) translateZ(125px);
-        }
-        &:nth-child(4) {
-          transform: rotateY(-90deg) translateZ(125px);
-        }
-        &:nth-child(5) {
-          transform: rotateX(90deg) translateZ(125px);
-        }
-        &:nth-child(6) {
-          transform: rotateX(-90deg) rotateZ(-180deg) translateZ(125px);
-        }
-      }
-      .skills-list {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        
-        li {
-          margin: 10px 0;
-        }
-      }
-
-      @keyframes spin {
-        from {
-          transform: rotateX(0) rotateY(0);
-        }
-        to {
-          transform: rotateX(360deg) rotateY(360deg);
-        }
+        --side-size: 115px;
       }
     }
   }
-
+}
 </style>
-

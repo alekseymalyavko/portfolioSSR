@@ -77,6 +77,8 @@ export default {
     .main {
       padding-top: 60px;
       flex: 1;
+      min-width: 320px;
+      width: 100%;
     }
   }
 </style>

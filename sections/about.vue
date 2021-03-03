@@ -184,9 +184,10 @@ export default {
     }
     @media screen and (max-width: 430px) {
       &__photo {
-        width: 350px;
-        height: 350px;
+        width: 330px;
+        height: 330px;
         min-height: unset;
+
       }
     }
     @media screen and (max-width: 360px) {
