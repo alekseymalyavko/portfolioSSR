@@ -109,22 +109,6 @@ module.exports = {
   ],
   router: {
     scrollBehavior: async (to, from, savedPosition) => {
-      function scrollTo(offset, callback) {
-        const fixedOffset = offset.toFixed(),
-        onScroll = () => {
-          console.log(1, (window.innerHeight + window.scrollY), document.body.scrollHeight, (window.innerHeight + window.scrollY) >= document.body.scrollHeight)
-          if (window.pageYOffset.toFixed() === fixedOffset || (window.innerHeight + window.scrollY) + 15 >= document.body.scrollHeight) {
-            window.removeEventListener('scroll', onScroll)
-            callback()
-          }
-        }
-        window.addEventListener('scroll', onScroll)
-        onScroll()
-        window.scrollTo({
-          top: offset,
-          behavior: 'smooth'
-        })
-      }
       if (savedPosition) {
         return savedPosition
       }
@@ -140,11 +124,8 @@ module.exports = {
       if (to.hash) {
         let el = await findEl(to.hash)
         const headerHeight = 56;
-        const changeHash = () => {
-          window.location.hash = ''
-          history.replaceState(null, null, ' ')
-        };
-        return scrollTo(el.offsetTop - headerHeight, changeHash)
+
+        return window.scrollTo({top: el.offsetTop - headerHeight, behavior: 'smooth'})
       }
       return { x: 0, y: 0 }
     }
