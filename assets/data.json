@@ -125,9 +125,9 @@
     ],
     "skills": [
       ["HTML", "CSS", "JS", "SCSS"],
-      ["ReactJs", "VueJs", "Web-components"],
-      ["jQuery", "LoDash", "Bootstrap", "Materialize", "ChartJs"],
-      ["NodeJs", "Mongoose", "NuxtJs", "WebPack"],
+      ["ReactJS", "VueJS", "Web-components"],
+      ["jQuery", "LoDash", "Bootstrap", "Materialize", "ChartJS"],
+      ["NodeJS", "Mongoose", "NuxtJS", "WebPack"],
       ["WordPress", "OpenCart", "AEM"],
       ["SEO", "GoogleMap API", "VK API", "YMAPS API"]
     ],
@@ -146,12 +146,12 @@
         "link": "/metrica"
       },
       {
-        "type": "app",
-        "title": "rest-app",
-        "descr": "SPA application for managing orders from customers in restaurant",
-        "stack": "HTML / CSS / VueJs / Vuex / MomentJs",
+        "type": "site",
+        "title": "altcheck",
+        "descr": "Responsive site with table for displaying cryptocurrency data",
+        "stack": "HTML / SCSS / ReactJS",
         "btn": "More",
-        "link": "/rest-app"
+        "link": "/altcheck"
       },
       {
         "type": "site",
@@ -165,7 +165,7 @@
         "type": "app",
         "title": "rex-stat",
         "descr": "Web-application for analyzing data from thematic communities from social network (DataVisualization)",
-        "stack": "NodeJs / MongoDB / ReactJs / JSX / ChartJs / VK API / CSS",
+        "stack": "NodeJS / MongoDB / ReactJS / JSX / ChartJS / VK API / CSS",
         "btn": "More",
         "link": "/rex-stat"
       },
@@ -181,7 +181,7 @@
         "type": "sites",
         "title": "other",
         "descr": "Responsive, cross-browser and fast sites with unique design for business",
-        "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery / Bootstrap",
+        "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery / Bootstrap / ReactJS / VueJS / PWA",
         "btn": "More",
         "link": "/other"
       }

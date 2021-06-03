@@ -1,11 +1,23 @@
-[
+[ 
+  {
+    "type": "site",
+    "title": "altcheck",
+    "descr": "Responsive site with table for displaying cryptocurrency data",
+    "fullDescr": "Responsive site with dynamic table for displaying cryptocurrency data with various of features (sort/filter/search).",
+    "link": ["altcheck.org"],
+    "stack": "HTML / SCSS / React",
+    "images": [
+      "/images/portfolio/altcheck-1.png",
+      "/images/portfolio/altcheck-2.png"
+    ]
+  },
   {
     "type": "site",
     "title": "metrica",
     "descr": "Responsive and cross-browser site with unique design for creative agency (RU)",
     "fullDescr": "Responsive and cross-browser site with unique design for creative agency (RU). Website was made for a company which creates brands, marketing strategies and different creative ideas. A unique design was developed, simple and intuitive to use, also optimized in google speed, where it scored high marks (92). Designed from the scratch using the technical stack above.",
     "logo": "/images/portfolio/metrica-0.png",
-    "link": "metrica.by",
+    "link": ["metrica.by"],
     "stack": "UX / UI / HTML / CSS / JS / SEO",
     "images": [
       "/images/portfolio/metrica-1.png",
@@ -19,7 +31,7 @@
     "title": "rest-app",
     "descr": "SPA application for managing orders from customers in restaurant",
     "fullDescr": "SPA for managing orders from customers in restaurant. SPA was created for a restaurant business, some restaurants was able to connect to this system, where they had the ability to manage delivery, accept and give orders to couriers who delivered the product to the buyer. This application was developed using VueJS FE-part and NodeJS for BE-part.",
-    "stack": "HTML / CSS / VueJs / Vuex / MomentJs",
+    "stack": "HTML / CSS / VueJS / Vuex / MomentJS",
     "images": [
       "/images/portfolio/rest-app-1.png",
       "/images/portfolio/rest-app-2.png",
@@ -31,7 +43,7 @@
     "title": "ballonbar",
     "descr": "Responsive site as online-shop, built on WordPress (CA)",
     "fullDescr": "Responsive site as online-shop, built on WordPress (CA). Website was developed for the business of balloons and various installations for different events. While developing, was decided to make eshop, where customer could order products, make payment and get delivery. The website was made on CMS Wordpress using different plugins, including Woocommerce.",
-    "link": "ballonbar.ca",
+    "link": ["ballonbar.ca"],
     "stack": "WordPress / CSS / JS / jQuery / Woocomerce",
     "images": [
       "/images/portfolio/ballonbar-1.png",
@@ -44,9 +56,9 @@
     "type": "app",
     "title": "rex-stat",
     "descr": "Web-application for analyzing data from thematic communities from social network (DataVisualization)",
-    "fullDescr": "Web-application for analyzing data from thematic communities from social network. Web-app was created within the framework of my own project on master's degree project, the purpose of the app is to collect and analyze statistics from various groups and communities in the social network (Vkontakte), qualitative and quantitative indicators were used to determine the coverage, number, dynamics of users, as well as how they perceive thematic information. Further, the data obtained were used to model the behavior of group members (SIRS model from medicine) in order to predict their dynamics and coverage of information inside this group. App was created using ReactJS, ChartJS for FE-part and NodeJs, VKAPI, MongoDb for BE-part.",
-    "link": "rex-stat-frontend.herokuapp.com",
-    "stack": "NodeJs / MongoDB / ReactJs / JSX / ChartJs / VK API / CSS",
+    "fullDescr": "Web-application for analyzing data from thematic communities from social network. Web-app was created within the framework of my own project on master's degree project, the purpose of the app is to collect and analyze statistics from various groups and communities in the social network (Vkontakte), qualitative and quantitative indicators were used to determine the coverage, number, dynamics of users, as well as how they perceive thematic information. Further, the data obtained were used to model the behavior of group members (SIRS model from medicine) in order to predict their dynamics and coverage of information inside this group. App was created using ReactJS, ChartJS for FE-part and NodeJS, VKAPI, MongoDb for BE-part.",
+    "link": ["rex-stat-frontend.herokuapp.com"],
+    "stack": "NodeJS / MongoDB / ReactJS / JSX / ChartJS / VK API / CSS",
     "images": [
       "/images/portfolio/rex-stat-1.png",
       "/images/portfolio/rex-stat-2.png",
@@ -59,7 +71,7 @@
     "title": "nom",
     "descr": "Web-application for food delivery from different vendors",
     "fullDescr": "Web-application, food delivery from different vendors. Web-app for the food delivery to customers, who had the opportunity to choose products from various cafes and restaraunts, choose their location using map and adress field and able to make payment. FE-part developed using VueJS and different libraries, for example YmapsAPI for interactions with location. BE-part was already developed by another developers.",
-    "link": "nom.by",
+    "link": ["nom.by"],
     "stack": "VueJS / Vuex / SCSS / YMAPS API",
     "images": [
       "/images/portfolio/nom-1.png",
@@ -73,7 +85,7 @@
     "title": "yalash-craft",
     "descr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU)",
     "fullDescr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU). Website was developed for the craft buisness, customers have ability to leave applications which directly come to artisan. Developed unique design with high perfomance and also made SEO optimization in Google and Yandex search systems.",
-    "link": "yalash-craft.by",
+    "link": ["yalash-craft.by"],
     "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery",
     "images": [
       "/images/portfolio/yalash-craft-1.png",
@@ -85,7 +97,7 @@
     "title": "bumpgame",
     "descr": "Responsive and cross-browser site with unique design for entertainment business",
     "fullDescr": "Website was developed for the entertainment buisness, where customers have ability to leave applications and comments. Developed unique design with high perfomance and also made SEO optimization in Google and Yandex search systems, where the website ranks is high(1-5 place).",
-    "link": "bumpgame.by",
+    "link": ["bumpgame.by"],
     "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery",
     "images": [
       "/images/portfolio/bumpgame.jpg"
@@ -94,11 +106,13 @@
   {
     "type": "sites",
     "title": "other",
-    "descr": "Responsive, cross-browser and fast sites with unique design for various type of business",
+    "descr": "Responsive, cross-browser and fast sites and apps with unique design for various type of business",
     "fullDescr": "Other projects created with core web technologies. Also for some of them was made SEO and speed optimization. Minimalistic and clear design with animations.",
-    "link": "kinghostels.ca",
-    "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery / Bootstrap",
+    "link": ["zakazal.by", "mastory.io", "kinghostels.ca"],
+    "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery / Bootstrap / ReactJS / VueJS / PWA",
     "images": [
+      "/images/portfolio/zakazal-1.png",
+      "/images/portfolio/mastory-1.png",
       "/images/portfolio/kinghostels.jpg",
       "/images/portfolio/dieta.jpg",
       "/images/portfolio/dveri.jpg",

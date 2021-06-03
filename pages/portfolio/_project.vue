@@ -32,11 +32,12 @@
             <span class="text bold">Stack:</span>
             <span class="caption">{{currentProject.stack}}</span>
           </div>
-          <div class="project__info__item resourses col-2" v-if="currentProject.link">
-            <div v-if="currentProject.link">
-              <a :href="`http://${currentProject.link}`" class="link" target="_blank">            
+          <div class="project__info__item resourses col-2" v-if="currentProject.link && currentProject.link.length">
+            <div v-for="(link, index) in currentProject.link" :key="index" >              
+              <a
+                :href="`http://${link}`" class="link" target="_blank">            
                 <LinkIcon/>
-                <span class="caption">{{currentProject.link}}</span>
+                <span class="caption">{{link}}</span>
               </a>
             </div>
           </div>
@@ -285,9 +286,13 @@ export default {
         padding: 15px 0;
         
         &.resourses {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          & > div {
+            margin-bottom: 8px;
+            a {
+              display: flex;
+              align-items: center;
+            }
+          }
         }
         svg {
           width: 25px;
