@@ -28,10 +28,10 @@ module.exports = {
       { name: 'yandex-verification', content: '40a5011ae7f8dc31'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://www.aleksmalyavko.site/favicon.ico' },
-      { rel: 'icon', type: 'image/png', href: 'https://www.aleksmalyavko.site/images/icon.png' },
-      { rel: 'apple-touch-icon', href: 'https://www.aleksmalyavko.site/images/icon.png' },
-      { rel: 'shortcut icon', type: 'image/png', href: 'https://www.aleksmalyavko.site/images/icon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: 'http://www.aleksmalyavko.site/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: 'http://www.aleksmalyavko.site/images/icon.png' },
+      { rel: 'apple-touch-icon', href: 'http://www.aleksmalyavko.site/images/icon.png' },
+      { rel: 'shortcut icon', type: 'image/png', href: 'http://www.aleksmalyavko.site/images/icon.png' }
     ],
     noscript: [{ innerHTML: 'This website requires JavaScript.' }],
     __dangerouslyDisableSanitizers: ['script'],
@@ -48,14 +48,14 @@ module.exports = {
               'addressLocality': 'Minsk'
             },
             'name': 'Aleks Malyako',
-            'image': 'https://www.aleksmalyavko.site/images/me1.png',
+            'image': 'http://www.aleksmalyavko.site/images/me1.png',
             'email': 'mailto:aleksmalyavko@gmail.com',
-            'url': 'https://www.aleksmalyavko.site',
+            'url': 'http://www.aleksmalyavko.site',
             'jobTitle': 'Software Engineer',
             'sameAs': [
-              'https://www.aleksmalyavko.site',
-              'https://github.com/alekseymalyavko',
-              'https://linkedin.com/in/aleks-malyavko-8b745b1ab'
+              'http://www.aleksmalyavko.site',
+              'http://github.com/alekseymalyavko',
+              'http://linkedin.com/in/aleks-malyavko-8b745b1ab'
             ]
           }
         )
@@ -68,9 +68,9 @@ module.exports = {
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
     author: 'Aleks Malyako',
     twitterCard: 'summary',
-    ogHost: 'https://www.aleksmalyavko.site',
+    ogHost: 'http://www.aleksmalyavko.site',
     ogImage: {
-      path: 'https://www.aleksmalyavko.site/images/icon-192.png'
+      path: 'http://www.aleksmalyavko.site/images/icon-192.png'
     }
   },
   rootDir: __dirname,
@@ -79,17 +79,17 @@ module.exports = {
     short_name: 'Aleks Malyako',
     icons: [
       {
-        'src': 'https://www.aleksmalyavko.site/images/icon-512.png',
+        'src': 'http://www.aleksmalyavko.site/images/icon-512.png',
         'sizes': '512x512',
         'type': 'image/png'
       },
       {
-        'src': 'https://www.aleksmalyavko.site/images/icon-192.png',
+        'src': 'http://www.aleksmalyavko.site/images/icon-192.png',
         'sizes': '192x192',
         'type': 'image/png'
       },
       {
-        'src': 'https://www.aleksmalyavko.site/images/icon-64.png',
+        'src': 'http://www.aleksmalyavko.site/images/icon-64.png',
         'sizes': '64x64',
         'type': 'image/png'
       }
