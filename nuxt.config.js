@@ -140,7 +140,7 @@ module.exports = {
     [
       '@naumstory/nuxtjs-yandex-metrika',
       {
-        id: '64463779',
+        id: '89695337',
         webvisor: true,
         clickmap:true,
         trackLinks:true,
