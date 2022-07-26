@@ -3,4 +3,4 @@ Disallow:
 
 User-agent: YandexBot
 Disallow: 
-Sitemap: https://www.aleksmalyavko.site/sitemap.xml
+Sitemap: https://aleksmalyavko.com/sitemap.xml
