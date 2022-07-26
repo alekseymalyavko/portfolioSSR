@@ -4,6 +4,9 @@
   "description": "portfolio page, created with ssr",
   "author": "amaliauka <aleksmalyavko@gmail.com>",
   "private": true,
+  "engines": {
+    "node": "10.15.0"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
