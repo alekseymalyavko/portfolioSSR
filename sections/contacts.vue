@@ -144,7 +144,6 @@ export default {
 <style lang="scss">
   .contacts {
     &__info {
-
       .list__item {
         padding-left: 15px;
         margin-bottom: 15px;
