@@ -70,7 +70,7 @@ module.exports = {
     twitterCard: 'summary',
     ogHost: 'https://aleksmalyavko.com',
     ogImage: {
-      path: '/images/icon-192.png'
+      path: '/images/icon-512.png'
     }
   },
   rootDir: __dirname,
@@ -100,7 +100,6 @@ module.exports = {
     theme_color: '#0abc5c'
   },
   serverMiddleware: [
-    // 'redirect-ssl',
     '~/api/index'
   ],
   loading: { color: 'var(--active)', height: '3px', throttle: 0 },
@@ -161,7 +160,7 @@ module.exports = {
     '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', 
       {
-        id: 'UA-167804682-2'
+        id: 'G-0KLWF2BSH5'
       }
     ]
   ],
