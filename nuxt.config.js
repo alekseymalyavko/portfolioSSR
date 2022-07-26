@@ -150,7 +150,7 @@ module.exports = {
     [
       '@nuxtjs/recaptcha', {
         hideBadge: false,
-        siteKey: process.env.RECAPTCHA || '6LeCMd0ZAAAAAK-Z599-UTWZj5_Vpbrj5F7gYhw_',
+        siteKey: process.env.RECAPTCHA || '6LcoqCAhAAAAAJUwm9CZyv-GKoQMp_6-TZAAB_rD',
         version: 2,
         size: 'invisible'
       }
