@@ -58,7 +58,7 @@ export default {
 
       &:hover {
         top: -8px;
-        background: var(--light-active);
+        background: var(--dark-blue);
       }
     }
     

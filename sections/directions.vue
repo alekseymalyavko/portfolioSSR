@@ -6,7 +6,7 @@
     <div class="row">  
 
       <div class="col-4" v-for="(direction, index) in text.directions" :key="index">
-        <Count  :progress="direction.procent"  :title="direction.title" :descr="direction.descr" :data-animate="`animated fadeInUp delay-${3*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }"/>
+        <Count  :progress="direction.percent"  :title="direction.title" :descr="direction.descr" :data-animate="`animated fadeInUp delay-${3*index}`" v-waypoint="{ active: true, callback: onWaypoint, options: { threshold: [0.25, 0.75] } }"/>
       </div>
 
     </div>

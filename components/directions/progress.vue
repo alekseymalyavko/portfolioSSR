@@ -4,9 +4,6 @@
       <div class="caption">
         {{title}}
       </div>
-      <div class="text">
-        {{progressIndicator}}%
-      </div>
     </div>
     <div class="progress__indicator">
       <span :style="{width: progressIndicator + '%'}"></span>

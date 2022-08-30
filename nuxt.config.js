@@ -18,7 +18,7 @@ module.exports = {
     htmlAttrs: {
       lang: 'en'
     },
-    title: 'Aleks Malyako | Software Engineer',
+    title: 'Aleks Malyavko | Software Engineer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -47,7 +47,7 @@ module.exports = {
               'addressCountry': 'BLR',
               'addressLocality': 'Minsk'
             },
-            'name': 'Aleks Malyako',
+            'name': 'Aleks Malyavko',
             'image': 'https://aleksmalyavko.com/images/me1.png',
             'email': 'mailto:aleksmalyavko@gmail.com',
             'url': 'https://aleksmalyavko.com',
@@ -63,10 +63,10 @@ module.exports = {
     ]
   },
   meta: {
-    name: 'Aleks Malyako | Software Engineer',
+    name: 'Aleks Malyavko | Software Engineer',
     description: 'Hire Professional Freelancer, JavaScript / Vue / React Developer. Building applications and websites, design UX/UI, creating animations and interactive experiences.',
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
-    author: 'Aleks Malyako',
+    author: 'Aleks Malyavko',
     twitterCard: 'summary',
     ogHost: 'https://aleksmalyavko.com',
     ogImage: {
@@ -75,8 +75,8 @@ module.exports = {
   },
   rootDir: __dirname,
   manifest: {
-    name: 'Aleks Malyako Site',
-    short_name: 'Aleks Malyako',
+    name: 'Aleks Malyavko Site',
+    short_name: 'Aleks Malyavko',
     icons: [
       {
         'src': 'https://aleksmalyavko.com/images/icon-512.png',

@@ -24,9 +24,10 @@
   },
   "hero": {
     "title": "Hi, <br/>I'm Aleks <br/> Software Engineer",
-    "skills": "HTML5 / CSS3 / JS / VueJS / ReactJS",
+    "skills": "HTML5 / CSS3 / JAVASCRIPT / VUE / REACT",
     "caption1": "and i",
     "creative": " love ",
+    "creativeTitle": "Click me :)",
     "caption2": "to create.",
     "btn": "look portfolio"
   },
@@ -35,10 +36,10 @@
     "sectionTitle": "about me",
     "title": "I'm Software Engineer",
     "descr": [
-      "I like all things that live on the internet, whether that be websites, applications, or anything in between, so i'm developing with passion any kind of web-applications or web-sites with minimalistic design and simplicity. My goal is to build products with high perfomanse and quality.",
+      "I like all things that live on the internet, whether that be websites, applications, or anything in between, so I'm developing with a passion any kind of web-applications or websites with minimalistic design and simplicity. My goal is to build products with high performance and quality.",
       "Well-organised and person, independent employee with high attention to details, problem solver and perfectionist. Fan of sport, any outdoor activities, also like reading literature about marketing & psychology.",
       "Graduated from university have a bachelor's degree in economic cybernetics as well as a master's degree in economic informatics, has sience work about spreading information in social networks (data analysis & forecast).",
-      "I have been developing for more than 3 years and open to new directions and opportunities."
+      "I have been developing for more than 5 years and open to new directions and opportunities."
     ],
     "image": {
       "text": "Aleks Malyavko"
@@ -71,17 +72,17 @@
     "directions": [
       {
         "title": "Web-development",
-        "procent": 83,
-        "descr": "Creating web-applications (spa, ssr), responsive and cross-browser sites, working with different APIs."
+        "percent": 95,
+        "descr": "Creating web-applications (SPA, SSR), responsive and cross-browser sites, working with different APIs."
       },
       {
         "title": "UX/UI design",
-        "procent": 67,
+        "percent": 70,
         "descr": "Design minimalist and simple sites with big variety of animation effects."
       },
       {
         "title": "Analytics",
-        "procent": 59,
+        "percent": 60,
         "descr": "Since I graduated from economic-cybernetics, I can analyze the data and draw conclusions based on them, build various models of processes."
       }
     ]
@@ -99,7 +100,7 @@
       {
         "icon": "development",
         "title": "Development",
-        "descr": "Development web applications and sites with modern technologies (ReactJS, VueJS)"
+        "descr": "Development web applications and sites with modern technologies (React, Vue)"
       },
       {
         "icon": "seo",
@@ -109,7 +110,7 @@
       {
         "icon": "support",
         "title": "Support",
-        "descr": "Support for existing projects bug fixing (WordPress, OpenCart, AEM)"
+        "descr": "Support for existing projects bug fixing (AEM, WordPress, OpenCart)"
       }
     ]
   },
@@ -119,16 +120,16 @@
     "title": "Work experience",
     "descr": [
       "The main side of my experience in web is front-end side (client side of the web).",
-      "HTML5, CSS3, JS, building small and medium web apps with VueJS or ReactJS, features, animations, working with APIs, creating and designing responsive web-sites. Also engaged in websites promotion as SEO (Google, Yandex). Have experience working with such CMS as Wordpress, OpenCart, AEM.",
-      "Have a large plenty of freelance projects with various stack including full-stack development (NodeJS, NuxtJS, Express, MongoDb). As well as I worked in start-up company that was engaged in the search and sale of tickets for any kind off transport. Now I'm working in a large outsourcing company.",
-      "All my skills and stack which I used while developing is placed on a cube."
+      "HTML5, CSS3, JS, building small and medium web apps with Vue or React, features, animations, working with APIs, creating and designing responsive websites. Also engaged in websites promotion as SEO (Google, Yandex). Have experience working with such CMS as Wordpress, OpenCart, AEM.",
+      "Have a large plenty of freelance projects with various stack including full-stack development (NodeJS, NuxtJS, Express, MongoDb). As well as I worked in start-up company that was engaged in the search and sale of tickets for any kind of transport. Now I'm working in a large outsourcing company.",
+      "All my skills and stack which I used while developing is placed on a cube which you able to move."
     ],
     "skills": [
-      ["HTML", "CSS", "JS", "SCSS"],
-      ["ReactJS", "VueJS", "Web-components"],
+      ["HTML", "CSS", "JavaScript"],
+      ["React", "Vue", "Web-components"],
       ["jQuery", "LoDash", "Bootstrap", "Materialize", "ChartJS"],
       ["NodeJS", "Mongoose", "NuxtJS", "WebPack"],
-      ["WordPress", "OpenCart", "AEM"],
+      ["AEM", "WordPress", "OpenCart"],
       ["SEO", "GoogleMap API", "VK API", "YMAPS API"]
     ],
     "btn": "Contact me"
@@ -149,7 +150,7 @@
         "type": "site",
         "title": "altcheck",
         "descr": "Responsive site with table for displaying cryptocurrency data",
-        "stack": "HTML / SCSS / ReactJS",
+        "stack": "HTML / SCSS / React",
         "btn": "More",
         "link": "/altcheck"
       },
@@ -165,7 +166,7 @@
         "type": "app",
         "title": "rex-stat",
         "descr": "Web-application for analyzing data from thematic communities from social network (DataVisualization)",
-        "stack": "NodeJS / MongoDB / ReactJS / JSX / ChartJS / VK API / CSS",
+        "stack": "NodeJS / MongoDB / React / JSX / ChartJS / VK API / CSS",
         "btn": "More",
         "link": "/rex-stat"
       },
@@ -173,7 +174,7 @@
         "type": "app",
         "title": "nom",
         "descr": "Web-application for food delivery to customers from different restaraunt vendors",
-        "stack": "VueJS / Vuex / SCSS / YMAPS API",
+        "stack": "Vue / Vuex / SCSS / YMAPS API",
         "btn": "More",
         "link": "/nom"
       },
@@ -181,7 +182,7 @@
         "type": "sites",
         "title": "other",
         "descr": "Responsive, cross-browser and fast sites with unique design for business",
-        "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery / Bootstrap / ReactJS / VueJS / PWA",
+        "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery / Bootstrap / React / Vue / PWA",
         "btn": "More",
         "link": "/other"
       }
@@ -191,9 +192,8 @@
     "sectionSubtitle": "get in touch",
     "sectionTitle": "contacts",
     "title": "just say hello!",
-    "descr": "I am interested in freelance opportunities. However, if you have other request or question, just fill the form, and I'll try my best to get back to you!",
+    "descr": "I am interested in freelance opportunities. However, if you have other request or question, just mail me, and I'll try my best to get back to you!",
     "contacts": {
-      "tel": "+37529 396 54 23",
       "mail": "aleksmalyavko@gmail.com",
       "location": "Minsk, Belarus"
     },

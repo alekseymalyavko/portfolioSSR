@@ -6,7 +6,7 @@
         <h5 class="hero__text light">{{text.skills}}</h5>
         <p class="caption">
           {{text.caption1}} 
-          <span class="creative bold" @click="setCreativeBg">{{text.creative}}</span> 
+          <span class="creative bold" :title="text.creativeTitle" @click="setCreativeBg">{{text.creative}}</span> 
           {{text.caption2}}
         </p>
         <nuxt-link :to="{ path: '/', hash:'#portfolio'}">

@@ -13,7 +13,7 @@
       <div class="generator__button">
         <div class="button" @click="e => this.generateColor()">random</div>
       </div>
-      <div class="generator__color" @click="e => this.toggleGenerator(e)">
+      <div class="generator__color" title="Change color :)" @click="e => this.toggleGenerator(e)">
         <PipetteIcon/>
       </div>
     </div>
@@ -176,7 +176,7 @@ export default {
       text-align: center;
       width: 115px;
       border: 1px solid var(--active);
-      background: var(--black);     
+      background: var(--dark-blue);     
       box-shadow: #000a1485 2px 2px 20px 10px;
       transition: border 0.35s;
     }
@@ -217,7 +217,7 @@ export default {
       height: 70px;
       padding: 10px;
       border: 1px solid var(--active);
-      background: var(--black);
+      background: var(--light-blue);
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
       border-right: none;
@@ -234,7 +234,7 @@ export default {
         fill: var(--active)
       }
       &:hover {
-        background: var(--light-blue);
+        background: var(--dark-blue);
       }
     }
     &__button {
