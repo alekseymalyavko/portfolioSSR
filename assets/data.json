@@ -36,10 +36,10 @@
     "sectionTitle": "about me",
     "title": "I'm Software Engineer",
     "descr": [
-      "I like all things that live on the internet, whether that be websites, applications, or anything in between, so I'm developing with a passion any kind of web-applications or websites with minimalistic design and simplicity. My goal is to build products with high performance and quality.",
-      "Well-organised and person, independent employee with high attention to details, problem solver and perfectionist. Fan of sport, any outdoor activities, also like reading literature about marketing & psychology.",
-      "Graduated from university have a bachelor's degree in economic cybernetics as well as a master's degree in economic informatics, has sience work about spreading information in social networks (data analysis & forecast).",
-      "I have been developing for more than 5 years and open to new directions and opportunities."
+      "I like all things that live on the internet, whether that be websites, applications, or anything in between, so I'm developing with a passion any kind of web applications or websites with minimalistic design and simplicity. My goal is to build products with high performance and quality.",
+      "Well-organized and person, independent employee with high attention to detail, problem solver, and perfectionist. Fan of sports and any outdoor activities, also like reading literature about marketing & psychology.",
+      "Graduated from university have a bachelor's degree in economic cybernetics as well as a master's degree in economic informatics, has science work about spreading information in social networks (data analysis & forecast).",
+      "I have been developing for more than 5 years and am open to new directions and opportunities."
     ],
     "image": {
       "text": "Aleks Malyavko"
@@ -73,17 +73,17 @@
       {
         "title": "Web-development",
         "percent": 95,
-        "descr": "Creating web-applications (SPA, SSR), responsive and cross-browser sites, working with different APIs."
+        "descr": "Creating web applications (SPA, SSR), responsive and cross-browser sites, and working with different APIs."
       },
       {
         "title": "UX/UI design",
         "percent": 70,
-        "descr": "Design minimalist and simple sites with big variety of animation effects."
+        "descr": "Design minimalist and simple sites with a big variety of animation effects."
       },
       {
         "title": "Analytics",
         "percent": 60,
-        "descr": "Since I graduated from economic-cybernetics, I can analyze the data and draw conclusions based on them, build various models of processes."
+        "descr": "Since I graduated from economic cybernetics, I can analyze the data and draw conclusions based on them, building various models of processes."
       }
     ]
   },
@@ -100,7 +100,7 @@
       {
         "icon": "development",
         "title": "Development",
-        "descr": "Development web applications and sites with modern technologies (React, Vue)"
+        "descr": "Develop web applications and sites with modern technologies (React, Vue)"
       },
       {
         "icon": "seo",
@@ -119,10 +119,10 @@
     "sectionTitle": "skills & experience",
     "title": "Work experience",
     "descr": [
-      "The main side of my experience in web is front-end side (client side of the web).",
-      "HTML5, CSS3, JS, building small and medium web apps with Vue or React, features, animations, working with APIs, creating and designing responsive websites. Also engaged in websites promotion as SEO (Google, Yandex). Have experience working with such CMS as Wordpress, OpenCart, AEM.",
-      "Have a large plenty of freelance projects with various stack including full-stack development (NodeJS, NuxtJS, Express, MongoDb). As well as I worked in start-up company that was engaged in the search and sale of tickets for any kind of transport. Now I'm working in a large outsourcing company.",
-      "All my skills and stack which I used while developing is placed on a cube which you able to move."
+      "The main side of my experience in the web is the front-end side (client side of the web).",
+      "HTML5, CSS3, JS, building small and medium web apps with Vue or React, features, animations, working with APIs, creating and designing responsive websites. Also engaged in website promotion as SEO (Google, Yandex). Have experience working with such CMS as WordPress, OpenCart and AEM.",
+      "Have large plenty of freelance projects with various stacks including full-stack development (NodeJS, NuxtJS, Express, MongoDB). As well as I worked in a start-up company that was engaged in the search and sale of tickets for any kind of transport. Now I'm working in a large outsourcing company.",
+      "All my skills and stack which I used while developing are placed on a cube that you are able to move."
     ],
     "skills": [
       ["HTML", "CSS", "JavaScript"],
@@ -141,7 +141,7 @@
       {
         "type": "site",
         "title": "metrica",
-        "descr": "Responsive and cross-browser site with unique design for creative agency (RU)",
+        "descr": "Responsive and cross-browser site with a unique design for the creative agency (RU)",
         "stack": "UX / UI / HTML / CSS / JS / SEO",
         "btn": "More",
         "link": "/metrica"
@@ -149,7 +149,7 @@
       {
         "type": "site",
         "title": "altcheck",
-        "descr": "Responsive site with table for displaying cryptocurrency data",
+        "descr": "Responsive site with a table for displaying cryptocurrency data",
         "stack": "HTML / SCSS / React",
         "btn": "More",
         "link": "/altcheck"
@@ -157,7 +157,7 @@
       {
         "type": "site",
         "title": "ballonbar",
-        "descr": "Responsive site as online-shop, built on WordPress (CA)",
+        "descr": "The responsive site as online shop, built on WordPress (CA)",
         "stack": "WordPress / CSS / JS / jQuery / Woocomerce",
         "btn": "More",
         "link": "/ballonbar"
@@ -165,7 +165,7 @@
       {
         "type": "app",
         "title": "rex-stat",
-        "descr": "Web-application for analyzing data from thematic communities from social network (DataVisualization)",
+        "descr": "Web application for analyzing data from thematic communities from the social networks (DataVisualization)",
         "stack": "NodeJS / MongoDB / React / JSX / ChartJS / VK API / CSS",
         "btn": "More",
         "link": "/rex-stat"
@@ -173,7 +173,7 @@
       {
         "type": "app",
         "title": "nom",
-        "descr": "Web-application for food delivery to customers from different restaraunt vendors",
+        "descr": "Web application for food delivery to customers from different restaurant vendors",
         "stack": "Vue / Vuex / SCSS / YMAPS API",
         "btn": "More",
         "link": "/nom"
@@ -181,7 +181,7 @@
       {
         "type": "sites",
         "title": "other",
-        "descr": "Responsive, cross-browser and fast sites with unique design for business",
+        "descr": "Responsive, cross-browser and fast sites with a unique design for business",
         "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery / Bootstrap / React / Vue / PWA",
         "btn": "More",
         "link": "/other"
@@ -192,7 +192,7 @@
     "sectionSubtitle": "get in touch",
     "sectionTitle": "contacts",
     "title": "just say hello!",
-    "descr": "I am interested in freelance opportunities. However, if you have other request or question, just mail me, and I'll try my best to get back to you!",
+    "descr": "I am interested in freelance opportunities. However, if you have other requests or questions, just mail me, and I'll try my best to get back to you!",
     "contacts": {
       "mail": "aleksmalyavko@gmail.com",
       "location": "Minsk, Belarus"
