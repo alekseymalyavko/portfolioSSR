@@ -70,7 +70,7 @@
     "type": "app",
     "title": "nom",
     "descr": "Web-application for food delivery from different vendors",
-    "fullDescr": "Web-application, food delivery from different vendors. Web-app for the food delivery to customers, who had the opportunity to choose products from various cafes and restaraunts, choose their location using map and adress field and able to make payment. FE-part developed using VueJS and different libraries, for example YmapsAPI for interactions with location. BE-part was already developed by another developers.",
+    "fullDescr": "Web application, food delivery from different vendors. Web app for food delivery to customers, who had the opportunity to choose products from various cafes and restaurants, choose their location using a map and address field, and able to make payment. FE-part developed using VueJS and different libraries, for example, YmapsAPI for interactions with the location. BE-part was already developed by another developer.",
     "link": ["nom.by"],
     "stack": "VueJS / Vuex / SCSS / YMAPS API",
     "images": [
@@ -84,7 +84,7 @@
     "type": "site",
     "title": "yalash-craft",
     "descr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU)",
-    "fullDescr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU). The website was developed for the craft business, customers have the ability to leave applications that directly come to artisan. Developed unique design with high performance and also made SEO optimization in Google and Yandex search systems.",
+    "fullDescr": "Responsive and cross-browser site with unique and minimalistic design for artisan (RU). The website was developed for the craft business, customers have the ability to leave applications that directly come to the artisan. Developed unique design with high performance and also made SEO optimization in Google and Yandex search systems.",
     "link": ["yalash-craft.by"],
     "stack": "UX / UI / HTML / CSS / JS / SEO / jQuery",
     "images": [
