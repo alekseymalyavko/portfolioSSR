@@ -55,7 +55,7 @@
       },
       { 
         "category" : "Location",
-        "value": "Minsk, Belarus"
+        "value": "Poland, Warsaw"
       }
     ],
     "btn": [
@@ -195,7 +195,7 @@
     "descr": "I am interested in freelance opportunities. However, if you have other requests or questions, just mail me, and I'll try my best to get back to you!",
     "contacts": {
       "mail": "aleksmalyavko@gmail.com",
-      "location": "Minsk, Belarus"
+      "location": "Poland, Warsaw"
     },
     "message": {
       "success": "Message was sent",

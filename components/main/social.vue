@@ -13,11 +13,6 @@
             <GhIcon/>
           </a>
         </li>
-        <li class="icon">
-          <a href="https://t.me/aleksmal" target="_blank" aria-label="Telegram" rel="nofollow noopener noreferrer">
-            <TgIcon/>
-          </a>
-        </li>
       </ul>
     </div>
   </div>

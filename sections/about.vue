@@ -12,7 +12,7 @@
           <div class="about__photo__square second" ref="secondSquare"></div>
           <div class="about__photo__image" ref="picture">
             <div class="about__photo__image__wrapper">
-              <img src="/images/me1.jpg" :alt="`${text.image.text}`" />
+              <img src="/images/me1.jpg" :alt="`${text.image.text}`" loading="lazy"/>
             </div>
             <p class="about__photo__name">{{text.image.text}}</p>
           </div>

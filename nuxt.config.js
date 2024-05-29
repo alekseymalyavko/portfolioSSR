@@ -23,7 +23,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'description', content: 'Hire Professional Freelancer, JavaScript / Vue / React Developer. Building applications and websites, design UX/UI, creating animations and interactive experiences.'},
-      { name: 'theme-color', content: '#0abc5c'},
+      { name: 'theme-color', content: '#4cfc33'},
       { name: 'google-site-verification', content: '5xveBIMAKbrs8XryW38TaiRi53IVyyAJXyUk7h43xt8'},
       { name: 'yandex-verification', content: '415d9e03474cd958'}
     ],
@@ -44,8 +44,8 @@ module.exports = {
             '@type': 'Person',
             'address': {
               '@type': 'PostalAddress',
-              'addressCountry': 'BLR',
-              'addressLocality': 'Minsk'
+              'addressCountry': 'PLN',
+              'addressLocality': 'Warsaw'
             },
             'name': 'Aleks Malyavko',
             'image': 'https://aleksmalyavko.com/images/me1.png',
@@ -97,7 +97,7 @@ module.exports = {
     start_url: '/',
     display: 'standalone',
     background_color: '#000a14',
-    theme_color: '#0abc5c'
+    theme_color: '#4cfc33'
   },
   serverMiddleware: [
     '~/api/index'

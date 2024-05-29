@@ -3,7 +3,7 @@
     <div class="generator__wrapper">
       <div class="generator__list" @click="e => this.chooseColor(e)">
         <div class="generator__list__item" style="background: #fe0000" data-color="#fe0000"></div>
-        <div class="generator__list__item" style="background: #0ABC5C" data-color="#0ABC5C"></div>
+        <div class="generator__list__item" style="background: #4cfc33" data-color="#4cfc33"></div>
         <div class="generator__list__item" style="background: #fee600" data-color="#fee600"></div>
         <div class="generator__list__item" style="background: #00bcf9" data-color="#00bcf9"></div>
       </div>

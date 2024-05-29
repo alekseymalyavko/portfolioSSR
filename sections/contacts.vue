@@ -14,7 +14,7 @@
             <i class="icon"><MailIcon/></i> <a :href="`mailto:${text.contacts.mail}`"><span class="caption">{{text.contacts.mail}}</span></a>
           </li>
           <li class="list__item ">
-            <i class="icon"><LocationIcon/></i> <a href="https://goo.gl/maps/vkNhdqywazneYsPr9" target="_blank" rel="noopener"><span class="caption">{{text.contacts.location}}</span></a>
+            <i class="icon"><LocationIcon/></i> <a href="https://maps.app.goo.gl/dzL2BjeRXoU6PDXM7" target="_blank" rel="noopener"><span class="caption">{{text.contacts.location}}</span></a>
           </li>
         </ul>
       </div>

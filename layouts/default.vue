@@ -29,7 +29,7 @@ export default {
   }),
   data() {
     return {
-      currentHexColor:  '#0ABC5C',
+      currentHexColor:  '#4cfc33',
       currentRgbaColor:  ['rgba(10, 185, 95, 0.2)', '10, 185, 95'],
     }
   },
