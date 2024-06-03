@@ -228,7 +228,7 @@ h5 {
 }
 .button {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: bold;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 0.3px;

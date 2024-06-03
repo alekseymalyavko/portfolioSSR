@@ -19,13 +19,12 @@
 </template>
 
 <script>
-import { InIcon, GhIcon, TgIcon } from '~/components/icons/index'
+import { InIcon, GhIcon } from '~/components/icons/index'
 export default {
   props: ['content'],
   components: {
     InIcon,
-    GhIcon,
-    TgIcon
+    GhIcon
   }
 }
 </script>

@@ -12,11 +12,6 @@
             <GhIcon/>
           </a>
         </li>
-        <li class="icon active">
-          <a href="https://t.me/aleksmalyavko" target="_blank" aria-label="Telegram" rel="nofollow noopener noreferrer">
-            <TgIcon/>
-          </a>
-        </li>
       </ul>
     </div>
     <p class="footer__text text light">{{content.title}}</p>
@@ -24,14 +19,13 @@
 </template>
 
 <script>
-import { InIcon, GhIcon, TgIcon } from '~/components/icons/index'
+import { InIcon, GhIcon } from '~/components/icons/index'
 
 export default {
   props: ['content'],
   components: {
     InIcon,
-    GhIcon,
-    TgIcon
+    GhIcon
   }
 }
 </script>

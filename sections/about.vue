@@ -27,7 +27,7 @@
           </p>
           <ul class="about__text__list list">
             <li class="list__item"  v-for="(item, index) in text.personal" :key="index">
-              <span class="">{{item.category}}:</span><span class="caption">{{item.value}}</span>
+              <span class="text">{{item.category}}:</span><span class="caption">{{item.value}}</span>
             </li>
           </ul>
           <div class="about__text__button button__container">
