@@ -1,5 +1,4 @@
 const isDev = process.env.NODE_ENV !== 'production';
-const BASE_URL = isDev ? 'http://localhost:8000' : 'https://aleks-malyavko-site.herokuapp.com';
 
 process.noDeprecation = true;
 
@@ -8,12 +7,6 @@ module.exports = {
   ...(!isDev && {
     modern: 'client'
   }),
-  env: {
-    baseUrl: process.env.BASE_URL || BASE_URL
-  },
-  server: {
-    port: process.env.PORT || 8000,
-  },
   head: {
     htmlAttrs: {
       lang: 'en'
@@ -99,9 +92,6 @@ module.exports = {
     background_color: '#000a14',
     theme_color: '#4cfc33'
   },
-  serverMiddleware: [
-    '~/api/index'
-  ],
   loading: { color: 'var(--active)', height: '3px', throttle: 0 },
   css: [
     'assets/main.css'
@@ -136,7 +126,6 @@ module.exports = {
     }
   ],
   modules: [
-    ['@nuxtjs/axios', { baseURL: '/api/' }],
     [
       '@naumstory/nuxtjs-yandex-metrika',
       {
@@ -145,14 +134,6 @@ module.exports = {
         clickmap:true,
         trackLinks:true,
         accurateTrackBounce:true
-      }
-    ],
-    [
-      '@nuxtjs/recaptcha', {
-        hideBadge: false,
-        siteKey: process.env.RECAPTCHA || '6LcoqCAhAAAAAJUwm9CZyv-GKoQMp_6-TZAAB_rD',
-        version: 2,
-        size: 'invisible'
       }
     ]
   ],

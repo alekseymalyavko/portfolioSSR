@@ -1,3 +1,6 @@
+import data from '~/assets/data.json'
+import projects from '~/assets/projects.json'
+
 export const state = () => ({
   data: null,
   projects: null
@@ -22,12 +25,8 @@ export const getters = {
 }
 
 export const actions = {
-  async nuxtServerInit ({commit}) {
-    const data = await fetch(`${process.env.baseUrl}/api/data`)
-    .then(res => res.json())
-    commit('setData', data);
-    const projects = await fetch(`${process.env.baseUrl}/api/projects`)
-    .then(res => res.json())
-    commit('setProjects', projects);
+  nuxtServerInit ({ commit }) {
+    commit('setData', data)
+    commit('setProjects', projects)
   }
 }
