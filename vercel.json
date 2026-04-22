@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run generate",
+  "buildCommand": "",
   "outputDirectory": "dist",
   "framework": null
 }

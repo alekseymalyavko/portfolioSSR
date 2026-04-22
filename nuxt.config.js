@@ -178,31 +178,6 @@ module.exports = {
     optimization: {
       minimize: !isDev
     },
-    postcss: {
-      plugins: {
-        ...(!isDev && {
-          cssnano: {
-            preset: ['advanced', {
-              reduceIdents: false,
-              autoprefixer: false,
-              cssDeclarationSorter: false,
-              zindex: false,
-              discardComments: {
-                removeAll: true
-              }
-            }]
-          }
-        })
-      },
-      ...(!isDev && {
-        preset: {
-          browsers: 'cover 99.5%',
-          autoprefixer: true
-        }
-      }),
-
-      order: 'cssnanoLast'
-    },
    transpile: ['vue-agile'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
